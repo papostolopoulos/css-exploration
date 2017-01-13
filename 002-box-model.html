@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/stylesheets/002.css">
+  <title>002-Box Model</title>
+</head>
+<body>
+  <aside class="asideClass" id="asideId">
+    <header class="headerClass" id="headerId">
+      <nav class="navClass" id="navId">
+        <ol class="navOlClass" id="navOlId">
+          <li>
+            <a href="001-specificity.html">Specificity</a>
+            </li>
+          <li>
+            <a href="002-box-model.html">Box Model</a>
+            </li>
+          <li>
+            <a href="003-positioning.html">Positioning</a>
+            </li>
+          <li>
+            <a href="004-typography.html">Typography</a>
+            </li>
+          <li>
+            <a href="005-backgrounds.html">Backgrounds</a>
+            </li>
+        </ol>
+      </nav>
+    </header>
+  </aside>
+
+  <section class="mainSectionClass" id="mainSectionId">
+    <article class="mainArticleClass" id="mainArticleId">
+      <h1>Box Model</h1>
+      <p>Different tags in the html document have different display settings.</p>
+      <p>That means that they are positioned in a different way and in relation to the other tags in the page.</p>
+      <p>Therefore, some content might render next to the other or it might render while it is spanning
+        throughout the whole page.</p>
+      <p>On the previous page, the links at the top of the page rendered
+        on top of the rest of the text.</p>
+      <p>Also there was no spacing between the different lines and no intentation on the different elelents.</p>
+      <p>For example, <code>&#60;ul&#62;</code>, <code>&#60;ol&#62;</code> and <code>&#60;li&#62;</code> tags are positioned
+        inside other tags that by default span through the whole stretch of the page and therefore they prevent
+        the elements from rendering next to each other.</p>
+      <p>In order to resolve these challenges, we need to define attributes like:</p>
+        <ul>
+          <li>The width</li>
+          <li>The height</li>
+          <li>The padding</li>
+          <li>The margin</li>
+          <li>The borders</li>
+          <li>The border's radius</li>
+          <li>The display</li>
+        </ul>
+        <p>of the particular elements that we need to work on and render properly.</p>
+        <p>In that way, we can accomplish a better positioning of the page's different elements.
+          That, in accordance to the specificity between the tags, classes and ids
+          can help us render things in the way we desire.</p>
+          <h2>The box sizing</h2>
+          <p>Even though the box model is conveniently assisting us to define size parameters for
+          all of our page elements, it can be challenging because it requires from us to calculate the total size
+        of the elements based on the sum of the margin, border, padding and width defined.</p>
+        <p></p>
+          <img src="assets/images/box-model1.jpg" alt="Box model without the content-box value" class="boxModels">
+        <p>This can be resolved by using the "content-box" property. What this property does is
+        that it maintains the width of an element regardless of the extra padding, borders and margin
+        that might be there. See the picture below to get an idea.</p>
+        <img src="assets/images/box-model2.jpg" alt="Box model with content-box value included" class="boxModels">
+
+
+          <p>Important Note: As we go over the different changes, we might need to do modifications
+            on the existing CSS code in order to accomplish
+          better rendering in all the different page elements.</p>
+          <p>The css code that we used is the following:</p>
+        <code>
+          *,<br>
+          *:before,<br>
+          *:after {<br>
+            -webkit-box-sizing: border-box;<br>
+               -moz-box-sizing: border-box;<br>
+                    box-sizing: border-box;<br>
+          }<br>
+
+          header {<br>
+          	width: 20%;<br>
+          	padding: 10px;<br>
+          }<br>
+
+          section {<br>
+          	width: 80%;<br>
+          	padding: 10px;<br>
+          }<br>
+
+          h1 {<br>
+          	margin: 5px 0;<br>
+          }<br>
+
+          h2 {<br>
+          	margin: 5px 0;<br>
+          }<br>
+
+          p {<br>
+          	margin: 5px 0;<br>
+          }<br>
+          .boxModels{<br>
+          	width: 50%;<br>
+          	border: 1px solid black;<br>
+          	margin: 0 5px 0 0;<br>
+          }<br>
+        </code>
+        <br>
+
+      <a href="001-specificity.html">Previous</a>
+      <a href="003-positioning.html">Next</a>
+    </article>
+  </section>
+  <section></section>
+  <footer>&copy; January 2017 - today. David Shin | Jeremy Beal | Paraskevas Apostolopoulos</footer>
+</body>
+</html>
