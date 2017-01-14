@@ -55,21 +55,31 @@ p {
 		font-size: 20px;
 }
 
-.example1 {
+.class-example1 {
 	color: blue;
 	font-size: 30px;
 }
 
-.example2 {
+.class-example2 {
 	color: blue;
 	font-size: 30px;
 }
 
-.example2 {
+.class-example2 {
 	color: yellow;
 	font-size: 40px;
 }
 
-.example2 {
+.class-example2 {
 	color: red;
+}
+
+#id-example1 {
+	color: purple;
+	font-size: 20px;
+}
+
+.class-example3 {
+	color: black;
+	font-size: 20px;
 }

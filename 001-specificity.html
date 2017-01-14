@@ -39,36 +39,129 @@
       <p>In the beginning days of the world wide web (WWW), documents or other information were often sent as simple plain text across the wires that formed the internet. Because the original intent was to allow scientists to share information at the particle accelerator <a href="http://home.cern/">CERN</a>, <a href="http://webfoundation.org/about/vision/history-of-the-web/">Sir Tim Berners-Lee</a>, the inventor of the WWW, developed the Hyper Text Markup Language (HTML) language we use today. HTML included the means to allow some basic formatting of the documents being shared. Once styling became more complex and CSS from a separate file was used to control the attributes of a webpage, there became a need for combining additional styling. By including some type of order and precedence we can keep CSS code DRY (don't repeat yourself). This increases readability for the developer while reducing the memory requirements on both the client and the server side, as well as during the transmission process.</p><br>
       <p>Currently, we have changed the font size of all of the paragraphs to a font size of 20 pixels and the text color to green from their browser specific values using the following code:</p><br>
       <code>
-      p {
-        color: green;
-      	font-size: 20px;
-      }
+          p {
+          		color: green;
+          		font-size: 20px;
+          }
   </code><br><br>
       <p>This is obviously easier and less time consuming than setting the font size and color within each paragraph or 'p' tag in the HTML document.</p><br>
       <p>The ‘C’ in CSS stands for “cascading”. What this means is that all of the ‘styling’ defined within each style sheet cascades or flows from the top of the document down to the bottom. Then, the styling for each element can then be updated by changing or combining property values. An example is shown here where we have updated the properties of the following paragraphs by defining a separate class selector, called "example1" with the following properties and values using the following CSS code:</p><br>
-      <code>.example1 {
-      	color: blue;
-      	font-size: 30px;
-      }</code><br><br>
+      <code>
+          p {
+          		color: green;
+          		font-size: 20px;
+          }
+
+          .class-example1 {
+          	color: blue;
+          	font-size: 30px;
+          }
+      </code><br><br>
       </p><br>
-      <p class="example1">The text color is now larger and blue (30 pixels), likewise, any other paragraphs that are also defined with the same class are rendered in the same way. For example the following paragraph.</p><br>
-      <p class="example1">Now while this paragraph is still blue, because it is also defined by the 'example1' class, the next paragraph reverts back to our original 'p' element formatting, as the HTML for this paragraph does not belong to the 'example1' class.</p><br>
+      <p class="class-example1">The text color is now larger and blue (30 pixels), likewise, any other paragraphs that are also defined with the same class are rendered in the same way. For example the following paragraph.</p><br>
+      <p class="class-example1">Now while this paragraph is still blue, because it is also defined by the 'class-example1' class, the next paragraph reverts back to our original 'p' element formatting, as the HTML for this paragraph does not belong to the 'class-example1' class.</p><br>
       <p>Now watch how the cascade works. In this next example, we first define the class for the following paragragh as blue. We then alter the cascade by setting the class that defines the following paragraphs to yellow with a font size of 40 pixels. Finally, we change the text to red, but leave the font size alone. What happens?</p><br>
       <code>
-      .example2 {
-          color: green;
-          font-size: 20px;
-      }
-      .example2 {
-          color: yellow;
-          font-size: 40px;
-      }
-      .example2 {
-          color: red;
-      }
+          p {
+          		color: green;
+          		font-size: 20px;
+          }
+
+          .class-example1 {
+          	color: blue;
+          	font-size: 30px;
+          }
+
+          .class-example2 {
+          	color: blue;
+          	font-size: 30px;
+          }
+
+          .class-example2 {
+          	color: yellow;
+          	font-size: 40px;
+          }
+
+          .class-example2 {
+          	color: red;
+          }
       </code></p><br>
-      <p class="example2">Well, because the text color of red was the last one to be defined in the cascade, it took precedence over green and yellow. Moreover, the larger size 40 pixel font persisted, even though it was defined at the same time as the color was set to yellow (which we never see). This is an example of how the properties of an element can be altered downward in the cascade by resetting property values.</p>
-      <p class="example2"></p>
+      <p class="class-example2">Well, because the text color of red was the last one to be defined in the cascade, it took precedence over green and yellow. Moreover, the larger size 40 pixel font persisted, even though it was defined at the same time as the color was set to yellow (which we never see). This is an example of how the properties of an element can be altered downward in the cascade by resetting property values.</p><br>
+      <p class="class-example2">Lastly, we will now use another selector, the id to change the next paragraph to purple and the font size back to 20.</p><br><br>
+      <code>
+          p {
+          		color: green;
+          		font-size: 20px;
+          }
+
+          .class-example1 {
+          	color: blue;
+          	font-size: 30px;
+          }
+
+          .class-example2 {
+          	color: blue;
+          	font-size: 30px;
+          }
+
+          .class-example2 {
+          	color: yellow;
+          	font-size: 40px;
+          }
+
+          .class-example2 {
+          	color: red;
+          }
+
+          #id-example1 {
+          	color: purple;
+          	font-size: 20px;
+          }
+
+          .class-example3 {
+          	color: black;
+          	font-size: 20px;
+          }
+      </code><br><br>
+      <p class="class-example2 "id="id-example1">I'm different and unique. Even though I have the class defining me as red, I am purple because of my unique ID. From here on, we will go back to using black text.</p><br>
+      p {
+      		color: green;
+      		font-size: 20px;
+      }
+
+      .class-example1 {
+      	color: blue;
+      	font-size: 30px;
+      }
+
+      .class-example2 {
+      	color: blue;
+      	font-size: 30px;
+      }
+
+      .class-example2 {
+      	color: yellow;
+      	font-size: 40px;
+      }
+
+      .class-example2 {
+      	color: red;
+      }
+
+      #id-example1 {
+      	color: purple;
+      	font-size: 20px;
+      }
+
+      .class-example3 {
+      	font-size: 40px;
+      	color: black;
+      }
+      <br><br>
+      <p class="class-example3">In the examples shown above, you see that we obtain specificity in our style sheets by different methods. Once a style is defined for an element, in this case 'p', it will persist unless othewise altered - lower down in the CSS document file. Second, we have a heirachy of precedence. When using just the element as the selector in our CSS, we have assigned the lowest amount of weight for that style. Classes have more weight than element tags when used as selectors, and therefore, the values defined by their properties will take precedence over that of those defined for the element tags. Lastly, ID's take precedence over classes, but also must be unique to a single element tag.</p>
+      <p class="class-example3">In fact, there is a numerical system to calculate specificity. The notation uses a system that starts with 0-0-0. The element or 'type' selector scores 1 point on the right, which represents the lowest specificity weight, and would appear as 0-0-1. Classes, which have more weight would score in the middle, or as 0-1-0. ID's score in the leftmost column, or as 1-0-0. It should be noted that in-line HTML formatting takes even higher precedence than ID's, as well as the use of <a href="https://css-tricks.com/when-using-important-is-the-right-choice/">!important rule</a> within a selector's definition. Moreover, because more advanced formatting can include combinations of selectors the weighting can become difficult to calculate. Here is an awesome <a href="https://flukeout.github.io/">game</a> to learn how to combine selectors. once you concur that, here is a fun online <a href=" https://specificity.keegan.st/">specificity calculator</a> to learn more about their values!</p><br><br>
+
+
       <a href="000-reset.html">Previous</a>
       <a href="002-box-model.html">Next</a>
     </article>
