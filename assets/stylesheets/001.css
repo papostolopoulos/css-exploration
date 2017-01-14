@@ -45,8 +45,31 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*
+========================================
+001 Specificity
+========================================
+*/
+p {
+		color: green;
+		font-size: 20px;
+}
 
+.example1 {
+	color: blue;
+	font-size: 30px;
+}
 
-body {
+.example2 {
+	color: blue;
+	font-size: 30px;
+}
 
+.example2 {
+	color: yellow;
+	font-size: 40px;
+}
+
+.example2 {
+	color: red;
 }

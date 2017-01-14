@@ -1,0 +1,19 @@
+In the beginning days of the world wide web (WWW), documents or other information were often sent as simple plain text across the wires that formed the internet. Because the original intent was to allow scientists to share information at the particle accelerator CERN, Sir Tim Berners-Lee, the inventor of the WWW, developed the Hyper Text Markup Language (HTML) language we use today. HTML was the means to allow some basic formatting of the documents being shared. Once styling became more complex and CSS from a separate file was used to control the attributes of a webpage, there became a need for combining additional styling. By including some type of order and precedence we can keep CSS code DRY (don't repeat yourself). This increases readability for the developer while reducing the memory requirements on both the client and the server side, as well as during the transmission process.
+
+Currently, we have changed the font size of all of the paragraphs to a font size of 20 from their browser specific values using the following code:
+
+p { color: green; font-size: 20px; }
+The ‘C’ in CSS stands for “cascading”. What this means is that all of the ‘styling’ defined within each style sheet cascades or flows from the top of the document down to the bottom. Then, the styling for each element can then be updated by changing or combining property values. An example is shown here in this first example paragraph where the text is defined by the following CSS code:
+
+.example1 { color: green; font-weight: bold; }
+
+Hi, I am the example paragraph. I have a class selector called "example1" and it Note how my text is GREEN! Below, you can see my CSS code:
+
+
+My color is also green, since my style is defined in the same way
+
+Now watch how the cascade works. In this next example, we first define the class for the following paragragh as green. We then alter the cascade by setting the class that defines the following paragraphs to yellow, and finally to red. We also changed the font size to 40 pixels when we set the color to yellow. What happens?
+
+.example2 { color: green; font-size: 20px; } .example2 { color: yellow; font-size: 40px; } .example2 { color: red; }
+
+Well, because the text color of red was the last one to be defined in the cascade, it took precedence over green and yellow. Moreover, the larger size 40 pixel font persisted, even though it was defined at the same time as the color was set to yellow (which we never see). This is an example of how the properties of an element can be altered downward in the cascade by resetting property values.
