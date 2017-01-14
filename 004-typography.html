@@ -4,46 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/stylesheets/000.css">
+  <link rel="stylesheet" href="assets/stylesheets/001.css">
+  <link rel="stylesheet" href="assets/stylesheets/002.css">
+  <link rel="stylesheet" href="assets/stylesheets/003.css">
   <link rel="stylesheet" href="assets/stylesheets/004.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <title>004-Typography</title>
 </head>
 <body>
-  <aside>
-    <header>
-      <nav>
-        <ol>
-          <li>
-            <a href="001-specificity.html">Specificity</a>
-            </li>
-          <li>
-            <a href="002-box-model.html">Box Model</a>
-            </li>
-          <li>
-            <a href="003-positioning.html">Positioning</a>
-            </li>
-          <li>
-            <a href="004-typography.html">Typography</a>
-            </li>
-          <li>
-            <a href="005-backgrounds.html">Backgrounds</a>
-            </li>
-        </ol>
-      </nav>
-    </header>
-  </aside>
+    <div id="container">
 
-  <section>
-    <article>
-      <h1>Box Model</h1>
-      <p>Put your text here</p>
-        <code>&#60;code&#62; goes here</code>
-        <br>
+      <aside class="asideClass" id="asideId">
+        <header class="headerClass" id="headerId">
+          <nav class="navClass" id="navId">
+            <ol class="navOlClass" id="menuBarUl">
+              <li>
+                <a href="001-specificity.html">Specificity</a>
+              </li>
+              <li>
+                <a href="002-box-model.html">Box Model</a>
+              </li>
+              <li>
+                <a href="003-positioning.html">Positioning</a>
+              </li>
+              <li>
+                <a href="004-typography.html">Typography</a>
+              </li>
+              <li>
+                <a href="005-backgrounds.html">Backgrounds</a>
+              </li>
+            </ol>
+          </nav>
+        </header>
+      </aside>
 
-      <a href="003-positioning.html">Previous</a>
-      <a href="005-backgrounds.html">Next</a>
-    </article>
-  </section>
-  <section></section>
-  <footer>&copy; January 2017 - today. David Shin | Jeremy Beal | Paraskevas Apostolopoulos</footer>
-</body>
+      <section class="mainSectionClass" id="mainSectionId">
+        <article class="mainArticleClass" id="mainArticleId">
+          <h1>Typograpy</h1>
+          <p>In this section we have modified the fonts of the page so we can distinguish different elements,
+            make the page easier and more pleasing to read.</p>
+            <p>The attributes that we can modify in font settings are:</p>
+            <ul class="mainSectionUl">
+              <li>The color: <code>&nbsp;h1 {color: black;}&nbsp;</code></li>
+              <li>The font size: <code>&nbsp;h2 {font-size: 22px;}&nbsp;</code></li>
+              <li>The font style: <code>&nbsp;h3 {font-style: italic;}&nbsp;</code></li>
+              <li>The font variant: <code>&nbsp;.logo {font-variant: small-caps;}&nbsp;</code></li>
+              <li>The font weight: <code>&nbsp;h4 {font-weight: lighter;}&nbsp;</code></li>
+              <li>The line height: <code>&nbsp;body {line-height: 18px;}&nbsp;</code></li>
+            </ul>
+            <p>On some cases, the web developers use a combination of the above options and
+              include them all (except the color) in one line. This shorthand option has the order of
+              <code>&nbsp;font-style&nbsp;</code>, <code>&nbsp;font-variant&nbsp;</code>, <code>&nbsp;font-weight&nbsp;</code>, <code>&nbsp;font-size&nbsp;</code>,
+              <code>&nbsp;line-height&nbsp;</code>, and <code>&nbsp;font-family&nbsp;</code>. Example: <br>
+              <code>&nbsp;body {font: normal normal 400 14px/22px "Open Sans", Helvetica, Arial, sans-serif}&nbsp;</code>
+            </p>
+            <h2>What was added in the code</h2>
+            <ul class="mainSectionUl">
+              <li>this was added in the code</li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <div id="codeSectionDiv">
+              <code>&nbsp; &#60;code&#62; goes here&nbsp;</code>
+            </div>
+            <div id="previousNextDiv">
+              <a href="003-positioning.html">Previous</a>
+              <a href="005-backgrounds.html">Next</a>
+            </div>
+
+          </article>
+        </section>
+        <section></section>
+        <footer>&copy; January 2017 - today. David Shin | Jeremy Beal | Paraskevas Apostolopoulos</footer>
+    </div>
+  </body>
 </html>

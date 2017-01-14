@@ -4,46 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/stylesheets/000.css">
+  <link rel="stylesheet" href="assets/stylesheets/001.css">
+  <link rel="stylesheet" href="assets/stylesheets/002.css">
+  <link rel="stylesheet" href="assets/stylesheets/003.css">
+  <link rel="stylesheet" href="assets/stylesheets/004.css">
   <link rel="stylesheet" href="assets/stylesheets/005.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <title>005-Backgrounds</title>
 </head>
 <body>
-  <aside>
-    <header>
-      <nav>
-        <ol>
-          <li>
-            <a href="001-specificity.html">Specificity</a>
+  <div id="container">
+    <aside>
+      <header>
+        <nav>
+          <ol id="menuBarUl">
+            <li>
+              <a href="001-specificity.html">Specificity</a>
             </li>
-          <li>
-            <a href="002-box-model.html">Box Model</a>
+            <li>
+              <a href="002-box-model.html">Box Model</a>
             </li>
-          <li>
-            <a href="003-positioning.html">Positioning</a>
+            <li>
+              <a href="003-positioning.html">Positioning</a>
             </li>
-          <li>
-            <a href="004-typography.html">Typography</a>
+            <li>
+              <a href="004-typography.html">Typography</a>
             </li>
-          <li>
-            <a href="005-backgrounds.html">Backgrounds</a>
+            <li>
+              <a href="005-backgrounds.html">Backgrounds</a>
             </li>
-        </ol>
-      </nav>
-    </header>
-  </aside>
+          </ol>
+        </nav>
+      </header>
+    </aside>
 
-  <section>
-    <article>
-      <h1>Box Model</h1>
-      <p>Put your text here</p>
-        <code>&#60;code&#62; goes here</code>
-        <br>
-
-      <a href="004-typography.html">Previous</a>
-      <a href="#">Next</a>
-    </article>
-  </section>
-  <section></section>
+    <section class="mainSectionClass" id="mainSectionId">
+      <article class="mainArticleClass" id="mainArticleId">
+        <h1>Backgrounds</h1>
+        <p>There are several things that someone can do with backgrounds.
+        The elements that can are usually added in the background of a page are:</p>
+        <ul class="mainSectionUl">
+          <li>A background color:<br>
+            <code>&nbsp;div{background-color: green;}&nbsp;</code></li>
+          <li>A background color with some transparency: <br>
+            <code>&nbsp;div{background-color: rgba(0, 155, 255, .5);}&nbsp;</code></li>
+          <li>An image: <br>
+            <code>&nbsp;div{background-image: url("");}&nbsp;</code></li>
+          <li>An image's position as a background: <br>
+            <code>&nbsp;div{background-position: 100px 5px;}</code></li>
+          <li>An image's repeat as a background: <br>
+            <code>&nbsp;div{background-repeat: none}</code></li>
+        </ul>
+        <h2>What was added in the code</h2>
+        <ul class="mainSectionUl">
+          <li>this was added in the code</li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <div id="codeSectionDiv">
+          <code>
+            &#60;code&#62; goes here and more<br>
+            and more and more
+          </code>
+        </div>
+        <div id="previousNextDiv">
+          <a href="004-typography.html">Previous</a>
+          <a href="#">Next</a>
+        </div>
+      </article>
+    </section>
+    <section id="interactiveSectionId">&nbsp;</section>
+  </div>
   <footer>&copy; January 2017 - today. David Shin | Jeremy Beal | Paraskevas Apostolopoulos</footer>
 </body>
 </html>
