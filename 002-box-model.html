@@ -13,9 +13,12 @@
   <aside class="asideClass" id="asideId">
     <header class="headerClass" id="headerId">
       <nav class="navClass" id="navId">
-        <ol class="navOlClass" id="navOlId">
+        <ol start="0">
           <li>
-            <a href="001-specificity.html">Specificity</a>
+            <a href="000-reset.html">Specificity</a>
+            </li>
+          <li>
+            <a href="001-specificity.html">Reset</a>
             </li>
           <li>
             <a href="002-box-model.html">Box Model</a>
@@ -28,7 +31,10 @@
             </li>
           <li>
             <a href="005-backgrounds.html">Backgrounds</a>
-            </li>
+          </li>
+          <li>
+            <a href="006-responsive_design.html">Responsive Design</a>
+          </li>
         </ol>
       </nav>
     </header>
@@ -36,6 +42,7 @@
 
   <section class="mainSectionClass" id="mainSectionId">
     <article class="mainArticleClass" id="mainArticleId">
+      <span id="floatedNumber">&nbsp;&nbsp;2&nbsp;&nbsp;</span>
       <h1>Box Model</h1>
       <p>Different tags in the html document have different display settings.</p>
       <p>That means that they are positioned in a different way and in relation to the other tags in the page.</p>
@@ -46,7 +53,7 @@
         inside other tags that by default span through the whole stretch of the page and therefore they prevent
         the elements from rendering next to each other.</p>
       <p>In order to resolve these challenges, we need to define attributes like:</p>
-        <ul>
+        <ul class="mainSectionUl">
           <li>The width: <br>
             <code>&nbsp;div {width: 100px}&nbsp;</code></li>
           <li>The height: <br>
@@ -75,67 +82,123 @@
         that it maintains the width of an element regardless of the extra padding, borders and margin
         that might be there. See the picture below to get an idea.</p>
         <img src="assets/images/box-model2.jpg" alt="Box model with content-box value included" class="boxModelsImages">
-
-
-          <p>Important Note: As we go over the different changes, we might need to do modifications
-            on the existing CSS code in order to accomplish
-          better rendering in all the different page elements.</p>
-          <p>The css code that we used is the following:</p><br>
-          <h2>What was added in the code:</h2><br>
-          <p>
-            <ul class="mainSectionUl">
-              <li>-We followed the box sizing model in order to avoid any sizing leakage in the document</li>
-              <li>-We added width, padding and borders in the different elements of the page
-                in order to better align the different elements. If needed, we will update the displays based on
-              the positioning we will follow.</li>
-            </ul>
-          </p>
-
-          <div id="codeSectionDiv">
-            <code>
-              *,<br>
-              *:before,<br>
-              *:after {<br>
-                -webkit-box-sizing: border-box;<br>
-                   -moz-box-sizing: border-box;<br>
-                        box-sizing: border-box;<br>
-              }<br>
-
-              header {<br>
-              	width: 20%;<br>
-              	padding: 10px;<br>
-              }<br>
-
-              section {<br>
-              	width: 80%;<br>
-              	padding: 10px;<br>
-              }<br>
-
-              h1 {<br>
-              	margin: 5px 0;<br>
-              }<br>
-
-              h2 {<br>
-              	margin: 5px 0;<br>
-              }<br>
-
-              p {<br>
-              	margin: 5px 0;<br>
-              }<br>
-              .boxModels{<br>
-              	width: 50%;<br>
-              	border: 1px solid black;<br>
-              	margin: 0 5px 0 0;<br>
-              }<br>
-            </code>
-          </div>
         <br>
-
+      “  <h2>How was CSS used</h2><br>
         <p>
-          <a href="001-specificity.html">Previous</a>
-          <a href="003-positioning.html">Next</a>
+          <ul class="mainSectionUl">
+            <li>-We followed the box sizing model in order to avoid any sizing leakage in the document</li>
+            <li>-We added width, padding and borders in the different elements of the page in order to
+              guarantee enough space between elements and better readability.</li>
+          </ul>
         </p>
+        <br>
+        <h3>The code</h3>
+        <div id="codeSectionDiv">
+          <code>
+            *,
+            *:before,
+            *:after {<br>
+              -webkit-box-sizing: border-box;<br>
+                 -moz-box-sizing: border-box;<br>
+                      box-sizing: border-box;<br>
+            }<br>
+            <br>
 
+            #container {<br>
+            	width: 100%;<br>
+            	height: 100%;<br>
+            }<br>
+            <br>
+
+            aside {<br>
+            	width: 10%;<br>
+            	padding: 10px;<br>
+            }<br>
+            <br>
+
+            section {<br>
+            	border-bottom: 2px solid rgb(22, 25, 37);<br>
+            	padding: 20px;<br>
+            }<br>
+            <br>
+
+            #mainSectionId {<br>
+            	width: 55%;<br>
+            	border-left: 2px solid rgb(22, 25, 37);<br>
+            }<br>
+            <br>
+
+            #interactiveSectionId {<br>
+            	width: 35%;<br>
+            }<br>
+            <br>
+
+            header {<br>
+            	padding: 10px;<br>
+            }<br>
+            <br>
+
+            h1 {<br>
+            	margin: 5px 0 0 50px;<br>
+            }<br>
+            <br>
+
+            h2 {<br>
+            	margin: 5px 0;<br>
+            }<br>
+            <br>
+
+            p {<br>
+            	margin: 5px 0;<br>
+            }<br>
+            <br>
+
+            ul {<br>
+            	padding-left: 20px;<br>
+            }<br>
+            <br>
+
+            footer {<br>
+            	height: 50px;<br>
+            	text-align: center;<br>
+            }<br>
+            <br>
+
+            #codeSectionDiv {<br>
+            	margin-left: 20px;<br>
+            	padding: 10px 10px 10px 10px;<br>
+            	width: 95%;<br>
+            	border-radius: 10px;<br>
+            }<br>
+            <br>
+
+            .boxModelsImages {<br>
+            	border: 2px solid black;<br>
+            }<br>
+            <br>
+
+            #previousNextDiv {<br>
+            	margin-top: 10px;<br>
+            	padding: 5px 5px 5px 20px;<br>
+            	height: 45px;<br>
+            	width: 350px;<br>
+            }<br>
+            <br>
+
+            #floatedNumber{<br>
+            	border-radius: 100%;<br>
+            	border: 2px solid rgb(22, 25, 37);<br>
+            }<br>
+            <br>
+
+          </code>
+        </div>
+      <br>
+
+      <p>
+        <a href="001-specificity.html">Previous</a>
+        <a href="003-positioning.html">Next</a>
+      </p>
     </article>
   </section>
   <section id="#interactiveSectionId"></section>

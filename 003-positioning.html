@@ -14,7 +14,10 @@
   <aside>
     <header>
       <nav>
-        <ol>
+        <ol start="0">
+          <li>
+            <a href="000-reset.html">Reset</a>
+            </li>
           <li>
             <a href="001-specificity.html">Specificity</a>
             </li>
@@ -29,7 +32,10 @@
             </li>
           <li>
             <a href="005-backgrounds.html">Backgrounds</a>
-            </li>
+          </li>
+          <li>
+            <a href="006-responsive_design.html">Responsive Design</a>
+          </li>
         </ol>
       </nav>
     </header>
@@ -37,17 +43,72 @@
 
   <section>
     <article>
-      <h1>3 Positioning</h1>
-      <p>Put your text here</p>
+      <span id="floatedNumber">&nbsp;&nbsp;3&nbsp;&nbsp;</span>
+      <h1>Positioning</h1>
+      <p>The positioning of html page elements can be accomplished by using a wide array of CSS techniques.</p>
+      <p>These techniques allow us to position the elements in relation to each other and with a variant distance.</p>
+      <p>In addition, CSS also offers the flexibility of positioning elements as far or as close to one another and
+        in some cases, on top or underneath each other.</p>
+      <p>Different programmers use different techniques to positione elements around the page. </p>
+      <p>The properties that are used to accomplish
+        these goals are:</p>
       <ul class="mainSectionUl">
-        <li>Put your text here about which elements we are talking about</li>
+        <li>The floats of the elements and in combination to the element's width:<br>
+          <code>&nbsp;div {float: left}&nbsp;</code>
+        </li>
+        <li>The z-index of the element in order to accomplish elevation<br>
+          <code>&nbsp;span {z-index: 1;}&nbsp;</code>
+        </li>
+        <li>The display of the elements: <br>
+          <code>&nbsp;article {display: table-cell;}&nbsp;</code>
+        </li>
+        <li>The position of the element which can be relative to the parent element
+          or in a free format: <br>
+          <code>&nbsp;span {position: absolute;}&nbsp;</code>
+        </li>
       </ul>
-      <h2>What was added in the code</h2>
+      <br>
+      <h2>How was CSS used</h2>
       <ul class="mainSectionUl">
-        <li>Put your comments here</li>
+        <li>We used the <code>&nbsp;display: table&nbsp;</code> option to properly position the main sections of the page</li>
+        <li>We used a <code>position: absolute</code> to be able to render the number
+        in a place where it renders on top of other elements and is not confined by the parent tags</li>
+        <li>We used a <code>display: block</code> for the footer of the page since we wanted to keep the footer in one line by itself</li>
       </ul>
+      <br>
+      <h3>The code</h3>
       <div id="codeSectionDiv">
-        <code>&#60;code&#62; goes here</code>
+        <code>
+          body {<br>
+          	display: block;<br>
+          }<br>
+
+          #container {<br>
+          	display: table;<br>
+          }<br>
+
+          aside {<br>
+          	display: table-cell;<br>
+          }<br>
+
+          section {<br>
+          	display: table-cell;<br>
+          }<br>
+
+          footer {<br>
+          	display: block;<br>
+          }<br>
+
+          #interactiveSectionId {<br>
+          	display: table-cell;<br>
+          }<br>
+
+          #floatedNumber{<br>
+          	position: absolute;<br>
+          	top: 22px;<br>
+          	left: 148px;<br>
+          }<br>
+        </code>
       </div>
         <br>
       <div id="previousNextDiv">

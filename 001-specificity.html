@@ -12,7 +12,10 @@
   <aside>
     <header>
       <nav>
-        <ol>
+        <ol class="navOlClass" id="menuBarUl" start="0">
+          <li>
+            <a href="000-reset.html">Reset</a>
+            </li>
           <li>
             <a href="001-specificity.html">Specificity</a>
             </li>
@@ -27,25 +30,80 @@
             </li>
           <li>
             <a href="005-backgrounds.html">Backgrounds</a>
-            </li>
+          </li>
+          <li>
+            <a href="006-responsive_design.html">Responsive Design</a>
+          </li>
         </ol>
       </nav>
     </header>
   </aside>
 <br>
-  <section>
-    <article>
-      <h1>1 Specificity</h1><br>
-      <p>Add your text here</p><br>
-      <p>The CSS code added in this document is:</p>
+  <section class="mainSectionClass" id="mainSectionId">
+    <article class="mainArticleClass" id="mainArticleId">
+      <span id="floatedNumber">&nbsp;&nbsp;1&nbsp;&nbsp;</span>
+      <h1>Specificity</h1><br>
+      <p>The CSS that is added in an html document can be added in different categories of tags.</p>
+      <p>When a css rule is applied in a particular tag, then that means that all the tags in the document
+        are affected by the CSS rule.</p>
+        <p>Therefore, if you would add a particular width property like: <code>div {width: 150px;}</code>,<br>
+          that would mean that all the div tags in the document would have a width of 150 pixels.</p><br>
+      <p>As a developer, you have the option of being more specific on which tags should get the settings you have defined.</p>
+      <p>You can be more specific on which selectors get the properties you are working on by using:</p>
+      <ul class="mainSectionUl">
+        <li><u>A class property</u> in the event that you want some of the same tags to be styled in a particular way
+          but you do not want all the tags with the same styling.</li>
+        <li><u>An id property</u> in case you want only one specific tag to be styled in a particular way
+          but you do not want other tags to have the same styling.</li>
+      </ul>
+      <br>
+      <p>There are several occasions where tags have more than one classes and more than one ids applied to them.</p>
+      <p>That is because we might be using different classes to accomplish different, overlapping or supplementing styling formats.</p>
+      <p>In order to be able to define the styling of tags in a priority base,
+      CSS uses a <u>specificity</u> weight.</p>
+      <p>In short, specificity means that ids have more weight than classes, and classes have more weight than tags.</p><br>
+      <p>For example, let's assume you have an <code>h2</code> tag that has the following structure:</p>
+      <code>&#60;h2 class="redBoldClass" id="greenUnderlineId"&#62;</code>
+      <p>And also let's assume that you have the following CSS code (dot is for classes, # is for ids)</p>
+      <code>
+        h2 {<br>
+          color: yellow;<br>
+          font-size: 30px;<br>
+        } <br>
+        <br>
+        .redBoldClass { <br>
+          color: red;<br>
+          font-size: 25px; <br>
+          font-weight: bold; <br>
+        } <br>
+        <br>
+        #greenUnderlineId { <br>
+          color: green; <br>
+          font-size: 35px; <br>
+          text-decoration: underline<br>
+        } <br>
+      </code>
+      <p>The particular CSS tag would end up having a <code>green</code> color,
+       a font size of <code>35px</code> and a text decoration of <code>underline</code>.</p>
+      <p>That is because the ids have a greater weight in specificity.</p>
+      <p>On the other hand, all the other <code>h2</code> tags that have the same class will inherit
+      the properties from the <code>.redBoldClass</code>,
+      while the <code>h2</code> tags that do not have and class or id attached to them,
+      will inherit the properties from the CSS applied in the h2 tag.</p>
+      <br>
+      <h2>How was CSS used</h2>
+      <ul>
+        <li>Nothing was added in this chapter.</li>
+        <li>Where needed, the different tags were given class and id names.</li>
+      </ul>
+      <p></p>
+
       <div id="codeSectionDiv">
         <code>
-          Code goes here.
+
         </code>
       </div>
-<br>
-
-        <br>
+      <br>
 
       <a href="000-reset.html">Previous</a>
       <a href="002-box-model.html">Next</a>

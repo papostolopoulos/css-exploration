@@ -18,32 +18,41 @@
     <aside>
       <header>
         <nav>
-          <ol id="menuBarUl">
+          <ol class="navOlClass" id="menuBarUl" start="0">
+            <li>
+              <a href="000-reset.html">Reset</a>
+              </li>
             <li>
               <a href="001-specificity.html">Specificity</a>
-            </li>
+              </li>
             <li>
               <a href="002-box-model.html">Box Model</a>
-            </li>
+              </li>
             <li>
               <a href="003-positioning.html">Positioning</a>
-            </li>
+              </li>
             <li>
               <a href="004-typography.html">Typography</a>
-            </li>
+              </li>
             <li>
               <a href="005-backgrounds.html">Backgrounds</a>
+            </li>
+            <li>
+              <a href="006-responsive_design.html">Responsive Design</a>
             </li>
           </ol>
         </nav>
       </header>
     </aside>
-
     <section class="mainSectionClass" id="mainSectionId">
       <article class="mainArticleClass" id="mainArticleId">
+        <span id="floatedNumber">&nbsp;&nbsp;5&nbsp;&nbsp;</span>
         <h1>Backgrounds</h1>
-        <p>There are several things that someone can do with backgrounds.
-        The elements that can are usually added in the background of a page are:</p>
+        <p>Backgrounds are used to offer to a page character, emphasize on page's elements
+          and get the user's attention.</p>
+        <p>When the developers are using colors to set backgrounds, they use Hex, RGB or HSL formatting.</p>
+        <p>In the case of this site, RGB was used for the color modifications of the backgrounds and the
+        colors of the fonts. </p>
         <ul class="mainSectionUl">
           <li>A background color:<br>
             <code>&nbsp;div{background-color: green;}&nbsp;</code></li>
@@ -56,17 +65,48 @@
           <li>An image's repeat as a background: <br>
             <code>&nbsp;div{background-repeat: none}</code></li>
         </ul>
-        <h2>What was added in the code</h2>
+        <h2>How was CSS used</h2>
         <ul class="mainSectionUl">
-          <li>this was added in the code</li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>We set the background color for all the different elements of the page.</li>
+          <li>We used a color pallete of four different colors in order to accomplish a uniform experience.</li>
         </ul>
+        <h3>The code</h3>
         <div id="codeSectionDiv">
           <code>
-            &#60;code&#62; goes here and more<br>
-            and more and more
+            html {<br>
+            	background-color: rgb(255, 255, 255);<br>
+            }<br>
+            <br>
+
+            body {<br>
+            	background-color: rgb(255, 255, 255);<br>
+            }<br>
+            <br>
+
+            aside {<br>
+            	background-color: rgb(35, 57, 91);<br>
+            }<br>
+            <br>
+
+            code {<br>
+            	background-color: rgb(22, 25, 37);<br>
+            }<br>
+            <br>
+
+            footer {<br>
+            	background-color: rgb(35, 57, 91);<br>
+            }<br>
+            <br>
+
+            #codeSectionDiv {<br>
+            	background-color: rgb(22, 25, 37);<br>
+            }<br>
+            <br>
+
+            #floatedNumber{<br>
+            	background-color: rgb(35, 57, 91);<br>
+            }<br>
+
           </code>
         </div>
         <div id="previousNextDiv">

@@ -15,24 +15,30 @@
 <body>
     <div id="container">
 
-      <aside class="asideClass" id="asideId">
+      <aside class="asideClass" id="asideId" >
         <header class="headerClass" id="headerId">
           <nav class="navClass" id="navId">
-            <ol class="navOlClass" id="menuBarUl">
+            <ol class="navOlClass" id="menuBarUl" start="0">
+              <li>
+                <a href="000-reset.html">Reset</a>
+                </li>
               <li>
                 <a href="001-specificity.html">Specificity</a>
-              </li>
+                </li>
               <li>
                 <a href="002-box-model.html">Box Model</a>
-              </li>
+                </li>
               <li>
                 <a href="003-positioning.html">Positioning</a>
-              </li>
+                </li>
               <li>
                 <a href="004-typography.html">Typography</a>
-              </li>
+                </li>
               <li>
                 <a href="005-backgrounds.html">Backgrounds</a>
+              </li>
+              <li>
+                <a href="006-responsive_design.html">Responsive Design</a>
               </li>
             </ol>
           </nav>
@@ -41,6 +47,7 @@
 
       <section class="mainSectionClass" id="mainSectionId">
         <article class="mainArticleClass" id="mainArticleId">
+          <span id="floatedNumber">&nbsp;&nbsp;4&nbsp;&nbsp;</span>
           <h1>Typograpy</h1>
           <p>In this section we have modified the fonts of the page so we can distinguish different elements,
             make the page easier and more pleasing to read.</p>
@@ -56,18 +63,138 @@
             <p>On some cases, the web developers use a combination of the above options and
               include them all (except the color) in one line. This shorthand option has the order of
               <code>&nbsp;font-style&nbsp;</code>, <code>&nbsp;font-variant&nbsp;</code>, <code>&nbsp;font-weight&nbsp;</code>, <code>&nbsp;font-size&nbsp;</code>,
-              <code>&nbsp;line-height&nbsp;</code>, and <code>&nbsp;font-family&nbsp;</code>. Example: <br>
+              <code>&nbsp;line-height&nbsp;</code>, and <code>&nbsp;font-family&nbsp;</code>. <br>
+              Example:
               <code>&nbsp;body {font: normal normal 400 14px/22px "Open Sans", Helvetica, Arial, sans-serif}&nbsp;</code>
             </p>
-            <h2>What was added in the code</h2>
+            <h2>How was CSS used</h2>
             <ul class="mainSectionUl">
-              <li>this was added in the code</li>
-              <li></li>
-              <li></li>
-              <li></li>
+              <li>We set up different fonts for different elements of the page</li>
+              <li>We modified the size of the different text properties</li>
+              <li>We modified the colors of the different fonts</li>
+              <li>We set up the height between different lines of text</li>
+              <li>We set up the fonts weight in case we needed to emphasize specific text.</li>
             </ul>
+            <h3>The code</h3>
             <div id="codeSectionDiv">
-              <code>&nbsp; &#60;code&#62; goes here&nbsp;</code>
+              <code>
+                html {<br>
+              	font: normal normal 400 100%/40px "Open Sans", Helvetica, Arial, sans-serif;<br>
+              	color: rgb(22, 25, 37);<br>
+              }<br>
+              <br>
+
+              h1 {<br>
+              	font-size: 3.2rem;<br>
+              	line-height: 5.2rem;<br>
+              	font-family: Arial;<br>
+              	font-weight: 600;<br>
+              }<br>
+              <br>
+
+              h2 {<br>
+              	font-size: 2.5rem;<br>
+              	line-height: 4.5rem;<br>
+              	font-family: Arial;<br>
+              }<br>
+              <br>
+
+              h3 {<br>
+              	font-size: 2rem;<br>
+              	line-height: 4.5rem;<br>
+              	font-family: Arial;<br>
+              }<br>
+              <br>
+
+              p {<br>
+              	line-height: 1.4rem;<br>
+              	font-size: 1.2rem;<br>
+              }<br>
+              <br>
+
+              li {<br>
+              	line-height: 1.8rem;<br>
+              	font-size: 1.2rem;<br>
+              }<br>
+              <br>
+
+              aside header nav ol li a {<br>
+              	font-family: Helvetica;<br>
+              	font-weight: bold;<br>
+              	color: rgb(255, 255, 255);<br>
+              	text-decoration: none;<br>
+              	line-height: 50px;<br>
+              }<br>
+              <br>
+
+              aside header nav ol li a:hover {<br>
+              	color: rgb(142, 168, 195);<br>
+              	text-shadow: 2px 2px rgb(0, 0, 0);<br>
+              }<br>
+              <br>
+
+              code {<br>
+              	color: rgb(107, 247, 237);<br>
+              	font-size: 1.2rem;<br>
+              }<br>
+              <br>
+
+              footer {<br>
+              	font-family: arial;<br>
+              	font-size: 1.2rem;<br>
+              	font-weight: bold;<br>
+              	color: rgb(255,255,255);<br>
+              	line-height: 50px;<br>
+              }<br>
+              <br>
+
+              .mainSectionUl {<br>
+              	list-style-type: square;<br>
+              }<br>
+              <br>
+
+              #menuBarUl {<br>
+              	list-style-type:decimal;<br>
+              	color: rgb(255,255,255);<br>
+              	font-family: Helvetica;<br>
+              	font-weight: bold;<br>
+              }<br>
+              <br>
+
+              #previousNextDiv {<br>
+              	word-spacing: 20px;<br>
+              }<br>
+              <br>
+
+              #previousNextDiv a {<br>
+              	line-height: 30px;<br>
+              	font-size: 24px;<br>
+              	font-weight: bold;<br>
+              	font-family: Helvetica;<br>
+              	text-decoration: none;<br>
+              	color: rgb(22, 25, 37);<br>
+              }<br>
+              <br>
+
+              #previousNextDiv a:hover {<br>
+              	color: rgb(64, 110, 142);<br>
+              	text-shadow: 1px 1px rgb(22, 25, 37);<br>
+              }<br>
+              <br>
+
+              #floatedNumber{<br>
+              	color: rgb(107, 247, 237);<br>
+              }<br>
+              <br>
+
+              #floatedNumber {<br>
+              	font-size: 3.2rem;<br>
+              	line-height: 5.2rem;<br>
+              	font-family: Arial;<br>
+              	font-weight: 600;<br>
+              }<br>
+
+              </code>
             </div>
             <div id="previousNextDiv">
               <a href="003-positioning.html">Previous</a>

@@ -26,3 +26,9 @@ footer {
 #interactiveSectionId {
 	display: table-cell;
 }
+
+#floatedNumber{
+	position: absolute;
+	top: 22px;
+	left: 166px;
+}

@@ -11,7 +11,10 @@
   <aside>
     <header>
       <nav>
-        <ol>
+        <ol start="0">
+          <li>
+            <a href="000-reset.html">Reset</a>
+            </li>
           <li>
             <a href="001-specificity.html">Specificity</a>
             </li>
@@ -34,13 +37,22 @@
 <br>
   <section>
     <article>
-      <h1>0 Reset CSS</h1><br>
-      <p>Before we touch specificity, we will work on stripping the page from any presets. In that way, we safeguard that
-        our code is more likely to render consistently among different web pages. A good resource to use and read more about
-      resetting pages is from <a href="http://meyerweb.com/eric/tools/css/reset/">mayerweb</a>.
-      The spaces that you see between some lines are intentonally created in order to make this
-    page more readable.</p><br>
-      <p>The CSS code added in this document is:</p>
+      <span id="floatedNumber">&nbsp;&nbsp;0&nbsp;&nbsp;</span>
+      <h1>Reset CSS</h1><br>
+      <p>Before we touch specificity, we will work on stripping the page from any presets.</p>
+      <p>In that way, we safeguard that
+        our code is more likely to render consistently among different browsers.</p>
+      <p>A good resource to use and read more about how to reset your pages is
+        from <a href="http://meyerweb.com/eric/tools/css/reset/">mayerweb</a>.</p>
+
+      <h2>What was added in the CSS code</h2>
+      <ul class="mainSectionUl">
+        <li>For the purpose of this tutorial, everything has been reset other than the <code>&#60;code&#62;</code> tag.</li>
+        <li>The spaces that you see between some lines are intentonally created in order to make this
+          page more readable.</li>
+        <li>Other than that, you do not see any formatting in the page because everything has been reset.</li>
+      </ul>
+      <p>The CSS code added in this document is:</p><br>
       <div id="codeSectionDiv">
         <code>
           html, body, div, span, applet, object, iframe,
@@ -89,12 +101,6 @@
         </code>
       </div>
       <br>
-      <h2>What is next</h2>
-        <ul>
-          <li>Use CSS to reset the presets of the browser's page</li>
-          <li>Discuss about specificity</li>
-        </ul>
-
 
       <a href="index.html">Previous</a>
       <a href="001-specificity.html">Next</a>
