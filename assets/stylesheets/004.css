@@ -104,3 +104,8 @@ footer {
 	font-family: Arial;
 	font-weight: 600;
 }
+
+.fa {
+	font-size: 250%;
+	color: rgb(255, 255, 255);
+}

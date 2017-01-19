@@ -28,7 +28,5 @@ footer {
 }
 
 #floatedNumber{
-	position: absolute;
-	top: 22px;
-	left: 166px;
+	float: right;
 }

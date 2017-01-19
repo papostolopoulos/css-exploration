@@ -8,13 +8,22 @@
   <link rel="stylesheet" href="assets/stylesheets/001.css">
   <link rel="stylesheet" href="assets/stylesheets/002.css">
   <link rel="stylesheet" href="assets/stylesheets/003.css">
+
+  <link rel="stylesheet" href="assets/stylesheets/006.css">
+
   <title>003-Positioning</title>
 </head>
 <body>
-  <aside>
-    <header>
-      <nav>
-        <ol start="0">
+  <aside class="asideClass" id="asideId" >
+    <header class="headerClass" id="headerId">
+      <div id="logoBurger">
+        <div id="logoDiv">
+          <a href="index.html"><i class="fa fa-css3"></i></a>
+        </div>
+      </div>
+      <nav id="navId">
+        <div id="burger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+        <ol class="navOlClass" id="menuBarUl" start="0">
           <li>
             <a href="000-reset.html">Reset</a>
             </li>
@@ -32,10 +41,10 @@
             </li>
           <li>
             <a href="005-backgrounds.html">Backgrounds</a>
-          </li>
-          <li>
-            <a href="006-responsive_design.html">Responsive Design</a>
-          </li>
+            </li>
+            <li>
+              <a href="006-responsive_design.html">Responsive Design</a>
+              </li>
         </ol>
       </nav>
     </header>
@@ -76,48 +85,51 @@
         <li>We used a <code>display: block</code> for the footer of the page since we wanted to keep the footer in one line by itself</li>
       </ul>
       <br>
-      <h3>The code</h3>
-      <div id="codeSectionDiv">
-        <code>
-          body {<br>
-          	display: block;<br>
-          }<br>
-
-          #container {<br>
-          	display: table;<br>
-          }<br>
-
-          aside {<br>
-          	display: table-cell;<br>
-          }<br>
-
-          section {<br>
-          	display: table-cell;<br>
-          }<br>
-
-          footer {<br>
-          	display: block;<br>
-          }<br>
-
-          #interactiveSectionId {<br>
-          	display: table-cell;<br>
-          }<br>
-
-          #floatedNumber{<br>
-          	position: absolute;<br>
-          	top: 22px;<br>
-          	left: 148px;<br>
-          }<br>
-        </code>
-      </div>
-        <br>
-      <div id="previousNextDiv">
-        <a href="002-box-model.html">Previous</a>
-        <a href="004-typography.html">Next</a>
-      </div>
     </article>
+
+    <div id="previousNextDiv">
+      <a href="002-box-model.html">Previous</a>
+      <a href="004-typography.html">Next</a>
+    </div>
   </section>
-  <section id="interactiveSectionId"></section>
-  <footer>&copy; January 2017 - today. David Shin | Jeremy Beal | Paraskevas Apostolopoulos</footer>
+  <section id="interactiveSectionId">
+    <h3>The code</h3>
+    <div id="codeSectionDiv">
+      <code>
+        body {<br>
+          display: block;<br>
+        }<br>
+
+        #container {<br>
+          display: table;<br>
+        }<br>
+
+        aside {<br>
+          display: table-cell;<br>
+        }<br>
+
+        section {<br>
+          display: table-cell;<br>
+        }<br>
+
+        footer {<br>
+          display: block;<br>
+        }<br>
+
+        #interactiveSectionId {<br>
+          display: table-cell;<br>
+        }<br>
+
+        #floatedNumber{<br>
+          float: right;<br>
+        }<br>
+      </code>
+    </div>
+      <br>
+  </section>
+  <footer>&copy; January 2017 - today. <br>
+    Jeremy Beal <br>
+    Paraskevas Apostolopoulos
+  </footer>
 </body>
 </html>

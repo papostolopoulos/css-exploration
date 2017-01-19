@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="assets/stylesheets/000.css">
   <link rel="stylesheet" href="assets/stylesheets/001.css">
   <link rel="stylesheet" href="assets/stylesheets/002.css">
@@ -18,7 +19,13 @@
   <div id="container">
     <aside>
       <header>
-        <nav>
+        <div id="logoBurger">
+          <div id="logoDiv">
+            <a href="index.html"><i class="fa fa-css3"></i></a>
+          </div>
+        </div>
+        <nav id="navId">
+          <div id="burger"><i class="fa fa-bars" aria-hidden="true"></i></div>
           <ol class="navOlClass" id="menuBarUl" start="0">
             <li>
               <a href="000-reset.html">Reset</a>
@@ -40,16 +47,17 @@
               </li>
               <li>
                 <a href="006-responsive_design.html">Responsive Design</a>
-                </li>
+              </li>
           </ol>
         </nav>
       </header>
     </aside>
     <section class="mainSectionClass" id="mainSectionId">
       <article class="mainArticleClass" id="mainArticleId">
+
         <span id="floatedNumber">&nbsp;&nbsp;6&nbsp;&nbsp;</span>
         <h1>Responsive design</h1>
-        <p>Text goes here</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
         <ul class="mainSectionUl">
           <li>List item<br>
             <code>&nbsp;code goes here&nbsp;</code></li>
@@ -58,21 +66,28 @@
         <ul class="mainSectionUl">
           <li>Text here</li>
         </ul>
-        <h3>The code</h3>
-        <div id="codeSectionDiv">
-          <code>
-            code here
-
-          </code>
-        </div>
-        <div id="previousNextDiv">
-          <a href="004-typography.html">Previous</a>
-          <a href="#">Next</a>
-        </div>
       </article>
+
+      <div id="previousNextDiv">
+        <a href="004-typography.html">Previous</a>
+        <a href="#">Next</a>
+      </div>
     </section>
-    <section id="interactiveSectionId">&nbsp;</section>
+
+
+    <section id="interactiveSectionId">
+      <h3>The code</h3>
+      <div id="codeSectionDiv">
+        <code>
+          code here here here here here here here here here here here here
+
+        </code>
+      </div>
+    </section>
   </div>
-  <footer>&copy; January 2017 - today. David Shin | Jeremy Beal | Paraskevas Apostolopoulos</footer>
+
+  <footer>&copy; January 2017 - today. <br>
+    Paraskevas Apostolopoulos
+  </footer>
 </body>
 </html>

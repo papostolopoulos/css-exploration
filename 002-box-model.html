@@ -7,18 +7,26 @@
   <link rel="stylesheet" href="assets/stylesheets/000.css">
   <link rel="stylesheet" href="assets/stylesheets/001.css">
   <link rel="stylesheet" href="assets/stylesheets/002.css">
+
+  <link rel="stylesheet" href="assets/stylesheets/006.css">
   <title>002-Box Model</title>
 </head>
 <body>
-  <aside class="asideClass" id="asideId">
+  <aside class="asideClass" id="asideId" >
     <header class="headerClass" id="headerId">
-      <nav class="navClass" id="navId">
-        <ol start="0">
+      <div id="logoBurger">
+        <div id="logoDiv">
+          <a href="index.html"><i class="fa fa-css3"></i></a>
+        </div>
+      </div>
+      <nav id="navId">
+        <div id="burger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+        <ol class="navOlClass" id="menuBarUl" start="0">
           <li>
-            <a href="000-reset.html">Specificity</a>
+            <a href="000-reset.html">Reset</a>
             </li>
           <li>
-            <a href="001-specificity.html">Reset</a>
+            <a href="001-specificity.html">Specificity</a>
             </li>
           <li>
             <a href="002-box-model.html">Box Model</a>
@@ -31,10 +39,10 @@
             </li>
           <li>
             <a href="005-backgrounds.html">Backgrounds</a>
-          </li>
-          <li>
-            <a href="006-responsive_design.html">Responsive Design</a>
-          </li>
+            </li>
+            <li>
+              <a href="006-responsive_design.html">Responsive Design</a>
+              </li>
         </ol>
       </nav>
     </header>
@@ -77,13 +85,17 @@
           <p>Even though the box model is conveniently assisting us to define size parameters for
           all of our page elements, it can be challenging because it requires from us to calculate the total size
         of the elements based on the sum of the margin, border, padding and width defined.</p>
+        <div class="images">
           <img src="assets/images/box-model1.jpg" alt="Box model without the content-box value" class="boxModelsImages">
+        </div>
         <p>This can be resolved by using the "content-box" property. What this property does is
         that it maintains the width of an element regardless of the extra padding, borders and margin
         that might be there. See the picture below to get an idea.</p>
-        <img src="assets/images/box-model2.jpg" alt="Box model with content-box value included" class="boxModelsImages">
+        <div class="images">
+          <img src="assets/images/box-model2.jpg" alt="Box model with content-box value included" class="boxModelsImages">
+        </div>
         <br>
-      “  <h2>How was CSS used</h2><br>
+        <h2>How was CSS used</h2><br>
         <p>
           <ul class="mainSectionUl">
             <li>-We followed the box sizing model in order to avoid any sizing leakage in the document</li>
@@ -92,107 +104,6 @@
           </ul>
         </p>
         <br>
-        <h3>The code</h3>
-        <div id="codeSectionDiv">
-          <code>
-            *,
-            *:before,
-            *:after {<br>
-              -webkit-box-sizing: border-box;<br>
-                 -moz-box-sizing: border-box;<br>
-                      box-sizing: border-box;<br>
-            }<br>
-            <br>
-
-            #container {<br>
-            	width: 100%;<br>
-            	height: 100%;<br>
-            }<br>
-            <br>
-
-            aside {<br>
-            	width: 10%;<br>
-            	padding: 10px;<br>
-            }<br>
-            <br>
-
-            section {<br>
-            	border-bottom: 2px solid rgb(22, 25, 37);<br>
-            	padding: 20px;<br>
-            }<br>
-            <br>
-
-            #mainSectionId {<br>
-            	width: 55%;<br>
-            	border-left: 2px solid rgb(22, 25, 37);<br>
-            }<br>
-            <br>
-
-            #interactiveSectionId {<br>
-            	width: 35%;<br>
-            }<br>
-            <br>
-
-            header {<br>
-            	padding: 10px;<br>
-            }<br>
-            <br>
-
-            h1 {<br>
-            	margin: 5px 0 0 50px;<br>
-            }<br>
-            <br>
-
-            h2 {<br>
-            	margin: 5px 0;<br>
-            }<br>
-            <br>
-
-            p {<br>
-            	margin: 5px 0;<br>
-            }<br>
-            <br>
-
-            ul {<br>
-            	padding-left: 20px;<br>
-            }<br>
-            <br>
-
-            footer {<br>
-            	height: 50px;<br>
-            	text-align: center;<br>
-            }<br>
-            <br>
-
-            #codeSectionDiv {<br>
-            	margin-left: 20px;<br>
-            	padding: 10px 10px 10px 10px;<br>
-            	width: 95%;<br>
-            	border-radius: 10px;<br>
-            }<br>
-            <br>
-
-            .boxModelsImages {<br>
-            	border: 2px solid black;<br>
-            }<br>
-            <br>
-
-            #previousNextDiv {<br>
-            	margin-top: 10px;<br>
-            	padding: 5px 5px 5px 20px;<br>
-            	height: 45px;<br>
-            	width: 350px;<br>
-            }<br>
-            <br>
-
-            #floatedNumber{<br>
-            	border-radius: 100%;<br>
-            	border: 2px solid rgb(22, 25, 37);<br>
-            }<br>
-            <br>
-
-          </code>
-        </div>
       <br>
 
       <p>
@@ -201,7 +112,112 @@
       </p>
     </article>
   </section>
-  <section id="#interactiveSectionId"></section>
-  <footer>&copy; January 2017 - today. David Shin | Jeremy Beal | Paraskevas Apostolopoulos</footer>
+  <section id="#interactiveSectionId">
+    <h3>The code</h3>
+    <div id="codeSectionDiv">
+      <code>
+        *,
+        *:before,
+        *:after {<br>
+          -webkit-box-sizing: border-box;<br>
+             -moz-box-sizing: border-box;<br>
+                  box-sizing: border-box;<br>
+        }<br>
+        <br>
+
+        #container {<br>
+          width: 100%;<br>
+          height: 100%;<br>
+        }<br>
+        <br>
+
+        aside {<br>
+          width: 10%;<br>
+          padding: 10px;<br>
+        }<br>
+        <br>
+
+        section {<br>
+          border-bottom: 2px solid rgb(22, 25, 37);<br>
+          padding: 20px;<br>
+        }<br>
+        <br>
+
+        #mainSectionId {<br>
+          width: 55%;<br>
+          border-left: 2px solid rgb(22, 25, 37);<br>
+        }<br>
+        <br>
+
+        #interactiveSectionId {<br>
+          width: 35%;<br>
+        }<br>
+        <br>
+
+        header {<br>
+          padding: 10px;<br>
+        }<br>
+        <br>
+
+        h1 {<br>
+          margin: 5px 0 0 50px;<br>
+        }<br>
+        <br>
+
+        h2 {<br>
+          margin: 5px 0;<br>
+        }<br>
+        <br>
+
+        p {<br>
+          margin: 5px 0;<br>
+        }<br>
+        <br>
+
+        ul {<br>
+          padding-left: 20px;<br>
+        }<br>
+        <br>
+
+        footer {<br>
+          height: 50px;<br>
+          text-align: center;<br>
+        }<br>
+        <br>
+
+        #codeSectionDiv {<br>
+          margin-left: 20px;<br>
+          padding: 10px 10px 10px 10px;<br>
+          width: 95%;<br>
+          border-radius: 10px;<br>
+        }<br>
+        <br>
+
+        .boxModelsImages {<br>
+          border: 2px solid black;<br>
+        }<br>
+        <br>
+
+        #previousNextDiv {<br>
+          margin-top: 10px;<br>
+          padding: 5px 5px 5px 20px;<br>
+          height: 45px;<br>
+          width: 350px;<br>
+        }<br>
+        <br>
+
+        #floatedNumber{<br>
+          border-radius: 100%;<br>
+          border: 2px solid rgb(22, 25, 37);<br>
+        }<br>
+        <br>
+
+      </code>
+    </div>
+
+  </section>
+  <footer>&copy; January 2017 - today. <br>
+    Paraskevas Apostolopoulos
+  </footer>
 </body>
 </html>
