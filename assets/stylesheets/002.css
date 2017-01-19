@@ -67,7 +67,9 @@ ul {
 
 footer {
 	height: 100%;
+  width: 100%;
 	text-align: center;
+  display: block;
 }
 
 #codeSectionDiv {
@@ -78,6 +80,7 @@ footer {
 
 .boxModelsImages {
 	border: 2px solid black;
+  width: 80%;
 }
 
 #previousNextDiv {

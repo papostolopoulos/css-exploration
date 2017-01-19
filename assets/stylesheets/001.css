@@ -3,3 +3,49 @@
   001 Specificity
   ========================================
 */
+
+p {
+    color: green;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+
+code {
+  color: black;
+  font-size: 15px;
+}
+
+p {
+    color: green;
+    font-size: 20px;
+}
+
+.class-example1 {
+  color: blue;
+  font-size: 30px;
+}
+
+.class-example2 {
+  color: blue;
+  font-size: 30px;
+}
+
+.class-example2 {
+  color: yellow;
+  font-size: 40px;
+}
+
+.class-example2 {
+  color: red;
+}
+
+#id-example1 {
+  color: purple;
+  font-size: 20px;
+}
+
+.class-example3 {
+  font-size: 20px;
+  color: black;
+}

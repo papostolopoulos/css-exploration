@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="assets/stylesheets/000.css">
-  <link rel="stylesheet" href="assets/stylesheets/001.css">
+  <!-- <link rel="stylesheet" href="assets/stylesheets/001.css"> -->
   <link rel="stylesheet" href="assets/stylesheets/002.css">
   <link rel="stylesheet" href="assets/stylesheets/003.css">
 
@@ -54,7 +54,152 @@
     <article>
       <span id="floatedNumber">&nbsp;&nbsp;3&nbsp;&nbsp;</span>
       <h1>Positioning</h1>
-      <p>The positioning of html page elements can be accomplished by using a wide array of CSS techniques.</p>
+      <p>There are a number of different ways to control position of content on a page using HTML/CSS.</p>
+      <p>It's important to learn how to use each technique individually, however, in many instances,
+        it takes a combination of CSS properties in order to gain the precise control
+        you need to build a well laid-out page.</p><br>
+
+      <h2>CSS PROPERTY #1: Display</h2>
+      <p>Each element on a webpage fills a rectangular box of space. The display
+        property sets how that box is treated by the web browser that reads and
+        interprets your code, building the view you see on your screen when you
+        visit a web page.</p>
+      <p>The two most important values of display are block and inline.</p>
+      <p>Understanding the default values of HTML elements, as well as how and
+        when to override these values, will help you understand how each element box works.</p><br>
+
+      <h3>DISPLAY VALUE #1: Block</h3>
+      <p>All container elements (header, nav, div, etc) are by default set to display
+        as a block. Block elements stretch as wide as the container that they are placed in.
+        Therefore, it is important to consider the size of the container an element
+        is being placed inside of when determining how you would like to frame your content.
+        As you build a web page, some block containers may be set to fill the full
+        width of the page and others will be set to specific widths.</p><br>
+
+        <h4>Block Rules:</h4>
+        <ol>
+          <li>If no width is set, it naturally expands to fill its parent container.</li>
+          <li>If no height is set, it will naturally fit any elements within
+            it—assuming they are not floated or positioned.</li>
+          <li>Will be placed below existing elements—assuming they are not floated
+            or positioned.</li>
+          <li>Margins and/or padding can be applied.</li>
+          <li>Ignores the vertical-align property.</li>
+        </ol><br>
+
+        <h3>DISPLAY VALUE #2: Inline</h3>
+        <p>Inline elements are often found inside of block container elements.
+          An inline element will accept margin and padding but the element still
+          sits inline as you might expect. Margin and padding will only push
+          other elements horizontally away, not vertically.
+          An inline element will not accept height and width.
+          Any height and width added to an inline element will be ignored.</p><br>
+
+        <h4>Inline Rules:</h4>
+        <ul>
+          <li>Takes up only as much width as it needs, and does not force new lines.</li>
+          <li>Flows along with the text content.</li>
+          <li>Will not clear previous content to drop to the next line like block elements.</li>
+          <li>Will ignore top and bottom margin settings, but will apply left and right margins,
+            and any padding.</li>
+          <li>Will ignore the width and height properties.</li>
+          <li>If floated left or right, will automatically become a block-level
+            element, subject to all block characteristics.</li>
+          <li>Is subject to the vertical-align property.</li>
+        </ul><br>
+
+        <h3>DISPLAY VALUE #3: Inline Block</h3>
+        <p>An element set to inline-block is very similar to an element set to
+          inline in that it will set inline with the natural flow of text.
+          The only difference is that you are able to set a width and height
+          which will be respected within the line in which it's placed inside.</p><br>
+
+        <h3>DISPLAY VALUE #4: Flex</h3>
+        <p></p><br>
+
+        <h2>CSS PROPERTY #2: Float</h2>
+        <p>Using the float property on an element causes that element to be positioned
+          as far left or right within its container as possible until it either runs
+          into another element or runs into the container's defined limits.</p>
+        <p>The float property is really important in web layouts by being used with two common techniques:
+        Floating inline elements (like images) will force content (like text) to wrap around it.
+        Floating block elements will slide one up alongside another.</p>
+        <p>By default, all elements have their float set to none.
+        The float property can be assigned a value of either left or right.
+        Using a float takes the floated content out of the natural flow of the page
+        making it especially important to consider the defined height and width
+        of both content and container elements.</p><br>
+
+        <h3>FLOAT ASIDE #1: The ClearFix Hack</h3>
+        <p>It is important to recognize when using float based layouts that a float's
+          container will not stretch down and around the height of the internal elements
+          if the internal elements have a greater defined height and width than
+          the container that they are positioned inside of.</p>
+          <p>With today's web browsers, if you only need to target IE 8 and up,
+            then this clear fix is widely accepted:</p>
+          <code>
+            .clearfix:after {<br>
+              content: " ";<br>
+              display: table;<br>
+              clear: both;<br>
+            }<br>
+          </code>
+          <p>This ClearFix "Hack" will cause the floated element's container element
+            to stretch around the content inside it like you think it would.</p><br>
+
+          <h2>CSS PROPERTY #3: Position</h2>
+          <p>In order to make more complex layouts, the position property is needed
+            to take elements out of the normal flow of the page. Elements can be moved
+            around on a web page in various ways by setting the top, right, bottom and
+            left positions. It's important to understand that these directional position
+            values of the positioned element are from the reference of the position property
+            that has been assigned to that element. When these properties are set on a
+            positionable element, that element is referred to as a "positioned element".</p><br>
+
+          <h3>POSITION VALUE #1: Static;</h3>
+          <p>"Static" is the default position value of every element. Typically,
+            an element with a static position is referred to as "not positioned"
+            and will ignore any additional properties assigned to it that would
+            move it from its current location. A static element is NOT positionable.</p><br>
+
+          <h3>POSITION VALUE #2: Relative;</h3>
+          <p>By setting the top, right, bottom, and/or left properties,
+            a relative positioned element will be moved away from its normal location accordingly.
+            The space that the element originally occupied will remain unchanged after the move.
+            This means that other elements will NOT move into the relative positioned
+            element's former location.</p><br>
+
+          <h3>POSITION VALUE #3: Absolute;</h3>
+          <p>An element given a position value of "absolute" will remove the element
+            completely from the layout of the page's content and position it relative
+            to the block element containing it. If the absolutely positioned element
+            is not contained within another container element, it will be positioned
+            relative to the main containing block, the &#60;html&#62; page. In contrast
+            to a relatively positioned element, an absolutely positioned element will
+            not leave a gap where the element was originally located on the page
+            because absolutely positioning an element completely removes it
+            from the layout of the content.</p><br>
+
+          <h3>POSITION VALUE #4: Fixed;</h3>
+          <p>An element given a position value of fixed will lock the element on
+            the screen and not move it, even if the page is scrolled.
+          Because an element with fixed position is always positioned apart
+          from or on top of the general content of the webpage, it will not leave
+          a gap in the content of the page, and will instead allow the static,
+          relative, and absolute positioned elements below it.</p><br>
+
+          <h2>CSS PROPERTY #4: Z-index;</h2>
+          <p>When working with relative, absolute and fixed positioned elements,
+            the z-index allows a stacking over order of which elements will be displayed;
+            one over the other. It's important to note that z-index will only work
+            on elements whose position property has been explicitly set to absolute,
+            fixed, or relative.</p>
+          <p>The higher the value given to the z-index property, the higher the
+            stacking order the element will be placed.</p><br>
+
+
+      <!-- content currently not used -->
+      <!-- <p>The positioning of html page elements can be accomplished by using a wide array of CSS techniques.</p>
       <p>These techniques allow us to position the elements in relation to each other and with a variant distance.</p>
       <p>In addition, CSS also offers the flexibility of positioning elements as far or as close to one another and
         in some cases, on top or underneath each other.</p>
@@ -75,8 +220,8 @@
           or in a free format: <br>
           <code>&nbsp;span {position: absolute;}&nbsp;</code>
         </li>
-      </ul>
-      <br>
+      </ul> -->
+
       <h2>How was CSS used</h2>
       <ul class="mainSectionUl">
         <li>We used the <code>&nbsp;display: table&nbsp;</code> option to properly position the main sections of the page</li>
@@ -128,6 +273,7 @@
       <br>
   </section>
   <footer>&copy; January 2017 - today. <br>
+    David Shin <br>
     Jeremy Beal <br>
     Paraskevas Apostolopoulos
   </footer>

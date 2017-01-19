@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="assets/stylesheets/000.css">
-  <link rel="stylesheet" href="assets/stylesheets/001.css">
+  <!-- <link rel="stylesheet" href="assets/stylesheets/001.css"> -->
   <link rel="stylesheet" href="assets/stylesheets/002.css">
   <link rel="stylesheet" href="assets/stylesheets/003.css">
   <link rel="stylesheet" href="assets/stylesheets/004.css">
@@ -57,14 +57,42 @@
 
         <span id="floatedNumber">&nbsp;&nbsp;6&nbsp;&nbsp;</span>
         <h1>Responsive design</h1>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <p>In this page, there were changes only on the elements that needed
+        modification in order to render properly for the mobile enviromnent.
+        These elements follow the usual CSS rules but they are all wrapped in
+        the <code>@media</code> rule. The media rule is used to define different
+        styles for different types of screen sizes.</p>
+        <p>In order to set the proper dimensions for all of the elements, we need
+        to take under consideration the dimensions of the device being used. In addition,
+        the width of a device and the viewport width of the device are different.
+        Hence, when we use the <code>width</code> attribute, we are referring to the
+        device's width and not the width of the viewport (screen).</p>
+        <p>Additional elements that need to be usually adjusted, are:</p>
         <ul class="mainSectionUl">
-          <li>List item<br>
-            <code>&nbsp;code goes here&nbsp;</code></li>
+          <li>The size of all the fonts<br>
+            <code>&nbsp;h1 {font-size: 180%;}&nbsp;</code>
+          </li>
+          <li>The display of all the container tags that are usually set on "block":
+            <br>
+            <code>div {display: block;}</code>
+          </li>
+          <li>The display of hidden elements like navigation bars: <br>
+            <code>nav {display: hidden;}</code>
+          </li>
+          <li>The position of the elements in relation to the interactivity of the
+            user: <br>
+            <code>nav:hover {position: absolute; display:block;}</code>
+          </li>
         </ul>
         <h2>How was CSS used</h2>
         <ul class="mainSectionUl">
-          <li>Text here</li>
+          <li>We set up the navigation tag with a display "none" in order to have it hidden.</li>
+          <li>We set up the navigation bar to display "block" during the hover / click action.</li>
+          <li>We set all the div and section tags in a display "block".</li>
+          <li>We set up the navigation icon to float left and the logo icon to an absolute position.</li>
+          <li>We modified te margins of different text elements to properly position
+          and render in the page with each other.</li>
+          <li>We modified the footer's size and line height in order to not occupy too much space</li>
         </ul>
       </article>
 
@@ -79,7 +107,134 @@
       <h3>The code</h3>
       <div id="codeSectionDiv">
         <code>
-          code here here here here here here here here here here here here
+          @media screen and (max-width: 768px) {<br>
+
+	body {<br>
+		min-width: 100%;<br>
+	}<br>
+<br>
+	h1 {<br>
+		font-size: 180%;<br>
+		line-height: 45px;<br>
+	}<br>
+<br>
+	h2 {<br>
+		font-size: 150%;<br>
+	}<br>
+<br>
+	h3 {<br>
+		font-size: 140%;<br>
+		margin-top: -10px;<br>
+	}<br>
+<br>
+	p {<br>
+		font-size: 100%;<br>
+	}<br>
+<br>
+	li {<br>
+		font-size: 100%;<br>
+	}<br>
+<br>
+	code {<br>
+		font-size: 120%;<br>
+	}<br>
+<br>
+	#container {<br>
+		display: block;<br>
+	}<br>
+<br>
+	aside {<br>
+		width: 100%;<br>
+		display: block;<br>
+		height: 65px;<br>
+		margin: -65px 0 0 0;<br>
+		padding: 0 0 0 10px;<br>
+		position: fixed;<br>
+		right: 0px;<br>
+		left: 0px;<br>
+	}<br>
+<br>
+	header {<br>
+		position: absolute;<br>
+		width: 100%;<br>
+	}<br>
+<br>
+	#logoDiv {<br>
+		position: absolute;<br>
+		margin: 5px 0 0 80%;<br>
+		display: block;<br>
+	}<br>
+<br>
+	#burger {<br>
+		float: left;<br>
+		width: 50%;<br>
+		display: block;<br>
+	}<br>
+<br>
+	.images {<br>
+		width: 100%;<br>
+	}<br>
+<br>
+	.boxModelsImages {<br>
+		width: 100%;<br>
+	}<br>
+<br>
+	nav {<br>
+		padding: 15px;<br>
+		margin-left: -12px;<br>
+		margin-top: -10px;<br>
+		width: 200px;<br>
+	}<br>
+<br>
+	#menuBarUl {<br>
+		border: 2px solid rgb(107, 247, 237);<br>
+		padding-left: 30px;<br>
+		margin-left: -12px;<br>
+	}<br>
+<br>
+	nav ol, nav:active ol {<br>
+		display: none;<br>
+		z-index: 1000;<br>
+	}<br>
+<br>
+	nav:hover, nav:hover ol {<br>
+		display: block;<br>
+		position: absolute;<br>
+	}<br>
+<br>
+	nav:hover ol {<br>
+		margin: 40px 0 0 0;<br>
+		background-color: rgb(35, 57, 91);<br>
+		padding: 0 10px;<br>
+	}<br>
+<br>
+
+/*MAIN SECTION*/<br>
+		section {<br>
+			display: block;<br>
+			width: 100%;<br>
+			text-align: justify;<br>
+		}<br>
+<br>
+		#mainSectionId {<br>
+			width: 100%;<br>
+			margin-top: 65px;<br>
+		}<br>
+<br>
+		#interactiveSectionId {<br>
+			width: 100%;<br>
+			padding: 0 20px 10px 0;<br>
+		}<br>
+<br>
+
+/*FOOTER*/<br>
+		footer {<br>
+			width: 100%;<br>
+			height: 100%;<br>
+			padding: 10px;<br>
+			font-size: 120%;<br>
+			line-height: 30px;<br>
+		}<br>
 
         </code>
       </div>
@@ -87,6 +242,8 @@
   </div>
 
   <footer>&copy; January 2017 - today. <br>
+    David Shin <br>
+    Jeremy Beal <br>
     Paraskevas Apostolopoulos
   </footer>
 </body>
