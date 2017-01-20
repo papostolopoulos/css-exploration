@@ -49,76 +49,57 @@
     <article class="mainArticleClass" id="mainArticleId">
       <span id="floatedNumber">&nbsp;&nbsp;1&nbsp;&nbsp;</span>
       <h1>Specificity</h1><br>
-      <p>In the beginning days of the world wide web (WWW), documents or other
-        information were often sent as simple plain text across the wires that
-        formed the internet. <br>
-        Because the original intent was to allow scientists to share information
-        at the particle accelerator <a href="http://home.cern/">CERN</a>,
-        <a href="http://webfoundation.org/about/vision/history-of-the-web/">Sir Tim Berners-Lee</a>,
-        the inventor of the WWW, developed the Hyper Text Markup Language (HTML). <br>
-        HTML included the means to allow some basic formatting of the documents
-        being shared. </p>
+      <p>Specificity is useful
+      to understand because it helps us set priorities when two different
+      elements share conflicting properties.</p><br>
 
-        <p>Once styling became more complex and demanding, there was a need for
-          a way that would allow the separation of the code that related to the
-          styling of the page from the rest of the document. <br>
-          CSS was introduced in order to satisfy this need. CSS files are used
-          to control the attributes of a webpage, while the overall style of an html page
-          is being managed through separate files. <br>
-          By including some type of order and precedence we can keep CSS code DRY
-          (don't repeat yourself). <br>
-          This increases readability for the developer while reducing the memory
-          requirements on both the client and the server side,
-          as well as during the transmission process.</p><br>
-        <p>Currently, we have changed the font size of all of the paragraphs to
-          a font size of 20 pixels, a left padding of 10 pixels and the text color
-          to green from their browser specific values using the following code:</p><br>
-          <p>
-            <code>
-              p {<br>
-              		color: green;<br>
-              		font-size: 20px;<br>
-              }<br>
-          </code>
-          </p>
+      <h2>CSS changes at a tag level</h2><br>
+      <p>In this paragraph and all paragraphs
+      that follow, we have changed the font
+      size  to 20 pixels, the left padding to 10 pixels and the text color
+        to green. <br>
+        This change replaces the default browser values using the following code:</p><br>
+        <p>
+          <code>
+            p {<br>
+            		color: green;<br>
+                left-padding: 10px; <br>
+            		font-size: 20px;<br>
+            }<br>
+        </code>
+      </p><br>
 
-        <p class="class-example1">In this and some of the following paragrahs,
-          we have added a class named "class-example1": <br><code>&#60;p class="class-example1"&#62;</code><br>
-          The text color is now larger and blue (30 pixels).
-          Likewise, any other paragraphs that are also defined with the same class
-          are rendered in the same way. For example the following paragraph.</p><br>
-        <p class="class-example1">Now while this paragraph is still blue,
-          because it is also defined by the 'class-example1' class, the next paragraph
-          reverts back to our original 'p' element formatting, as the HTML for this
-          paragraph does not belong to the 'class-example1' class.</p><br>
-        <p>Now watch how the cascade works. In this next example, we first define
-          the class for the following paragragh as blue. <br>
-          We then alter the cascade by setting the class that defines the following
-          paragraphs to yellow with a font size of 40 pixels. <br>
-          Finally, we change the text to red, but leave the font size alone. What happens?</p><br>
+      <h2>CSS changes at a Class level</h2><br>
+      <p class="class-example1">While some paragraphs below have been given the
+        same css property values as the opening paragraph at the tag level,<br>
+        they are displayed differently
+        on the page because they have also been given classes. <br>
+        These paragraphs have been given a class named
+        "class-example1": </p>
+        <p>
+          <code>&#60;p class="class-example1"&#62;</code><br.
+        </p>
+        <p class="class-example1"> The values of
+        these classes have priority over all values at the tag level.
+        The text color is now larger and blue (30 pixels).
+        Likewise, any other paragraphs that are also defined with the same class
+        are rendered in the same way.</p><br>
+      <p>This paragraph has reverted
+         back to the original <code>&#60;p&#62;</code> tag formatting.
+        Since it does not have a class assigned to it, the content renders based
+        on the values given to it at the <code>&#60;p&#62;</code> tag level.</p><br>
+      <p>Now, watch how the cascade works. Take a look at the code below. Notice how
+        there are conflicting property values given to the class named "class-example2".</p><br>
 
           <code>
           p { <br>
-          		color: green;<br>
-          		font-size: 20px;<br>
-          }<br>
-<br>
-
-          .class-example1 {<br>
-          	color: blue;<br>
-          	font-size: 30px;<br>
-          }<br>
-<br>
-
           .class-example2 {<br>
           	color: blue;<br>
-          	font-size: 30px;<br>
           }<br>
 <br>
 
           .class-example2 {<br>
           	color: yellow;<br>
-          	font-size: 40px;<br>
           }<br>
 <br>
 
@@ -126,117 +107,64 @@
           	color: red;<br>
           }<br>
       </code><br>
-      <p class="class-example2">Well, because the text color of red was the last
-        one to be defined in the cascade, it took precedence over green and yellow. <br>
-        Moreover, the larger size 40 pixel font persisted, even though it was defined
-        at the same time as the color was set to yellow (which we never see). <br>
+      <p class="class-example2">
+      In this example, we first define the class as having a font color blue. <br>
+      We then alter the cascade by setting the class's color to yellow.<br>
+      Finally, we change the color to red. <br>
+      Because the font color red was the last
+        value defined in the cascade, it took precedence over green and yellow. <br>
         This is an example of how the properties of an element can be altered
         downward in the cascade by resetting property values.</p><br>
-      <p class="class-example2">Lastly, we will now use another selector,
-        the id to change the next paragraph to purple and the font size back to 20.</p><br><br>
+
+      <h2>CSS changes at an ID level</h2><br>
+      <p class="class-example2" id="id-example1">We have now used another selector,
+        the id, to change this paragraph to purple and the font size to 20 pixels. <br>
+        Even though this paragraph also has a class that defines the font color as red,
+        it is purple because of the unique ID. </p><br>
       <code>
-          p { <br>
-          		color: green;<br>
-          		font-size: 20px;<br>
-          }<br>
-<br>
-          .class-example1 {<br>
-          	color: blue;<br>
-          	font-size: 30px;<br>
-          }<br>
-<br>
-          .class-example2 {<br>
-          	color: blue;<br>
-          	font-size: 30px;<br>
-          }<br>
-<br>
-          .class-example2 {<br>
-          	color: yellow;<br>
-          	font-size: 40px;<br>
-          }<br>
-<br>
-          .class-example2 {<br>
-          	color: red;<br>
-          }<br>
-<br>
           #id-example1 {<br>
           	color: purple;<br>
           	font-size: 20px;<br>
           }<br>
-<br>
-          .class-example3 {<br>
-          	color: black;<br>
-          	font-size: 20px;<br>
-          }<br>
-      </code><br><br>
-      <p class="class-example2" id="id-example1">I'm different and unique.
-        Even though I have the class defining me as red, I am purple because of
-        my unique ID. From here on, we will go back to using black text.</p>
+      </code><br>
+
+      <h2>Summary</h2><br>
+      <p class="class-example3">We have now used another class and no id for this
+        and the following paragraphs.</p>
       <code>
         p { <br>
-          color: green;<br>
-          font-size: 20px;<br>
-        }<br>
-        <br>
-        .class-example1 {<br>
-          color: blue;<br>
-          font-size: 30px;<br>
-        }<br>
-        <br>
-        .class-example2 {<br>
-          color: blue;<br>
-          font-size: 30px;<br>
-        }<br>
-        <br>
-        .class-example2 {<br>
-          color: yellow;<br>
-          font-size: 40px;<br>
-        }<br>
-        <br>
-        .class-example2 {<br>
-          color: red;<br>
-        }<br>
-        <br>
-        #id-example1 {<br>
-          color: purple;<br>
-          font-size: 20px;<br>
-        }<br>
-        <br>
         .class-example3 {<br>
           font-size: 20px;<br>
           color: black;<br>
         }<br>
       </code>
       <br><br>
-      <p class="class-example3">In the examples shown above, you see that we obtain
+      <p class="class-example3">In the examples shown above, we obtain
         specificity in our style sheets by different methods. <br>
-        Once a style is defined for an element, in this case 'p', it will persist <br>
-        unless othewise altered - lower down in the CSS document file. <br>
-        Second, we have a heirachy of precedence. When using just the element as
-        the selector in our CSS, we have assigned the lowest amount of weight for that style. <br>
-        Classes have more weight than element tags when used as selectors, and therefore,
-        the values defined by their properties will take precedence over that of those
-        defined for the element tags. </p><br>
-      <p class="class-example3">Lastly, ID's take precedence over classes,
-        but also must be unique to a single element tag.<br>
-        In fact, there is a numerical system to calculate specificity.
-        The notation uses a system that starts with 0-0-0. <br>
-        The element or 'type' selector scores 1 point on the right, which represents
-        the lowest specificity weight, and would appear as 0-0-1. <br>
-        Classes, which have more weight would score in the middle, or as 0-1-0.
-        ID's score in the leftmost column, or as 1-0-0.<br>
-        It should be noted that
-        in-line HTML formatting takes even higher precedence than ID's, as well as the use of
-        <a href="https://css-tricks.com/when-using-important-is-the-right-choice/">!important rule</a>
-        within a selector's definition. <br>
-        Moreover, because more advanced formatting can include combinations of selectors
-        the weighting can become difficult to calculate. <br>
-        Here is an awesome <a href="https://flukeout.github.io/">game</a>
-        to learn how to combine selectors. once you concuer that, here is a fun online
-        <a href=" https://specificity.keegan.st/">specificity calculator</a>
-        to learn more about their values!</p><br><br>
+        Once a style is defined for an element, it will persist <br>
+        unless defined otherwise in a CSS selector that occurs later on the stylesheet.</p><br>
+        <p class="class-example3">
+          Second, we have a heirachy of precedence. <br>
+          When using just the element as
+          the selector in our CSS, we have assigned the lowest amount of weight for that style. <br>
+          Classes have more weight than element tags when used as selectors, and therefore,
+          the values defined by their properties will take precedence over that of those
+          defined for the element tags. </p><br>
 
-      <br><br>
+
+      <p class="class-example3">Lastly, ID's take precedence over classes,
+        but also must be unique to a single element tag.</p><br>
+
+        <h2>Additional resources</h2> <br>
+        <p class="class-example3">You can use the following resources to learn more about
+          CSS specificity:</p>
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">MDN specificity.</a></li>
+            <li><a href="https://flukeout.github.io/">A game for calculating specificity.</a></li>
+            <li><a href="https://specificity.keegan.st/">Specificity calculator.</a></li>
+            <li></li>
+          </ul>
+          <br><br>
 
 
       <a href="000-reset.html">Previous</a>
