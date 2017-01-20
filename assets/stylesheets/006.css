@@ -50,6 +50,7 @@
 		position: fixed;
 		right: 0px;
 		left: 0px;
+		background-color: rgba(35, 57, 91, .9);
 	}
 
 	header {
