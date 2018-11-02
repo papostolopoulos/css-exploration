@@ -14,6 +14,15 @@ var app = new Vue({
       "008": "More b",
       "009": "More c",
       "010": "This is ten"
+    },
+    activePage: "Reset",
+    indexPage: ""
+  }, //End of data
+  methods: {
+    chapterChange() {
+      console.log(event);
     }
-  }
+  }, //End of methods
+  computed: {
+  } //End of computed
 });

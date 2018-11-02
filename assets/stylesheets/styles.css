@@ -38,5 +38,28 @@ time, mark, audio, video {
 body {
   width: 100vw;
   height: 100vh;
-  padding: 10px;
+}
+
+section{
+  font: normal normal normal 14px/16px arial, helvetica, sans-serif;
+}
+
+h1{
+
+}
+
+h2{
+
+}
+
+h3{
+
+}
+
+h4{
+
+}
+
+h5{
+
 }
