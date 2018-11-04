@@ -2,62 +2,22 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Transforms</title>
+    <title>A CSS Tutorial</title>
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="assets/stylesheets/styles.css">
-    <style media="screen">
-
-      #container{
-        display: grid;
-        grid-template-columns: 2fr 8fr;
-        grid-template-rows: 1fr 18fr 1fr;
-        grid-template-areas:
-          "header header"
-          "aside main"
-          "footer footer"
-      }
-
-      header{
-        grid-area: header;
-        background: lightyellow;
-        height: 5vh;
-      }
-
-      aside{
-        grid-area: aside;
-        background: lightgreen;
-        height: 90vh;
-        overflow: auto;
-        padding: 10px;
-      }
-
-      main{
-        grid-area: main;
-        background: lightblue;
-        height: 90vh;
-        overflow: auto;
-        padding: 10px;
-      }
-
-      footer{
-        grid-area: footer;
-        background: pink;
-        height: 5vh;
-      }
-    </style>
-
   </head>
   <body>
     <div id="container">
       <header>
+        <a id="cssLogo" @click="activePage = 'Welcome'"><i class="fa fa-css3"></i></a>
         <h1>CSS Tutorial: {{activePage}}</h1>
       </header>
       <aside class="asideNavigation">
         <nav>
           <ul>
             <li v-for="(chapter, idx) in chapters">
-              <a :href="idx + '-' + chapter.replace(' ', '-').toLowerCase() + '.html'"
-              @click="activePage = chapter">
+              <a @click="activePage = chapter">
                 {{chapter}}
               </a>
             </li>
@@ -69,31 +29,118 @@
 
 
       <main>
-        <section id="000-reset">
+        <!-- INDEX -->
+        <section
+        class="sectionIndex"
+        v-show="activePage === 'Welcome'"
+        >
+          This is the index <br>
+          Dark blue is rgb(0, 113, 184) <br>
+          light blue is rgb(42, 171, 222) <br>
+          Gray is rgb(207, 207, 207) <br>
+          White is rgb(255, 255, 255)
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <!-- 000 RESET -->
+        <section
+        class="sectionReset"
+        id="section-000-reset"
+        v-show="activePage === 'Reset'">
+          <h1>Reset (h1)</h1>
+          <p>This is a paragraph</p>
           Reset
         </section>
 
-        <section id="001-specificity">
+
+
+
+
+
+
+
+
+
+        <!-- 001 SPECIFICITY -->
+        <section id="section-001-specificity" v-show="activePage === 'Specificity'">
           Specificity
         </section>
 
-        <section id="002-box-model">
+
+
+
+
+
+
+
+
+
+        <!-- 002 BOX MODEL -->
+        <section id="section-002-box-model" v-show="activePage === 'Box Model'">
           Box Model
         </section>
 
-        <section id="003-positioning">
+
+
+
+
+
+
+
+
+
+        <!-- 003 POSITIONING -->
+        <section id="section-003-positioning" v-show="activePage === 'Positioning'">
           Positioning
         </section>
 
-        <section id="004-typography">
+
+
+
+
+
+
+
+
+
+        <!-- 004 TYPOGRAPHY -->
+        <section id="section-004-typography" v-show="activePage === 'Typography'">
           Typography
         </section>
 
-        <section id="005-backgrounds">
+
+
+
+
+
+
+
+
+
+        <!-- 005 BACKGROUNDS -->
+        <section id="section-005-backgrounds" v-show="activePage === 'Backgrounds'">
           Backgrounds
         </section>
 
-        <section id="006-transforms">
+
+
+
+
+
+
+
+
+        <!-- 006 TRANSFORMS -->
+        <section id="006-transforms" v-show="activePage === 'Transforms'">
+          Transforms
           <h1>Are you ready for the truth?</h1>
           <p>put the anchors (or have the computed property navigate you where you need)</p>
           <p>change the fonts</p>
@@ -150,50 +197,6 @@
           <h5>No, motherfucker</h5>
 
         </section>
-
-        <a @click="chapterChange">Click me</a>
-
-
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
-        <p>I am adding garbage</p>
 
 
       </main>

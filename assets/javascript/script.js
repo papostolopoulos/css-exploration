@@ -9,20 +9,24 @@ var app = new Vue({
       "003": "Positioning",
       "004": "Typography", //Do I need to change the positioning of this so that it is after the backgrounds?
       "005": "Backgrounds",
-      "006": "Responsive Design",
+      "006": "Transforms",
       "007": "more a",
       "008": "More b",
       "009": "More c",
       "010": "This is ten"
     },
-    activePage: "Reset",
-    indexPage: ""
+    activePage: "Transforms",
+    indexPage: "",
+    activeSection: ""
   }, //End of data
   methods: {
     chapterChange() {
-      console.log(event);
+      console.log(event.target.id);
     }
   }, //End of methods
   computed: {
+    whatIsActive(){
+      console.log();
+    }
   } //End of computed
 });
