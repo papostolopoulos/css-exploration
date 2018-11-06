@@ -17,9 +17,13 @@
         <nav>
           <ul>
             <li v-for="(chapter, idx) in chapters">
-              <a @click="activePage = chapter">
-                {{chapter}}
-              </a>
+              <h2>
+                <a @click="(activePage = chapter) && (activeTag($event))"
+                >
+                  {{chapter}}
+                </a>
+              </h2>
+
             </li>
           </ul>
         </nav>
@@ -32,7 +36,7 @@
         <!-- INDEX -->
         <section
         class="sectionIndex"
-        v-show="activePage === 'Welcome'"
+        v-show="activePage === 'Index'"
         >
           This is the index <br>
           Dark blue is rgb(0, 113, 184) <br>

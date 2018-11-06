@@ -57,10 +57,10 @@ header h1{
 
 aside{
   grid-area: aside;
-  background: lightgreen;
   height: 80vh;
   overflow: auto;
   padding: 10px;
+  color: rgb(42, 171, 222);
 }
 
 main{
@@ -85,7 +85,24 @@ h1{
   margin: 1vh 0 .5vh 0;
 }
 
+aside h2{
+  font-size: 3vh;
+  line-height: 4vh;
+}
 
+a:hover{
+  cursor: pointer;
+  color: rgb(0, 113, 184);
+  text-decoration: underline;
+}
+
+.anchorActiveTag{
+  color: rgb(0, 113, 184);
+  font-size: bold;
+}
+
+
+/* This is probably to be viewed used for the reset section inside the content */
 .sectionReset {
 	margin: 0;
 	padding: 0;

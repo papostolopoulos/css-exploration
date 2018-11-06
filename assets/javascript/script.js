@@ -15,13 +15,19 @@ var app = new Vue({
       "009": "More c",
       "010": "This is ten"
     },
-    activePage: "Transforms",
+    activePage: "Index",
     indexPage: "",
     activeSection: ""
   }, //End of data
   methods: {
-    chapterChange() {
-      console.log(event.target.id);
+    activeTag(event){
+      var list = event.path[3].children;
+      for (var i = 0; i < list.length; i++) {
+        var anchorClass = list[i].children[0].children[0].className;
+        list[i].children[0].children[0].className = anchorClass.replace(/\s?anchorActiveTag/, "");
+      }
+
+      event.target.className += "anchorActiveTag";
     }
   }, //End of methods
   computed: {
