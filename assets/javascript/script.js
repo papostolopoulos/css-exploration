@@ -17,22 +17,37 @@ var app = new Vue({
     },
     activePage: "Index",
     indexPage: "",
-    activeSection: ""
+    activeSection: "",
+    makeAMess: [
+
+    ]
   }, //End of data
   methods: {
     activeTag(event){
-      var list = event.path[3].children;
+      console.log(event);
+      let list = event.path[3].children;
       for (var i = 0; i < list.length; i++) {
+        console.log(list[i]);
         var anchorClass = list[i].children[0].children[0].className;
         list[i].children[0].children[0].className = anchorClass.replace(/\s?anchorActiveTag/, "");
       }
 
       event.target.className += "anchorActiveTag";
+    },
+    whatIsActive(){
+      console.log(document.querySelectorAll("h1,h2,h3,h4,h5"));
+      let hdngsList = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+      hdngsList.forEach(el=>{
+        console.log(el.localName);
+        console.log(el.innerText);
+        let newHeading = {};
+        newHeading.heading = el.localName;
+        newHeading.text = el.innerText;
+        this.makeAMess.push(newHeading);
+      });
     }
   }, //End of methods
-  computed: {
-    whatIsActive(){
-      console.log();
-    }
-  } //End of computed
+  beforeMount(){
+    this.whatIsActive();
+  }
 });

@@ -10,20 +10,41 @@
   <body>
     <div id="container">
       <header>
-        <a id="cssLogo" @click="activePage = 'Welcome'"><i class="fa fa-css3"></i></a>
-        <h1>CSS Tutorial: {{activePage}}</h1>
+        <a id="cssLogo" @click="activePage = 'Index'"><i class="fa fa-css3"></i></a>
+        <span id="spanHeaderTitle">CSS Tutorial: {{activePage}}</span>
       </header>
       <aside class="asideNavigation">
         <nav>
-          <ul>
+          <!-- <ul>
             <li v-for="(chapter, idx) in chapters">
               <h2>
-                <a @click="(activePage = chapter) && (activeTag($event))"
-                >
+                <a @click="(activePage = chapter) && (activeTag($event))">
                   {{chapter}}
                 </a>
               </h2>
 
+            </li>
+          </ul> -->
+
+          <ul>
+            <li v-for="(mess, idx) in makeAMess" v-if="mess.heading === 'h1'">
+              <h1>
+                <a @click="(activePage = mess.text) && (activeTag($event))">
+                  {{mess.text}}
+                </a>
+              </h1>
+            </li>
+            <li v-else-if="mess.heading === 'h2'">
+              <h2>{{mess.text}}</h2>
+            </li>
+            <li v-else-if="mess.heading === 'h3'">
+              <h3>{{mess.text}}</h3>
+            </li>
+            <li v-else-if="mess.heading === 'h4'">
+              <h4>{{mess.text}}</h4>
+            </li>
+            <li v-else-if="mess.heading === 'h5'">
+              <h5>{{mess.text}}</h5>
             </li>
           </ul>
         </nav>
@@ -38,11 +59,88 @@
         class="sectionIndex"
         v-show="activePage === 'Index'"
         >
+          <h1>Index</h1>
           This is the index <br>
           Dark blue is rgb(0, 113, 184) <br>
           light blue is rgb(42, 171, 222) <br>
           Gray is rgb(207, 207, 207) <br>
           White is rgb(255, 255, 255)
+
+          <!-- {{whatIsActive}} -->
+
+          <p>put the anchors (or have the computed property navigate you where you need)</p>
+          <p>change the fonts</p>
+          <p>connect with the computed property that changes to the right chapter</p>
+          <p>
+            Now that we know who you are, I know who I am. I'm not a mistake! It all makes
+            sense! In a comic, you know how you can tell who the arch-villain's going to
+            be? He's the exact opposite of the hero. And most times they're friends,
+            like you and me! I should've known way back when... You know why, David?
+            Because of the kids. They called me Mr Glass.
+          </p>
+
+          <h2>h2 burger!</h2>
+          <p>
+            Now that we know who you are, I know who I am. I'm not a mistake! It all makes
+            sense! In a comic, you know how you can tell who the arch-villain's going to be?
+            He's the exact opposite of the hero. And most times they're friends, like you
+            and me! I should've known way back when... You know why, David? Because of
+            the kids. They called me Mr Glass.
+          </p>
+
+          <h3>h3 burger!</h3>
+          <p>
+            You think water moves fast? You should see ice. It moves like it has a mind.
+            Like it knows it killed the world once and got a taste for murder.
+            After the avalanche, it took us a week to climb out. Now, I don't know exactly
+            when we turned on each other, but I know that seven of us survived the slide...
+            and only five made it out. Now we took an oath, that I'm breaking now.
+            We said we'd say it was the snow that killed the other two, but it wasn't.
+            Nature is lethal but it doesn't hold a candle to man.
+          </p>
+
+          <h4>h4 burger!</h4>
+          <p>
+            My money's in that office, right? If she start giving me some bullshit about
+            it ain't there, and we got to go someplace else and get it, I'm gonna shoot you
+            in the head then and there. Then I'm gonna shoot that bitch in the kneecaps,
+            find out where my goddamn money is. She gonna tell me too. Hey, look at me
+            when I'm talking to you, motherfucker. You listen: we go in there, and that
+            nigga Winston or anybody else is in there, you the first motherfucker to get
+            shot. You understand?
+          </p>
+
+          <p>
+            The path of the righteous man is beset on all sides by the iniquities of the
+            selfish and the tyranny of evil men. Blessed is he who, in the name of charity
+            and good will, shepherds the weak through the valley of darkness, for he is
+            \truly his brother's keeper and the finder of lost children. And I will strike
+            down upon thee with great vengeance and furious anger those who would attempt
+            to poison and destroy My brothers. And you will know My name is the Lord when
+            I lay My vengeance upon thee.
+          </p>
+
+          <h5>h5 No, motherfucker</h5>
+          <p>
+            The path of the righteous man is beset on all sides by the iniquities of the
+            selfish and the tyranny of evil men. Blessed is he who, in the name of charity
+            and good will, shepherds the weak through the valley of darkness, for he is
+            \truly his brother's keeper and the finder of lost children. And I will strike
+            down upon thee with great vengeance and furious anger those who would attempt
+            to poison and destroy My brothers. And you will know My name is the Lord when
+            I lay My vengeance upon thee.
+          </p>
+
+          <h6>h6 No, motherfucker</h6>
+          <p>
+            The path of the righteous man is beset on all sides by the iniquities of the
+            selfish and the tyranny of evil men. Blessed is he who, in the name of charity
+            and good will, shepherds the weak through the valley of darkness, for he is
+            \truly his brother's keeper and the finder of lost children. And I will strike
+            down upon thee with great vengeance and furious anger those who would attempt
+            to poison and destroy My brothers. And you will know My name is the Lord when
+            I lay My vengeance upon thee.
+          </p>
         </section>
 
 
@@ -59,7 +157,7 @@
         class="sectionReset"
         id="section-000-reset"
         v-show="activePage === 'Reset'">
-          <h1>Reset (h1)</h1>
+          <h1>Reset</h1>
           <p>This is a paragraph</p>
           Reset
         </section>
@@ -75,7 +173,7 @@
 
         <!-- 001 SPECIFICITY -->
         <section id="section-001-specificity" v-show="activePage === 'Specificity'">
-          Specificity
+          <h1>Specificity</h1>
         </section>
 
 
@@ -89,7 +187,7 @@
 
         <!-- 002 BOX MODEL -->
         <section id="section-002-box-model" v-show="activePage === 'Box Model'">
-          Box Model
+          <h1>Box Model</h1>
         </section>
 
 
@@ -103,7 +201,7 @@
 
         <!-- 003 POSITIONING -->
         <section id="section-003-positioning" v-show="activePage === 'Positioning'">
-          Positioning
+          <h1>Positioning</h1>
         </section>
 
 
@@ -117,7 +215,7 @@
 
         <!-- 004 TYPOGRAPHY -->
         <section id="section-004-typography" v-show="activePage === 'Typography'">
-          Typography
+          <h1>Typography</h1>
         </section>
 
 
@@ -131,7 +229,7 @@
 
         <!-- 005 BACKGROUNDS -->
         <section id="section-005-backgrounds" v-show="activePage === 'Backgrounds'">
-          Backgrounds
+          <h1>Backgrounds</h1>
         </section>
 
 
@@ -144,7 +242,7 @@
 
         <!-- 006 TRANSFORMS -->
         <section id="006-transforms" v-show="activePage === 'Transforms'">
-          Transforms
+          <h1>Transforms</h1>
           <h1>Are you ready for the truth?</h1>
           <p>put the anchors (or have the computed property navigate you where you need)</p>
           <p>change the fonts</p>
@@ -199,6 +297,26 @@
           </p>
 
           <h5>No, motherfucker</h5>
+          <p>
+            The path of the righteous man is beset on all sides by the iniquities of the
+            selfish and the tyranny of evil men. Blessed is he who, in the name of charity
+            and good will, shepherds the weak through the valley of darkness, for he is
+            \truly his brother's keeper and the finder of lost children. And I will strike
+            down upon thee with great vengeance and furious anger those who would attempt
+            to poison and destroy My brothers. And you will know My name is the Lord when
+            I lay My vengeance upon thee.
+          </p>
+
+          <h6>No, motherfucker</h6>
+          <p>
+            The path of the righteous man is beset on all sides by the iniquities of the
+            selfish and the tyranny of evil men. Blessed is he who, in the name of charity
+            and good will, shepherds the weak through the valley of darkness, for he is
+            \truly his brother's keeper and the finder of lost children. And I will strike
+            down upon thee with great vengeance and furious anger those who would attempt
+            to poison and destroy My brothers. And you will know My name is the Lord when
+            I lay My vengeance upon thee.
+          </p>
 
         </section>
 

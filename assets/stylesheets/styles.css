@@ -21,7 +21,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  font: normal normal normal 14px/16px arial, helvetica, sans-serif;
+  font: normal normal normal 16px/18px helvetica, arial, sans-serif;
 }
 
 #container{
@@ -44,13 +44,16 @@ header{
   border-bottom: 2px solid rgb(0, 113, 184);
 }
 
-header h1{
+#spanHeaderTitle{
   align-self: center;
+  margin: 1vh 0 .5vh 0;
+  color: rgb(0, 113, 184);
+  font-size: 7vh;
 }
 
 #cssLogo{
   position: absolute;
-  left: 10px;
+  left: 8vw;
   align-self: center;
   font-size: 8vh;
 }
@@ -76,18 +79,64 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-h1{
+h1, h2, h3, h4{
+  color: rgb(0, 113, 184);
+  font-family: georgia;
+}
+
+section h1{
+  font-size: 6vh;
+  line-height: 6vh;
+  margin: 6vh 0 .5vh 0;
+}
+
+section h2{
   font-size: 5vh;
   line-height: 5vh;
-  margin: 1vh 0 .5vh 0;
+  margin: 7vh 0 .5vh 0;
 }
 
-aside h2{
+section h3{
+  font-size: 4vh;
+  line-height: 4vh;
+  margin: 4vh 0 .5vh 0;
+}
+
+
+section h4{
+  font-size: 3vh;
+  line-height: 3vh;
+  margin: 4vh 0 .5vh 0;
+  font-weight: bold;
+}
+
+section h5{
+  font-size: 16px;
+  line-height: 2vh;
+  margin: 3vh 0 .5vh 0;
+  font-weight: bold;
+}
+
+section h6{
+  font-size: 16px;
+  line-height: 2vh;
+  margin: 3vh 0 .5vh 0;
+  font-weight: bold;
+  font-style: italic;
+}
+
+section p{
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+aside h1{
   font-size: 3vh;
   line-height: 4vh;
+  margin: 0;
+  font-family: arial;
 }
 
 a:hover{
