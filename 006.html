@@ -42,15 +42,15 @@
               </h3>
             </li>
             <li v-else-if="chapter.heading === 'h4'">
-              <h4 :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
-                <a>
+              <h4>
+                <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
                   {{chapter.text}}
                 </a>
               </h4>
             </li>
             <li v-else-if="chapter.heading === 'h5'">
-              <h5 :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
-                <a>
+              <h5>
+                <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
                   {{chapter.text}}
                 </a>
               </h5>

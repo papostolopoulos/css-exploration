@@ -12,6 +12,10 @@ var app = new Vue({
   }, //End of data
   methods: {
     activeTag(event){
+      console.log(location.hash);
+      console.log(event.target.hash);
+      // location.hash = event.target.hash;
+      console.log(location.hash);
       let list = event.path[3].children;
       for (var i = 0; i < list.length; i++) {
         var anchorClass = list[i].children[0].children[0].className;
@@ -39,7 +43,6 @@ var app = new Vue({
       let hList = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
 
       for(let i = 0; i < hList.length; i++){
-        console.log(hList[i].parentNode.localName);
         if (hList[i].parentNode.localName !== "li")
           hList[i].id = hList[i].localName + "_" + hList[i].innerText.replace(/\s/g, "-");
       }
