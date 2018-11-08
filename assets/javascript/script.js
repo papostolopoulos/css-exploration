@@ -39,7 +39,9 @@ var app = new Vue({
       let hList = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
 
       for(let i = 0; i < hList.length; i++){
-        hList[i].id = hList[i].localName + "_" + hList[i].innerText.replace(/\s/g, "-");
+        console.log(hList[i].parentNode.localName);
+        if (hList[i].parentNode.localName !== "li")
+          hList[i].id = hList[i].localName + "_" + hList[i].innerText.replace(/\s/g, "-");
       }
     }
   }, //End of methods

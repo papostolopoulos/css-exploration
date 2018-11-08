@@ -29,7 +29,6 @@
 
             <li v-else-if="chapter.heading === 'h2'">
               <h2>
-                &nbsp;&nbsp;
                 <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
                   {{chapter.text}}
                 </a>
@@ -37,7 +36,6 @@
             </li>
             <li v-else-if="chapter.heading === 'h3'">
               <h3>
-                &nbsp;&nbsp;&nbsp;&nbsp;
                 <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
                   {{chapter.text}}
                 </a>
@@ -45,7 +43,6 @@
             </li>
             <li v-else-if="chapter.heading === 'h4'">
               <h4 :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a>
                   {{chapter.text}}
                 </a>
@@ -53,7 +50,6 @@
             </li>
             <li v-else-if="chapter.heading === 'h5'">
               <h5 :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a>
                   {{chapter.text}}
                 </a>
