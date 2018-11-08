@@ -132,14 +132,27 @@ section p{
   margin-bottom: 10px;
 }
 
+aside h1,
+aside h2,
+aside h3,
+aside h4,
+aside h5 {
+  font-family: arial;
+  color: rgb(42, 171, 222);
+}
+
 aside h1{
   font-size: 3vh;
   line-height: 4vh;
   margin: 0;
-  font-family: arial;
 }
 
-a:hover{
+aside a{
+  text-decoration: none;
+  color: rgb(0, 113, 184);
+}
+
+aside a:hover{
   cursor: pointer;
   color: rgb(0, 113, 184);
   text-decoration: underline;
@@ -147,7 +160,7 @@ a:hover{
 
 .anchorActiveTag{
   color: rgb(0, 113, 184);
-  font-size: bold;
+  font-weight: bold;
 }
 
 

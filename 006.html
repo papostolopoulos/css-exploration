@@ -15,36 +15,49 @@
       </header>
       <aside class="asideNavigation">
         <nav>
-          <!-- <ul>
-            <li v-for="(chapter, idx) in chapters">
-              <h2>
-                <a @click="(activePage = chapter) && (activeTag($event))">
-                  {{chapter}}
-                </a>
-              </h2>
-
-            </li>
-          </ul> -->
 
           <ul>
-            <li v-for="(mess, idx) in makeAMess" v-if="mess.heading === 'h1'">
+            <li v-for="(chapter, idx) in chapters" v-if="chapter.heading === 'h1'">
               <h1>
-                <a @click="(activePage = mess.text) && (activeTag($event))">
-                  {{mess.text}}
+                <a @click="(activePage = chapter.text) && (activeTag($event))"
+                :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')"
+                >
+                  {{chapter.text}}
                 </a>
               </h1>
             </li>
-            <li v-else-if="mess.heading === 'h2'">
-              <h2>{{mess.text}}</h2>
+
+            <li v-else-if="chapter.heading === 'h2'">
+              <h2>
+                &nbsp;&nbsp;
+                <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
+                  {{chapter.text}}
+                </a>
+              </h2>
             </li>
-            <li v-else-if="mess.heading === 'h3'">
-              <h3>{{mess.text}}</h3>
+            <li v-else-if="chapter.heading === 'h3'">
+              <h3>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
+                  {{chapter.text}}
+                </a>
+              </h3>
             </li>
-            <li v-else-if="mess.heading === 'h4'">
-              <h4>{{mess.text}}</h4>
+            <li v-else-if="chapter.heading === 'h4'">
+              <h4 :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a>
+                  {{chapter.text}}
+                </a>
+              </h4>
             </li>
-            <li v-else-if="mess.heading === 'h5'">
-              <h5>{{mess.text}}</h5>
+            <li v-else-if="chapter.heading === 'h5'">
+              <h5 :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a>
+                  {{chapter.text}}
+                </a>
+              </h5>
             </li>
           </ul>
         </nav>
@@ -68,9 +81,9 @@
 
           <!-- {{whatIsActive}} -->
 
-          <p>put the anchors (or have the computed property navigate you where you need)</p>
+          <p>V-SHOW FOR DISPLAYING H2, H3 ETC?</p>
           <p>change the fonts</p>
-          <p>connect with the computed property that changes to the right chapter</p>
+          <p>CREATE ANCHORS FOR ALL THE TEXT?</p>
           <p>
             Now that we know who you are, I know who I am. I'm not a mistake! It all makes
             sense! In a comic, you know how you can tell who the arch-villain's going to
@@ -79,7 +92,7 @@
             Because of the kids. They called me Mr Glass.
           </p>
 
-          <h2>h2 burger!</h2>
+          <h2 ref="theH2">h2</h2>
           <p>
             Now that we know who you are, I know who I am. I'm not a mistake! It all makes
             sense! In a comic, you know how you can tell who the arch-villain's going to be?
@@ -243,7 +256,7 @@
         <!-- 006 TRANSFORMS -->
         <section id="006-transforms" v-show="activePage === 'Transforms'">
           <h1>Transforms</h1>
-          <h1>Are you ready for the truth?</h1>
+          <h2>Are you ready for the truth?</h2>
           <p>put the anchors (or have the computed property navigate you where you need)</p>
           <p>change the fonts</p>
           <p>connect with the computed property that changes to the right chapter</p>
