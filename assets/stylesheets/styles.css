@@ -1,0 +1,251 @@
+/*
+  ========================================
+  Generic
+  ========================================
+*/
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+  outline: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font: normal normal normal 16px/18px helvetica, arial, sans-serif;
+}
+
+#container{
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer"
+}
+
+header{
+  grid-area: header;
+  height: 10vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  color: rgb(0, 113, 184);
+  border-bottom: 2px solid rgb(0, 113, 184);
+}
+
+#spanHeaderTitle{
+  align-self: center;
+  margin: 1vh 0 .5vh 0;
+  color: rgb(0, 113, 184);
+  font-size: 7vh;
+}
+
+#cssLogo{
+  position: absolute;
+  left: 8vw;
+  align-self: center;
+  font-size: 8vh;
+}
+
+aside{
+  grid-area: aside;
+  height: 80vh;
+  overflow: auto;
+  padding: 10px;
+  color: rgb(42, 171, 222);
+}
+
+main{
+  grid-area: main;
+  height: 80vh;
+  overflow: auto;
+  padding: 10px;
+}
+
+footer{
+  grid-area: footer;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, h3, h4{
+  color: rgb(0, 113, 184);
+  font-family: georgia;
+}
+
+section h1{
+  font-size: 6vh;
+  line-height: 6vh;
+  margin: 6vh 0 .5vh 0;
+}
+
+section h2{
+  font-size: 5vh;
+  line-height: 5vh;
+  margin: 7vh 0 .5vh 0;
+}
+
+section h3{
+  font-size: 4vh;
+  line-height: 4vh;
+  margin: 4vh 0 .5vh 0;
+}
+
+
+section h4{
+  font-size: 3vh;
+  line-height: 3vh;
+  margin: 4vh 0 .5vh 0;
+  font-weight: bold;
+}
+
+section h5{
+  font-size: 16px;
+  line-height: 2vh;
+  margin: 3vh 0 .5vh 0;
+  font-weight: bold;
+}
+
+section h6{
+  font-size: 16px;
+  line-height: 2vh;
+  margin: 3vh 0 .5vh 0;
+  font-weight: bold;
+  font-style: italic;
+}
+
+section p{
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+aside h1,
+aside h2,
+aside h3,
+aside h4,
+aside h5 {
+  font-family: arial;
+  color: rgb(42, 171, 222);
+}
+
+aside h1{
+  font-size: 28px;
+  line-height: 30px;
+  margin: 0;
+}
+
+aside h2{
+  font-size: 24px;
+  line-height: 26px;
+  margin: 0;
+  text-indent: 10px;
+}
+
+aside h3{
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0;
+  text-indent: 20px;
+}
+
+aside h4{
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0;
+  text-indent: 30px;
+}
+
+aside a{
+  text-decoration: none;
+  color: rgb(0, 113, 184);
+}
+
+aside a:hover{
+  cursor: pointer;
+  color: rgb(0, 113, 184);
+  text-decoration: underline;
+}
+
+.anchorActiveTag{
+  color: rgb(0, 113, 184);
+  font-weight: bold;
+}
+
+.divExample{
+  height: 500px;
+  background: lightblue;
+}
+
+.divPractice{
+  height: 80vh;
+  background-color: pink;
+}
+
+.textAreaPracticeHtml{
+  width: 50%;
+  height: 50%;
+  background-color: red;
+}
+
+.textAreaPracticeCss{
+
+}
+
+.iFramePractice{
+  background-color: lightgreen;
+  width: 50%;
+  height: 100%;
+}
+
+
+/* This is probably going to be used for the reset section inside the content */
+.sectionReset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+/*
+  ========================================
+  006 Transforms
+  ========================================
+*/
+
+section{
+}
+
+h1{
+
+}
+
+h2{
+
+}
+
+h3{
+
+}
+
+h4{
+
+}
+
+h5{
+
+}
