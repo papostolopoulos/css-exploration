@@ -184,8 +184,34 @@ aside a:hover{
   font-weight: bold;
 }
 
+.divExample{
+  height: 500px;
+  background: lightblue;
+}
 
-/* This is probably to be viewed used for the reset section inside the content */
+.divPractice{
+  height: 80vh;
+  background-color: pink;
+}
+
+.textAreaPracticeHtml{
+  width: 50%;
+  height: 50%;
+  background-color: red;
+}
+
+.textAreaPracticeCss{
+
+}
+
+.iFramePractice{
+  background-color: lightgreen;
+  width: 50%;
+  height: 100%;
+}
+
+
+/* This is probably going to be used for the reset section inside the content */
 .sectionReset {
 	margin: 0;
 	padding: 0;

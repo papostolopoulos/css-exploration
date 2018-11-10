@@ -12,10 +12,14 @@ var app = new Vue({
   }, //End of data
   methods: {
     activeTag(event){
-      console.log(location.hash);
-      console.log(event.target.hash);
-      // location.hash = event.target.hash;
-      console.log(location.hash);
+      console.log("location hash:", location.hash);
+      console.log("event target hash (what I want it to change it to):", event.target.hash);
+      console.log("window.location.hash:", window.location.hash);
+      // window.location.href = window.location.href.replace(/#.*/, "") + event.target.hash;
+      // document.location.href = document.location.origin+document.location.pathname+event.target.hash;
+      window.location.assign(document.location.origin+document.location.pathname+event.target.hash);
+      console.log(window.location.href);
+
       let list = event.path[3].children;
       for (var i = 0; i < list.length; i++) {
         var anchorClass = list[i].children[0].children[0].className;
