@@ -15,9 +15,16 @@ var app = new Vue({
       console.log("location hash:", location.hash);
       console.log("event target hash (what I want it to change it to):", event.target.hash);
       console.log("window.location.hash:", window.location.hash);
+      // window.location.hash = "";
+      // top.location.hash = "";
       // window.location.href = window.location.href.replace(/#.*/, "") + event.target.hash;
-      // document.location.href = document.location.origin+document.location.pathname+event.target.hash;
+      // window.location.href = window.location.origin+window.location.pathname+event.target.hash;
       window.location.assign(document.location.origin+document.location.pathname+event.target.hash);
+      console.log("-------------------");
+      console.log("location hash:", location.hash);
+      console.log("event target hash (what I want it to change it to):", event.target.hash);
+      console.log("window.location.hash:", window.location.hash);
+      // top.location.assign(top.location.origin + top.location.pathname+event.target.hash);
       console.log(window.location.href);
 
       let list = event.path[3].children;
