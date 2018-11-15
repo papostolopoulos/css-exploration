@@ -1,3 +1,28 @@
+Vue.component("practice-area",{
+  data: function() {
+    return {
+      textAreaPracticeHtml: "",
+      textAreaPracticeCss: "",
+      iframeContent: ""
+    }
+  },
+  template: `
+  <div class="divPractice">
+    <textarea
+    class="textAreaPracticeHtml"
+    placeholder="Add your html"
+    v-model="textAreaPracticeHtml"
+    ></textarea>
+    <textarea
+    class="textAreaPracticeCss"
+    placeholder="Add your css"
+    v-model = "textAreaPracticeCss"
+    ></textarea>
+    <iframe src="" width="" height="" class="iFramePractice"></iframe>
+  </div>
+  `
+});
+
 var app = new Vue({
   el: "#container",
   data: {
