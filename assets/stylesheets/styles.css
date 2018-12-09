@@ -179,15 +179,19 @@ aside a:hover{
   text-decoration: underline;
 }
 
+code{
+	white-space: pre;
+}
+
+.divExample{
+  background-color: rgb(0, 113, 184);
+}
+
 .anchorActiveTag{
   color: rgb(0, 113, 184);
   font-weight: bold;
 }
 
-.divExample{
-  height: 500px;
-  background: lightblue;
-}
 
 .divPractice{
   height: 78vh;

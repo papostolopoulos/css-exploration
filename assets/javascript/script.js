@@ -1,4 +1,4 @@
-Vue.component("practice-area",{
+var practiceArea = Vue.component("practice-area",{
   data: function() {
     return {
       textAreaPracticeHtml: "",
@@ -12,45 +12,57 @@ Vue.component("practice-area",{
     class="textAreaPracticeHtml"
     placeholder="Add your html"
     v-model="textAreaPracticeHtml"
+    @keyup="htmlCssCombine($event)"
     ></textarea>
     <textarea
     class="textAreaPracticeCss"
     placeholder="Add your css"
     v-model = "textAreaPracticeCss"
+    @keyup="htmlCssCombine($event)"
     ></textarea>
-    <iframe src="" width="" height="" class="iFramePractice"></iframe>
+    <iframe src="" width="" height="" class="iFramePractice" id="testFrame"></iframe>
   </div>
-  `
+  `,
+  computed: {
+    iframeContentUpdate() {
+      return "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
+    }
+  },
+  methods: {
+    htmlCssCombine(event){
+      event.path[1].children[2].contentDocument.body.innerHTML = this.iframeContentUpdate;
+    }
+  }
 });
 
 var app = new Vue({
   el: "#container",
   data: {
-    hello: "Hello there. This is the vue related script",
     chapters: [],
     activePage: "Index",
     indexPage: "",
     activeSection: "",
-    makeAMess: [
-
-    ]
   }, //End of data
   methods: {
     activeTag(event){
-      console.log("location hash:", location.hash);
-      console.log("event target hash (what I want it to change it to):", event.target.hash);
-      console.log("window.location.hash:", window.location.hash);
+      //KEEP THIS LINE IN CASE YOU DON'T WANT TO DO THE CHANGE THROUGH THE HTML
+      //ON THE @CLICK EVENT
+      // this.activePage = event.target.innerHTML.trim();
+
+      // console.log("location hash:", location.hash);
+      // console.log("event target hash (what I want it to change it to):", event.target.hash);
+      // console.log("window.location.hash:", window.location.hash);
       // window.location.hash = "";
       // top.location.hash = "";
       // window.location.href = window.location.href.replace(/#.*/, "") + event.target.hash;
       // window.location.href = window.location.origin+window.location.pathname+event.target.hash;
       window.location.assign(document.location.origin+document.location.pathname+event.target.hash);
-      console.log("-------------------");
-      console.log("location hash:", location.hash);
-      console.log("event target hash (what I want it to change it to):", event.target.hash);
-      console.log("window.location.hash:", window.location.hash);
+      // console.log("-------------------");
+      // console.log("location hash:", location.hash);
+      // console.log("event target hash (what I want it to change it to):", event.target.hash);
+      // console.log("window.location.hash:", window.location.hash);
       // top.location.assign(top.location.origin + top.location.pathname+event.target.hash);
-      console.log(window.location.href);
+      // console.log(window.location.href);
 
       let list = event.path[3].children;
       for (var i = 0; i < list.length; i++) {
