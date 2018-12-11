@@ -127,9 +127,23 @@ section h6{
   font-style: italic;
 }
 
-section p{
+section p, section ul{
   width: 60%;
   margin-bottom: 10px;
+}
+
+b{
+	font-weight: bold;
+}
+
+em{
+	font-style: italic;
+}
+
+li{
+	display: list-item;
+	list-style-type: circle;
+	padding-left: 2vw;
 }
 
 aside h1,
@@ -181,9 +195,14 @@ aside a:hover{
 
 code{
 	white-space: pre;
+	font-family: "Monaco";
+	background-color: rgb(0, 113, 184);
+	color: yellow;
+	font-weight: bold;
+	padding: 0 4px;
 }
 
-.divExample{
+.divExampleContainer{
   background-color: rgb(0, 113, 184);
 }
 
@@ -193,7 +212,7 @@ code{
 }
 
 
-.divPractice{
+.divPractice, .divExample{
   height: 78vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -210,11 +229,15 @@ code{
 textarea{
   resize: none;
   padding: 10px;
+	color: white;
+	background-color: black;
+	font-family: "Monaco";
+	font-weight: bold;
 }
 
 textarea:focus{
   box-shadow: inset .5px .5px 0 2px rgb(0, 113, 184);
-  background-color: rgba(0, 113, 184, .1);
+  background-color: rgba(0, 0, 0, .8);
 }
 
 .textAreaPracticeHtml{
@@ -243,34 +266,4 @@ textarea:focus{
 	border: 0;
 	font: inherit;
 	vertical-align: baseline;
-}
-
-
-/*
-  ========================================
-  006 Transforms
-  ========================================
-*/
-
-section{
-}
-
-h1{
-
-}
-
-h2{
-
-}
-
-h3{
-
-}
-
-h4{
-
-}
-
-h5{
-
 }

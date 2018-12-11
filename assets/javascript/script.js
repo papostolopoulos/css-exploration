@@ -20,7 +20,51 @@ var practiceArea = Vue.component("practice-area",{
     v-model = "textAreaPracticeCss"
     @keyup="htmlCssCombine($event)"
     ></textarea>
-    <iframe src="" width="" height="" class="iFramePractice" id="testFrame"></iframe>
+    <iframe src="" width="" height="" class="iFramePractice"></iframe>
+  </div>
+  `,
+  computed: {
+    iframeContentUpdate() {
+      return "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
+    }
+  },
+  methods: {
+    htmlCssCombine(event){
+      this.iframeContentUpdate = "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
+      event.path[1].children[2].contentDocument.body.innerHTML = this.iframeContentUpdate;
+    }
+  }
+});
+
+
+
+
+var practiceArea = Vue.component("example-area",{
+  data: function() {
+    return {
+      textAreaPracticeHtml: "",
+      textAreaPracticeCss: "",
+      iframeContent: ""
+    }
+  },
+  template: `
+  <div>
+    <div class="divExample">
+      <textarea
+      class="textAreaPracticeHtml"
+      placeholder="Add your html"
+      v-model="textAreaPracticeHtml"
+      @keyup="htmlCssCombine($event)"
+      ></textarea>
+      <textarea
+      class="textAreaPracticeCss"
+      placeholder="Add your css"
+      v-model = "textAreaPracticeCss"
+      @keyup="htmlCssCombine($event)"
+      ></textarea>
+      <iframe src="" width="" height="" class="iFramePractice" id="testFrame"></iframe>
+    </div>
+    <span><slot></slot></span>
   </div>
   `,
   computed: {
@@ -31,9 +75,42 @@ var practiceArea = Vue.component("practice-area",{
   methods: {
     htmlCssCombine(event){
       event.path[1].children[2].contentDocument.body.innerHTML = this.iframeContentUpdate;
-    }
+    },
+    preSetContent(){
+      this.textAreaPracticeCss =
+      this.$el.children[1].innerHTML
+      .split("</span>")[0]
+      .replace("<span>", "")
+      .replace(/\s[^\S]/g, "")
+      .replace(/\{/g, "{\n\t")
+      .replace(/;[^\}]/g, ";\n\t")
+      .replace(/\}/g, "}\n\n")
+      .trim();
+
+      this.textAreaPracticeHtml =
+      this.$el.children[1].innerHTML
+      .split("</span>")[1]
+      .replace(/(<\/\w+>)/g, "\n$1")
+      .replace(/(<\w+>)/g, "\n$1\n\t")
+      .trim();
+      // this.textAreaPracticeHtml = this.$el.children[1]
+    },
+    preSetiFrameContent(){
+
+      this.$el.children[0].children[2].contentDocument.body.innerHTML =
+      "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
+      }
+  },
+  beforeMount(){
+  },
+  mounted() {
+    this.preSetContent();
+    this.preSetiFrameContent();
   }
 });
+
+
+
 
 var app = new Vue({
   el: "#container",

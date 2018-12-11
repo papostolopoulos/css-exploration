@@ -112,7 +112,8 @@
 
 
 
-          <h3>HTML/CSS history (by <a href="https://www.linkedin.com/in/davidshin1/" target="_blank">David Shin</a>)</h3>
+          <h3>HTML/CSS history</h3>
+          <i><b>(by <a href="https://www.linkedin.com/in/davidshin1/" target="_blank">David Shin</a>)</b></i>
           <p>
             In the early days of the world wide web (WWW), documents or other
             information were often sent as simple plain text across the wires
@@ -144,7 +145,27 @@
 
           <h2>CSS Syntax</h2>
           <p>
-            I need to write some things about the CSS Syntax...
+            CSS has a syntax that has some similarities to the way JSON files or
+            JavaScript is structured. The main components of CSS are the following:
+            <ul>
+
+              <li>
+                A selector: is the one that points to the HTML element (or elements)
+                that you want to style. If this would be stated in plain English,
+                it would read like: <i>I want you to select the <code>h1</code>
+                  tags.</i>
+              </li>
+              <li>
+                Declarations: These are the different properties that state the
+                type of styling you want a particular element to have and what the
+                value is. If this would be stated in plain English, it would read
+                something like: <em>I want you to select the <code>h1</code>
+                  tags.</em> (selector) <em>and I want their <code>color</code> to
+                  be <code>green</code></em>.
+              </li>
+              <li></li>
+              <li></li>
+            </ul>
           </p>
 
 
@@ -164,7 +185,7 @@
               that we added by viewing the things entered in the <code>&#60;code&#62;</code>
               tag.</p>
               <p>For example, you will see code displayed like this:</p>
-              <div class="divExample">
+              <div class="divExampleContainer">
                 <code>
                   h1 {
                     font-size: 3.2rem;
@@ -179,6 +200,24 @@
 
 
               <h4>Example</h4>
+              <p>
+                Here is the example area
+              </p>
+              <example-area>
+                <slot>
+                  <span>
+                    h1{
+                      color: green;
+                    }
+
+                    p{
+                      font-family: Tahoma, Arial;
+                    }
+                  </span>
+                  <h1>Hello there I am the slot!</h1>
+                  <p>I am so happy to be here.<b> Oh yes I am</b></p>
+                </slot>
+              </example-area>
 
             <h4>Practice</h4>
             <practice-area></practice-area>
