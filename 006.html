@@ -73,8 +73,8 @@
         <!-- INDEX -->
         <section
         class="sectionIndex"
-        v-show="activePage === 'Index'"
         >
+        <!-- v-show="activePage === 'Index'" -->
           <h1>Index</h1>
           This is the index <br>
           Dark blue is rgb(0, 113, 184) <br>
@@ -153,47 +153,42 @@
                 A selector: is the one that points to the HTML element (or elements)
                 that you want to style. If this would be stated in plain English,
                 it would read like: <i>I want you to select the <code>h1</code>
-                  tags.</i>
+                tags.</i>
               </li>
               <li>
                 Declarations: These are the different properties that state the
                 type of styling you want a particular element to have and what the
                 value is. If this would be stated in plain English, it would read
-                something like: <em>I want you to select the <code>h1</code>
-                  tags.</em> (selector) <em>and I want their <code>color</code> to
-                  be <code>green</code></em>.
+                something like: <em>I want to select the <code>h1</code>
+                tags.</em> (selector) <em>and I want their <code>color</code> to
+                be <code>green</code></em>.
               </li>
-              <li></li>
-              <li></li>
+              <li>
+                Property: The property is the entity that states what needs to
+                change (eg: color, positioning, background, display)
+              </li>
+              <li>
+                Value: The value is the entity that states how the property changes /
+                what the value of the property is. If this would be stated in plain
+                English, it woud read something like: <em>I want to select the <code>h1</code>
+                tags.</em> (selector) <em>and I want the following things to happen:</em>
+              </li>
+              <ul style="width: 100%">
+                <li>
+                  Declaration: I want the - property - <code>color</code> to have a
+                  value <code>green</code>
+                </li>
+                <li>
+                  Declaration: I want the - property - <code>font-size</code> to
+                  have a value of <code>16px</code>.
+                </li>
+              </ul>
             </ul>
           </p>
 
 
-            <h2>How was CSS used on this page?</h2>
-          <p>Even though there is no CSS applied to the page, you can see that some
-            formatting is already applied to it.</p>
-          <p>This formatting comes from the browser's preset settings and it might be different
-            from how other browsers format the page.</p>
-            <p>That is why you see things like:</p>
-            <ol>
-              <li>The <code>&#60;h1&#62; and &#60;h2&#62;</code> tags of the page in a larger font size.</li>
-              <li>The fonts of the page being in a specific preset font format.</li>
-              <li>Some indentation between the text and the window's frame.</li>
-              <li>Spacing between the different paragraphs and the headers of the page.</li>
-            </ol>
-            <p>As you progress through the pages of this tutorial, you will be able to see the css code
-              that we added by viewing the things entered in the <code>&#60;code&#62;</code>
-              tag.</p>
-              <p>For example, you will see code displayed like this:</p>
               <div class="divExampleContainer">
-                <code>
-                  h1 {
-                    font-size: 3.2rem;
-                    line-height: 5.2rem;
-                    font-family: Arial;
-                    font-weight: 600;
-                  }
-                </code>
+
               </div>
 
 
@@ -203,20 +198,18 @@
               <p>
                 Here is the example area
               </p>
-              <example-area>
-                <slot>
-                  <span>
-                    h1{
-                      color: green;
-                    }
+              <example-area class="exampleArea">
+                <span>
+                  h1{
+                    color: green;
+                  }
 
-                    p{
-                      font-family: Tahoma, Arial;
-                    }
-                  </span>
-                  <h1>Hello there I am the slot!</h1>
-                  <p>I am so happy to be here.<b> Oh yes I am</b></p>
-                </slot>
+                  p{
+                    font-family: Tahoma, Arial;
+                  }
+                </span>
+                <h1>Hello there I am the slot!</h1>
+                <p>I am so happy to be here.<b> Oh yes I am</b></p>
               </example-area>
 
             <h4>Practice</h4>

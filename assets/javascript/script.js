@@ -153,7 +153,8 @@ var app = new Vue({
       let hList = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
 
       hList.forEach((el, idx)=>{
-        // console.log(el.innerText);
+        // console.log("innerText", el.innerText);
+        console.log(el.parentElement.className);
         let newHeading = {};
 
         //If statement so that the headings in the <aside> tag are disregarded

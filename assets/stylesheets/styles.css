@@ -21,7 +21,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  font: normal normal normal 16px/18px helvetica, arial, sans-serif;
+  font: normal normal normal 16px/22px helvetica, arial, sans-serif;
 }
 
 #container{
@@ -132,6 +132,24 @@ section p, section ul{
   margin-bottom: 10px;
 }
 
+section ul{
+	padding-left: 2vw;
+	list-style: none;
+}
+
+
+
+section ul li::before{
+	content: "\2192";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: rgb(0, 113, 184); /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+	font-size: 4vh;
+	padding-top: 1vh;
+  /* width: 1em; /* Also needed for space (tweak if needed) */ */
+  /* margin-left: -1em; /* Also needed for space (tweak if needed) */ */
+}
+
 b{
 	font-weight: bold;
 }
@@ -140,11 +158,6 @@ em{
 	font-style: italic;
 }
 
-li{
-	display: list-item;
-	list-style-type: circle;
-	padding-left: 2vw;
-}
 
 aside h1,
 aside h2,
@@ -197,7 +210,7 @@ code{
 	white-space: pre;
 	font-family: "Monaco";
 	background-color: rgb(0, 113, 184);
-	color: yellow;
+	color: white;
 	font-weight: bold;
 	padding: 0 4px;
 }
@@ -230,14 +243,14 @@ textarea{
   resize: none;
   padding: 10px;
 	color: white;
-	background-color: black;
+	background-color: rgb(0, 113, 184);
 	font-family: "Monaco";
 	font-weight: bold;
 }
 
 textarea:focus{
   box-shadow: inset .5px .5px 0 2px rgb(0, 113, 184);
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgb(0, 79, 128);
 }
 
 .textAreaPracticeHtml{
