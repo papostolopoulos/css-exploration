@@ -39,7 +39,7 @@ var practiceArea = Vue.component("practice-area",{
 
 
 
-var practiceArea = Vue.component("example-area",{
+var exampleArea = Vue.component("example-area",{
   data: function() {
     return {
       textAreaPracticeHtml: "",
@@ -65,6 +65,7 @@ var practiceArea = Vue.component("example-area",{
       <iframe src="" width="" height="" class="iFramePractice" id="testFrame"></iframe>
     </div>
     <span><slot></slot></span>
+    <button type="button" class="buttonExampleArea">Reset Example</button>
   </div>
   `,
   computed: {
@@ -133,7 +134,7 @@ var app = new Vue({
       // top.location.hash = "";
       // window.location.href = window.location.href.replace(/#.*/, "") + event.target.hash;
       // window.location.href = window.location.origin+window.location.pathname+event.target.hash;
-      window.location.assign(document.location.origin+document.location.pathname+event.target.hash);
+      // window.location.assign(document.location.origin+document.location.pathname+event.target.hash);
       // console.log("-------------------");
       // console.log("location hash:", location.hash);
       // console.log("event target hash (what I want it to change it to):", event.target.hash);
@@ -141,6 +142,9 @@ var app = new Vue({
       // top.location.assign(top.location.origin + top.location.pathname+event.target.hash);
       // console.log(window.location.href);
 
+      //Give the bolding effect to the clicked element of the <aside> tag.
+      console.log(event.target);
+      console.log(event.target.parentElement);
       let list = event.path[3].children;
       for (var i = 0; i < list.length; i++) {
         var anchorClass = list[i].children[0].children[0].className;
@@ -154,14 +158,16 @@ var app = new Vue({
 
       hList.forEach((el, idx)=>{
         // console.log("innerText", el.innerText);
-        console.log(el.parentElement.className);
         let newHeading = {};
 
-        //If statement so that the headings in the <aside> tag are disregarded
+        //If statement so that the headings in the <aside> tag are disregarded OR
+        //If they are inside a <span> in the example area
         if (!el.innerText.includes("chapter.text")) {
-          newHeading.heading = el.localName;
-          newHeading.text = el.innerText;
-          this.chapters.push(newHeading);
+          if (!el.parentElement.className.includes("exampleArea")) {
+            newHeading.heading = el.localName;
+            newHeading.text = el.innerText;
+            this.chapters.push(newHeading);
+          }
         }
       });
     },

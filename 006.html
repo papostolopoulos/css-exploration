@@ -170,7 +170,7 @@
               <li>
                 Value: The value is the entity that states how the property changes /
                 what the value of the property is. If this would be stated in plain
-                English, it woud read something like: <em>I want to select the <code>h1</code>
+                English, it would read something like: <em>I want to select the <code>h1</code>
                 tags.</em> (selector) <em>and I want the following things to happen:</em>
               </li>
               <ul style="width: 100%">
@@ -187,33 +187,49 @@
           </p>
 
 
-              <div class="divExampleContainer">
 
-              </div>
+          <h2>Tutorial examples</h2>
+          <p>
+            This tutorial has example areas where snippets of code along with the
+            returning result are being displayed. The particular areas have the
+            advantage of interactivity, so it is easy to change the content if you
+            will need to experiment. If for some reason you need to view the original
+            example, just click on the "reset" button.
+          </p>
+
+
+          <h2>Practice areas</h2>
+          <p>
+
+          </p>
+
+          <div class="divExampleContainer">
+
+          </div>
 
 
 
 
-              <h4>Example</h4>
-              <p>
-                Here is the example area
-              </p>
-              <example-area class="exampleArea">
-                <span>
-                  h1{
-                    color: green;
-                  }
+          <h4>Example</h4>
+          <p>
+            Here is the example area
+          </p>
+          <example-area class="exampleArea">
+            <span>
+              h1{
+                color: green;
+              }
 
-                  p{
-                    font-family: Tahoma, Arial;
-                  }
-                </span>
-                <h1>Hello there I am the slot!</h1>
-                <p>I am so happy to be here.<b> Oh yes I am</b></p>
-              </example-area>
+              p{
+                font-family: Tahoma, Arial;
+              }
+            </span>
+            <h1>Hello there I am the slot!</h1>
+            <p>I am so happy to be here.<b> Oh yes I am</b></p>
+          </example-area>
 
-            <h4>Practice</h4>
-            <practice-area></practice-area>
+          <h4>Practice</h4>
+          <practice-area></practice-area>
         </section>
 
 
@@ -226,10 +242,8 @@
 
 
         <!-- 000 RESET -->
-        <section
-        class="sectionReset"
-        id="section-000-reset"
-        v-show="activePage === 'Reset'">
+        <section id="section-000-reset">
+        <!-- v-show="activePage === 'Reset'" -->
           <h1>Reset</h1>
           <p>This is a paragraph</p>
           Reset
@@ -245,7 +259,8 @@
 
 
         <!-- 001 SPECIFICITY -->
-        <section id="section-001-specificity" v-show="activePage === 'Specificity'">
+        <section id="section-001-specificity">
+          <!-- v-show="activePage === 'Specificity'" -->
           <h1>Specificity</h1>
         </section>
 
@@ -259,7 +274,8 @@
 
 
         <!-- 002 BOX MODEL -->
-        <section id="section-002-box-model" v-show="activePage === 'Box Model'">
+        <section id="section-002-box-model">
+          <!-- v-show="activePage === 'Box Model'" -->
           <h1>Box Model</h1>
         </section>
 
@@ -273,7 +289,8 @@
 
 
         <!-- 003 POSITIONING -->
-        <section id="section-003-positioning" v-show="activePage === 'Positioning'">
+        <section id="section-003-positioning">
+          <!-- v-show="activePage === 'Positioning'" -->
           <h1>Positioning</h1>
         </section>
 
@@ -287,7 +304,8 @@
 
 
         <!-- 004 TYPOGRAPHY -->
-        <section id="section-004-typography" v-show="activePage === 'Typography'">
+        <section id="section-004-typography">
+          <!-- v-show="activePage === 'Typography'" -->
           <h1>Typography</h1>
         </section>
 
@@ -301,7 +319,8 @@
 
 
         <!-- 005 BACKGROUNDS -->
-        <section id="section-005-backgrounds" v-show="activePage === 'Backgrounds'">
+        <section id="section-005-backgrounds">
+          <!-- v-show="activePage === 'Backgrounds'" -->
           <h1>Backgrounds</h1>
         </section>
 
@@ -314,7 +333,8 @@
 
 
         <!-- 006 TRANSFORMS -->
-        <section id="006-transforms" v-show="activePage === 'Transforms'">
+        <section id="006-transforms" >
+          <!-- v-show="activePage === 'Transforms'" -->
           <h1>Transforms</h1>
           <h2>Are you ready for the truth?</h2>
           <p>put the anchors (or have the computed property navigate you where you need)</p>
@@ -396,7 +416,10 @@
 
       </main>
       <footer>
-        This is the footer
+        <span>
+          CSS Tutorial 2018 | No rights reserved |
+          <a href="http://addeventlistener.com" target="_blank">Paraskevas Apostolopoulos</a>
+        </span>
       </footer>
     </div>
 
