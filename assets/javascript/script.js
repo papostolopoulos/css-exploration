@@ -1,52 +1,4 @@
-var practiceArea = Vue.component("practice-area",{
-  data: function() {
-    return {
-      textAreaPracticeHtml: "",
-      textAreaPracticeCss: "",
-      iframeContent: ""
-    }
-  },
-  template: `
-  <div class="divPractice">
-    <textarea
-    class="textAreaPracticeHtml"
-    placeholder="Add your html"
-    v-model="textAreaPracticeHtml"
-    @keyup="htmlCssCombine($event)"
-    ></textarea>
-    <textarea
-    class="textAreaPracticeCss"
-    placeholder="Add your css"
-    v-model = "textAreaPracticeCss"
-    @keyup="htmlCssCombine($event)"
-    ></textarea>
-    <iframe src="" width="" height="" class="iFramePractice"></iframe>
-  </div>
-  `,
-  computed: {
-    iframeContentUpdate() {
-      return "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
-    }
-  },
-  methods: {
-    htmlCssCombine(event){
-      this.iframeContentUpdate = "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
-      event.path[1].children[2].contentDocument.body.innerHTML = this.iframeContentUpdate;
-    }
-  }
-});
-
-
-
-
 var exampleArea = Vue.component("example-area",{
-  data: function() {
-    return {
-      textAreaPracticeHtml: "",
-      textAreaPracticeCss: "",
-      iframeContent: ""
-    }
-  },
   template: `
   <div>
     <div class="divExample">
@@ -64,10 +16,19 @@ var exampleArea = Vue.component("example-area",{
       ></textarea>
       <iframe src="" width="" height="" class="iFramePractice" id="testFrame"></iframe>
     </div>
-    <span><slot></slot></span>
-    <button type="button" class="buttonExampleArea">Reset Example</button>
+    <span class="spanExampleArea"><slot></slot></span>
+    <div class="buttonExampleArea">
+    <button type="button" @click="resetContent">Reset Example</button>
+    </div>
   </div>
   `,
+  data: function() {
+    return {
+      textAreaPracticeHtml: "",
+      textAreaPracticeCss: "",
+      iframeContent: ""
+    }
+  },
   computed: {
     iframeContentUpdate() {
       return "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
@@ -77,7 +38,7 @@ var exampleArea = Vue.component("example-area",{
     htmlCssCombine(event){
       event.path[1].children[2].contentDocument.body.innerHTML = this.iframeContentUpdate;
     },
-    preSetContent(){
+    preSetContent(){ //Content extracted from the <span> <slot>
       this.textAreaPracticeCss =
       this.$el.children[1].innerHTML
       .split("</span>")[0]
@@ -94,13 +55,15 @@ var exampleArea = Vue.component("example-area",{
       .replace(/(<\/\w+>)/g, "\n$1")
       .replace(/(<\w+>)/g, "\n$1\n\t")
       .trim();
-      // this.textAreaPracticeHtml = this.$el.children[1]
     },
-    preSetiFrameContent(){
-
+    preSetiFrameContent(){ //Content that is being pre-loaded from the computed property
       this.$el.children[0].children[2].contentDocument.body.innerHTML =
       "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
-      }
+    },
+    resetContent(){
+      this.preSetContent();
+      this.preSetiFrameContent();
+    }
   },
   beforeMount(){
   },
@@ -109,6 +72,112 @@ var exampleArea = Vue.component("example-area",{
     this.preSetiFrameContent();
   }
 });
+
+
+
+
+var practiceArea = Vue.component("practice-area",{
+  template: `
+  <div>
+    <div class="divPractice">
+      <textarea
+      class="textAreaPracticeHtml"
+      placeholder="Add your html"
+      v-model="textAreaPracticeHtml"
+      @keyup="htmlCssCombine($event)"
+      ></textarea>
+      <textarea
+      class="textAreaPracticeCss"
+      placeholder="Add your css"
+      v-model = "textAreaPracticeCss"
+      @keyup="htmlCssCombine($event)"
+      ></textarea>
+      <iframe src="" width="" height="" class="iFramePractice"></iframe>
+    </div>
+    <span class="spanSolutionArea"><slot></slot></span>
+    <div class="buttonExampleArea">
+      <button @click="solutionContentExecute">Solution</button>
+      <button @click="yourEdits">Your edits</button>
+    </div>
+  </div>
+  `,
+  data: function() {
+    return {
+      textAreaPracticeHtml: "",
+      textAreaPracticeCss: "",
+      iFrameUserContent: "",
+      iframeSolutionContent: ""
+    }
+  },
+  computed: {
+    iframeContentUpdate() {
+      return "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
+    }
+  },
+  methods: {
+    htmlCssCombine(event){ //Updates the iFrame content on the keyUp events.
+      event.path[1].children[2].contentDocument.body.innerHTML = this.iframeContentUpdate;
+    },
+    solutionContent(){ //content loaded from the <span> <slot> tag when click on "solution" button
+      this.textAreaPracticeCss =
+      this.$el.children[1].innerHTML
+      .split("</span>")[0]
+      .replace("<span>", "")
+      .replace(/\s[^\S]/g, "")
+      .replace(/\{/g, "{\n\t")
+      .replace(/;[^\}]/g, ";\n\t")
+      .replace(/\}/g, "}\n\n")
+      .trim();
+
+      this.textAreaPracticeHtml =
+      this.$el.children[1].innerHTML
+      .split("</span>")[1]
+      .replace(/(<\/\w+>)/g, "\n$1")
+      .replace(/(<\w+>)/g, "\n$1\n\t")
+      .trim();
+    },
+    solutioniFrameContent(){
+      this.iFrameUserContent = "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
+      console.log("this.iFrameUserContent", this.iFrameUserContent);
+      this.$el.children[0].children[2].contentDocument.body.innerHTML =
+      "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
+    },
+    yourEditsContent(){
+      //I have to modify the textAreaPracticeCss and textAreaPracticeHtml according to the
+      // value saved in this.iFrameUserContent
+    },
+    yourEdits(){
+      console.log(this.iFrameUserContent);
+      this.$el.children[0].children[2].contentDocument.body.innerHTML = this.iFrameUserContent;
+
+      this.textAreaPracticeCss =
+      this.iFrameUserContent
+      .split("</style>")[0]
+      .replace("<style>", "")
+      .replace(/\s[^\S]/g, "")
+      .replace(/\{/g, "{\n\t")
+      .replace(/;[^\}]/g, ";\n\t")
+      .replace(/\}/g, "}\n\n")
+      .trim();
+
+      this.textAreaPracticeHtml =
+      this.iFrameUserContent
+      .split("</style>")[1]
+      .replace(/(<\/\w+>)/g, "\n$1")
+      .replace(/(<\w+>)/g, "\n$1\n\t")
+      .trim();
+    },
+    solutionContentExecute(){
+      this.solutionContent();
+      this.solutioniFrameContent();
+    }
+  }, //End of methods
+  mounted() {
+    // this.solutionContent();
+    // this.solutioniFrameContent();
+  }
+});
+
 
 
 
