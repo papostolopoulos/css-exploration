@@ -263,7 +263,7 @@ textarea:focus{
 	position: relative;
 }
 
-.spanExampleArea{
+.spanExampleArea, .spanSolutionArea{
 	display: none;
 }
 

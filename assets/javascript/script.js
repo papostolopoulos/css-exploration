@@ -26,7 +26,6 @@ var exampleArea = Vue.component("example-area",{
     return {
       textAreaPracticeHtml: "",
       textAreaPracticeCss: "",
-      iframeContent: ""
     }
   },
   computed: {
@@ -106,7 +105,6 @@ var practiceArea = Vue.component("practice-area",{
       textAreaPracticeHtml: "",
       textAreaPracticeCss: "",
       iFrameUserContent: "",
-      iframeSolutionContent: ""
     }
   },
   computed: {
@@ -119,6 +117,8 @@ var practiceArea = Vue.component("practice-area",{
       event.path[1].children[2].contentDocument.body.innerHTML = this.iframeContentUpdate;
     },
     solutionContent(){ //content loaded from the <span> <slot> tag when click on "solution" button
+      this.iFrameUserContent = "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
+
       this.textAreaPracticeCss =
       this.$el.children[1].innerHTML
       .split("</span>")[0]
@@ -137,17 +137,10 @@ var practiceArea = Vue.component("practice-area",{
       .trim();
     },
     solutioniFrameContent(){
-      this.iFrameUserContent = "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
-      console.log("this.iFrameUserContent", this.iFrameUserContent);
       this.$el.children[0].children[2].contentDocument.body.innerHTML =
       "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
     },
-    yourEditsContent(){
-      //I have to modify the textAreaPracticeCss and textAreaPracticeHtml according to the
-      // value saved in this.iFrameUserContent
-    },
     yourEdits(){
-      console.log(this.iFrameUserContent);
       this.$el.children[0].children[2].contentDocument.body.innerHTML = this.iFrameUserContent;
 
       this.textAreaPracticeCss =
