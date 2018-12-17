@@ -27,7 +27,7 @@ body {
 #container{
   display: grid;
   grid-template-columns: 2fr 8fr;
-  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-rows: 8% 87% 5%;
   grid-template-areas:
     "header header"
     "aside main"
@@ -36,7 +36,7 @@ body {
 
 header{
   grid-area: header;
-  height: 10vh;
+  height: 8vh;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -55,12 +55,12 @@ header{
   position: absolute;
   left: 8vw;
   align-self: center;
-  font-size: 8vh;
+  font-size: 7vh;
 }
 
 aside{
   grid-area: aside;
-  height: 80vh;
+  height: 87vh;
   overflow: auto;
   padding: 10px;
   /* color: rgb(42, 171, 222); */
@@ -68,14 +68,14 @@ aside{
 
 main{
   grid-area: main;
-  height: 80vh;
+  height: 87vh;
   overflow: auto;
   padding: 10px;
 }
 
 footer{
   grid-area: footer;
-  height: 10vh;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -263,7 +263,7 @@ textarea:focus{
 	position: relative;
 }
 
-.spanExampleArea{
+.spanExampleArea, .spanSolutionArea{
 	display: none;
 }
 
