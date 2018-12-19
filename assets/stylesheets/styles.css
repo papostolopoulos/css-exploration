@@ -152,8 +152,8 @@ section ul li::before{
   display: inline-block; /* Needed to add space between the bullet and the text */
 	font-size: 4vh;
 	padding-top: 1vh;
-  /* width: 1em; /* Also needed for space (tweak if needed) */
-  /* margin-left: -1em; /* Also needed for space (tweak if needed) */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
 
 b{
@@ -222,7 +222,7 @@ code{
 }
 
 .divExampleContainer{
-  background-color: rgb(0, 113, 184);
+  background-color: rgb(207, 207, 207);
 }
 
 .anchorActiveTag{

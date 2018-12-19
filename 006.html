@@ -82,6 +82,9 @@
           light blue is rgb(42, 171, 222) <br>
           Gray is rgb(207, 207, 207) <br>
           White is rgb(255, 255, 255)
+
+
+
           <h2>Introduction</h2>
           <p>
             Hello and welcome to the CSS Tutorial. This tutorial works as a point
@@ -113,33 +116,50 @@
 
 
 
-          <h3>HTML/CSS history</h3>
-          <i><b>(by <a href="https://www.linkedin.com/in/davidshin1/" target="_blank">David Shin</a>)</b></i>
+          <h2>Structure of website</h2>
           <p>
-            In the early days of the world wide web (WWW), documents or other
-            information were often sent as simple plain text across the wires
-            that formed the internet. Because the original intent was to allow
-            scientists to share information at the particle accelerator
-            <a href="http://home.cern/" target="_blank">CERN</a>,
-            <a href="http://webfoundation.org/about/vision/history-of-the-web/" target="_blank">
-              Sir Tim Berners-Lee</a>,
-            the inventor of the WWW, developed the Hyper Text Markup Language
-            (HTML). HTML included the means to allow some basic formatting of
-            the documents being shared.
+            This site is broken in different chapters based on the topic you would
+            like to study. Each chapter is constituted by the following core components:
           </p>
+          <h5>Chapter topic</h5>
           <p>
-            Once styling became more complex and demanding, there was a need for
-            a way that would allow the separation of the code that related to the
-            styling of the page from the rest of the document. CSS was introduced
-            in order to satisfy this need. CSS files are used to control the
-            attributes of a webpage, while the overall style of an html page is
-            being managed through separate files.
+            This is where the particular topic is being discussed along with some
+            generic information.
           </p>
+          <h5>Properties to learn</h5>
           <p>
-            By including some type of order and precedence we can keep CSS code
-            DRY (don't repeat yourself). This increases readability for the
-            developer while reducing the memory requirements on both the client
-            and the server side, as well as during the transmission process.
+            There are different properties in CSS that do different things for
+            particular topics. I will try to cover as many different properties
+            as possible. This is where the properties are being registered.
+          </p>
+          <h5>Example</h5>
+          <p>
+            This is where I will be displaying an example of how to use the different
+            properties being taught. You will be able to review the html and css
+            code and also play with it.
+          </p>
+          <h5>Practice</h5>
+          <p>
+            This is where you will be given a task to complete. There is an option
+            where you can toggle between your code and the solution so it is okay
+            if you get stuck since you will be able to get some help if you need to.
+          </p>
+
+
+
+
+
+          <h2>What is CSS?</h2>
+          <p>
+            CSS stands for Cascading Style Sheets. CSS is a style language sheet that
+            is being used to modify the way an HTML page is being presented. Let's take
+            a random person as an example. This person might wear a coat, a skirt,
+            and a had one day, and jeans, a t-shirt and glasses the other day. The
+            person is always the same but the way she looks is different based on
+            the clothes she is wearing.
+            Likewise, CSS can give a different look, feel and level of interactivity
+            to the different components of the HTML page, based on the different
+            properties we are modifying to the elements (tags) of the HTML page.
           </p>
 
 
@@ -185,6 +205,9 @@
                 </li>
               </ul>
             </ul>
+
+            An example of how the different declarations are being written is:
+            <code>p {color: green; font-size: 16px;}</code>
           </p>
 
 
@@ -199,35 +222,30 @@
           </p>
 
 
-          <h2>Practice areas</h2>
-          <p>
-
-          </p>
 
           <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Here is the example area
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                h1{
+                  color: red;
+                }
 
+                p{
+                  font-family: Tahoma, Arial;
+                }
+              </span>
+              <h1>Hello there I am the slot!</h1>
+              <p>I am so happy to be here.<b> Oh yes I am</b></p>
+            </example-area>
           </div>
 
 
 
 
-          <h4>Example</h4>
-          <p>
-            Here is the example area
-          </p>
-          <example-area class="exampleArea">
-            <span>
-              h1{
-                color: red;
-              }
-
-              p{
-                font-family: Tahoma, Arial;
-              }
-            </span>
-            <h1>Hello there I am the slot!</h1>
-            <p>I am so happy to be here.<b> Oh yes I am</b></p>
-          </example-area>
 
           <h4>Practice</h4>
           <practice-area class="exampleArea">
@@ -430,7 +448,7 @@
       <footer>
         <span>
           CSS Tutorial 2018 | No rights reserved |
-          <a href="http://addeventlistener.com" target="_blank">Paraskevas Apostolopoulos</a>
+          <a href="http://addeventlistener.xyz" target="_blank">Paraskevas Apostolopoulos</a>
         </span>
       </footer>
     </div>
