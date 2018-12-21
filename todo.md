@@ -4,7 +4,7 @@ method that runs "beforeMount" (used for setting up the headings).
 If I put a heading in the span within the exampleArea, then it will be run in the
 aside tag.
 
-[] create function for buttonExampleArea to reset the data inside the textAreaPracticeCss and
+[X] create function for buttonExampleArea to reset the data inside the textAreaPracticeCss and
 textAreaPracticeHtml, and consequently change the display in the iFramePractice
 
 [] Create effect where the aside headings that are h2 or less disappear when clicking on an h1

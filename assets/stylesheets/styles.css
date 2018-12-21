@@ -42,13 +42,16 @@ header{
   justify-content: center;
   color: rgb(0, 113, 184);
   border-bottom: 2px solid rgb(0, 113, 184);
+	background-color: rgba(255,255,255,.2);
 }
 
 #spanHeaderTitle{
   align-self: center;
+	justify-content: center;
   margin: 1vh 0 .5vh 0;
   color: rgb(0, 113, 184);
-  font-size: 7vh;
+  font-size: 6vh;
+	background-color: rgba(255,255,255,.2);
 }
 
 #cssLogo{
@@ -116,7 +119,7 @@ section h3{
 section h4{
   font-size: 3vh;
   line-height: 3vh;
-  margin: 4vh 0 .5vh 0;
+  margin: 3vh 0 .5vh 0;
   font-weight: bold;
 }
 
@@ -218,11 +221,25 @@ code{
 	background-color: rgb(0, 113, 184);
 	color: white;
 	font-weight: bold;
-	padding: 0 4px;
+	padding: 1px 4px;
+}
+
+.divCodeBlock{
+	background-color: rgb(0, 113, 184);
+	width: 60%;
+}
+
+.divExampleContainer, .divPracticeContainer{
+	padding: 4px;
+	background-color: rgb(207, 207, 207);
+	border: 2px solid rgb(0, 79, 128);
 }
 
 .divExampleContainer{
-  background-color: rgb(207, 207, 207);
+}
+
+.divPracticeContainer{
+	margin-top: 3vh;
 }
 
 .anchorActiveTag{
@@ -239,9 +256,8 @@ code{
   grid-template-areas:
   "textAreaPracticeHtml iFramePractice"
   "textAreaPracticeCss iFramePractice";
-  border: 2px solid rgb(207, 207, 207);
   grid-column-gap: 4px;
-  gap: 4px 2px;
+  gap: 4px 4px;
   padding: 0;
 }
 
@@ -271,7 +287,8 @@ button{
 	background-color: rgb(0, 113, 184);
 	color: white;
 	font-weight: bold;
-	padding: 10px;
+	padding: 10px 0;
+	width: 100px;
 	border: 2px solid rgb(0, 79, 128);
 }
 
@@ -298,20 +315,17 @@ button:active{
 
 .textAreaPracticeHtml{
   grid-area: textAreaPracticeHtml;
-  border-bottom: 2px solid rgb(207, 207, 207);
-  border-right: 2px solid rgb(207, 207, 207);
 }
 
 .textAreaPracticeCss{
   grid-area: textAreaPracticeCss;
-  border-top: 2px solid rgb(207, 207, 207);
-  border-right: 2px solid rgb(207, 207, 207);
 }
 
 .iFramePractice{
-  gridArea: iFramePractice;
+  grid-area: iFramePractice;
   width: 100%;
-  height: 200%;
+  height: 100%;
+	background-color: white;
 }
 
 

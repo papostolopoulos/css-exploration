@@ -18,7 +18,7 @@ var exampleArea = Vue.component("example-area",{
     </div>
     <span class="spanExampleArea"><slot></slot></span>
     <div class="buttonExampleArea">
-    <button type="button" @click="resetContent">Reset Example</button>
+    <button type="button" @click="resetContent">Reset</button>
     </div>
   </div>
   `,
@@ -48,9 +48,11 @@ var exampleArea = Vue.component("example-area",{
       .replace(/\}/g, "}\n\n")
       .trim();
 
+      console.log(this.$el.children[1].innerHTML.split("</span>")[1].includes("\n"));
       this.textAreaPracticeHtml =
       this.$el.children[1].innerHTML
       .split("</span>")[1]
+      .replace(/(\s){2,}/gm, " ")
       .replace(/(<\/\w+>)/g, "\n$1")
       .replace(/(<\w+>)/g, "\n$1\n\t")
       .trim();
@@ -123,6 +125,7 @@ var practiceArea = Vue.component("practice-area",{
       this.$el.children[1].innerHTML
       .split("</span>")[0]
       .replace("<span>", "")
+      .replace(/(\s){2,}/gm, " ")
       .replace(/\s[^\S]/g, "")
       .replace(/\{/g, "{\n\t")
       .replace(/;[^\}]/g, ";\n\t")
@@ -132,6 +135,7 @@ var practiceArea = Vue.component("practice-area",{
       this.textAreaPracticeHtml =
       this.$el.children[1].innerHTML
       .split("</span>")[1]
+      .replace(/\s{2,}/gm, "")
       .replace(/(<\/\w+>)/g, "\n$1")
       .replace(/(<\w+>)/g, "\n$1\n\t")
       .trim();
@@ -156,6 +160,7 @@ var practiceArea = Vue.component("practice-area",{
       this.textAreaPracticeHtml =
       this.iFrameUserContent
       .split("</style>")[1]
+      .replace(/(\s){2,}/gm, " ")
       .replace(/(<\/\w+>)/g, "\n$1")
       .replace(/(<\w+>)/g, "\n$1\n\t")
       .trim();
@@ -179,7 +184,7 @@ var app = new Vue({
   el: "#container",
   data: {
     chapters: [],
-    activePage: "Index",
+    activePage: "Introduction",
     indexPage: "",
     activeSection: "",
   }, //End of data

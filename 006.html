@@ -70,12 +70,10 @@
 
 
       <main>
-        <!-- INDEX -->
-        <section
-        class="sectionIndex"
-        >
-        <!-- v-show="activePage === 'Index'" -->
-          <h1>Index</h1>
+        <!-- Introduction -->
+        <section id="sectionIntroduction">
+          <!-- v-show="activePage === 'Introduction'" -->
+          <h1>Introduction to CSS</h1>
           This is the index <br>
           Darker blue is rgb(0, 79, 128) <br>
           Dark blue is rgb(0, 113, 184) <br>
@@ -83,9 +81,6 @@
           Gray is rgb(207, 207, 207) <br>
           White is rgb(255, 255, 255)
 
-
-
-          <h2>Introduction</h2>
           <p>
             Hello and welcome to the CSS Tutorial. This tutorial works as a point
             of reference for me but also can be used by whomever thinks it might
@@ -116,9 +111,9 @@
 
 
 
-          <h2>Structure of website</h2>
+          <h2>Structure of tutorial</h2>
           <p>
-            This site is broken in different chapters based on the topic you would
+            This tutorial is broken in different chapters based on the topic you would
             like to study. Each chapter is constituted by the following core components:
           </p>
           <h5>Chapter topic</h5>
@@ -154,7 +149,7 @@
             CSS stands for Cascading Style Sheets. CSS is a style language sheet that
             is being used to modify the way an HTML page is being presented. Let's take
             a random person as an example. This person might wear a coat, a skirt,
-            and a had one day, and jeans, a t-shirt and glasses the other day. The
+            and a hat one day, and jeans, a t-shirt and glasses the other day. The
             person is always the same but the way she looks is different based on
             the clothes she is wearing.
             Likewise, CSS can give a different look, feel and level of interactivity
@@ -164,12 +159,153 @@
 
 
 
-          <h2>CSS Syntax</h2>
+          <h2>Examples</h2>
+          <p>
+            This tutorial has example areas where snippets of code along with the
+            outcome are being displayed. The example areas allow you to change
+            the content if you would like to experiment. Also, if you wish to revisit
+            the original example after your edits, just click on the "reset" button.
+          </p>
+
+
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              In this area, there will be a description of what the example is displaying.
+              Feel free to experiment with the example's different options and
+              click on "reset" if you want to revert back to the original version.
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                h1{
+                  color: red;
+                }
+
+                p{
+                  font-family: Tahoma, Arial;
+                  color: gray;
+                }
+              </span>
+              <h1>Hello there I am the example area!</h1>
+              <p>
+                If you want, you can run tests in this area. You can update the
+                HTML code on the top left slot where the HTML code exists and you
+                can update the CSS in the bottom left area.
+              </p>
+              <p>
+                Do you think you can change the property of the <code>h1</code> tag
+                to read: <i>Hello there, this is my first example</i>
+              </p>
+              <p>
+                Also, do you think you can change the color of the h1 tag from <code>red</code>
+                to <code>rgb(0, 113, 184)</code>?
+              </p>
+              <p>
+                If you wish to, you can click on the "reset" button to view
+                the original code.
+              </p>
+            </example-area>
+          </div>
+
+
+          <h2>Practice</h2>
+          <p>
+            The practice area will have some coding problem that you can try to resolve.
+            The things that are asked relate to the learnings of the particular
+            chapter but there may be some components from previous chapters as well. You
+            can have fun working on the challenge. And also, if you do not close the
+            browser window, your work will not be lost, even if you navigate to
+            other chapters of this tutorial.
+          </p>
+          <p>
+            There will be a description of the problem you can try to solve.
+            You can always look at the solution of the problem if you need help.
+            You can revert back to the original version of the problem and continue
+            your work.
+          </p>
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Let's work on our basic syntax. Try to do the following:
+            </p>
+            <h5>HTML</h5>
+            <ul>
+              <li>
+                Create an <code>h1</code> tag with text that reads: My first CSS code
+              </li>
+              <li>
+                Create a <code>p</code> tag with text that reads: <i>This is my first
+                code in the CSS tutorial. I think it is great!</i>
+              </li>
+              <li>
+                Wrap the word "great" inside a <code>b</code> tag.
+            </ul>
+            <h5>CSS</h5>
+            <ul>
+              <li>
+                Give to the <code>h1</code> tag the property of <code>font-family</code>
+                with a value of "Tahoma".
+              </li>
+              <li>
+                Give the h1 tag the property of <code>font-style</code> with the
+                value "italic".
+              </li>
+              <li>
+                Give to the <code>h1</code> tag the property of <code>color</code>
+                with the value of "blue".
+              </li>
+              <li>
+                Give the <code>p</code> tag the property of <code>font-size</code>
+                with the value of "16px"
+              </li>
+              <li>
+                Give to the <code>b</code> tag the property of <code>font-variant</code>
+                with the value of "small-caps"
+            </ul>
+
+
+            <practice-area class="exampleArea">
+              <span>
+                h1{
+                  font-family: tahoma;
+                  color: blue;
+                }
+
+                p {
+                  font-size: 18px;
+                }
+
+                b{
+                  font-variant: small-caps;
+                }
+              </span>
+              <h1>My first CSS code</h1>
+              <p>This is my first
+              code in the CSS tutorial. I think it is <b>great!</b></p>
+            </practice-area>
+          </div>
+        </section>
+
+
+
+
+
+
+
+        <section id="sectionSyntax">
+          <h1>CSS Syntax</h2>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
           <p>
             CSS has a syntax that has some similarities to the way JSON files or
-            JavaScript is structured. The main components of CSS are the following:
+            JavaScript object literals are structured.
+            The main components of CSS are the following:
+          </p>
             <ul>
-
               <li>
                 A selector: is the one that points to the HTML element (or elements)
                 that you want to style. If this would be stated in plain English,
@@ -205,63 +341,19 @@
                 </li>
               </ul>
             </ul>
-
-            An example of how the different declarations are being written is:
-            <code>p {color: green; font-size: 16px;}</code>
-          </p>
-
-
-
-          <h2>Tutorial examples</h2>
-          <p>
-            This tutorial has example areas where snippets of code along with the
-            returning result are being displayed. The particular areas have the
-            advantage of interactivity, so it is easy to change the content if you
-            will need to experiment. If for some reason you need to view the original
-            example, just click on the "reset" button.
-          </p>
-
-
-
-          <div class="divExampleContainer">
-            <h4>Example</h4>
             <p>
-              Here is the example area
+              In the following example, you can see how the declarations are being
+              entered in a new CSS rule. In this example, all the <code>&lt;p&gt;</code>
+              nodes have a font color of green and the font size is 16 pixels.
             </p>
-            <example-area class="exampleArea">
-              <span>
-                h1{
-                  color: red;
+            <div class="divCodeBlock">
+              <code>
+                p {
+                  color: green;
+                  font-size: 16px;
                 }
-
-                p{
-                  font-family: Tahoma, Arial;
-                }
-              </span>
-              <h1>Hello there I am the slot!</h1>
-              <p>I am so happy to be here.<b> Oh yes I am</b></p>
-            </example-area>
-          </div>
-
-
-
-
-
-          <h4>Practice</h4>
-          <practice-area class="exampleArea">
-            <span>
-              h1{
-                color: red;
-              }
-
-              p{
-                font-family: Tahoma, Arial;
-              }
-            </span>
-            <h1>Hello there I am the slot of the practice area!</h1>
-            <p>I am so happy to be here.<b> Oh yes I am</b></p>
-            <h2>An h2 for your pleasure</h2>
-          </practice-area>
+              </code>
+            </div>
         </section>
 
 
@@ -271,12 +363,58 @@
 
 
 
-        <!-- 000 RESET -->
-        <section id="section-000-reset">
-        <!-- v-show="activePage === 'Reset'" -->
+
+
+
+        <!-- RESET -->
+        <section id="sectionReset">
+          <!-- v-show="activePage === 'Reset'" -->
           <h1>Reset</h1>
-          <p>This is a paragraph</p>
-          Reset
+          <h5>Chapter Topic</h5>
+          <h5>Properties to Learn</h5>
+          <h5>Example</h5>
+          <h5>Practice</h5>
+          <p>
+            Paragraph
+          </p>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+            </ul>
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
         </section>
 
 
@@ -289,9 +427,50 @@
 
 
         <!-- 001 SPECIFICITY -->
-        <section id="section-001-specificity">
+        <section id="sectionSpecificity">
           <!-- v-show="activePage === 'Specificity'" -->
           <h1>Specificity</h1>
+          <p>
+            Paragraph
+          </p>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+            </ul>
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
         </section>
 
 
@@ -304,9 +483,50 @@
 
 
         <!-- 002 BOX MODEL -->
-        <section id="section-002-box-model">
+        <section id="sectionBoxModel">
           <!-- v-show="activePage === 'Box Model'" -->
           <h1>Box Model</h1>
+          <p>
+            Paragraph
+          </p>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+            </ul>
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
         </section>
 
 
@@ -319,9 +539,50 @@
 
 
         <!-- 003 POSITIONING -->
-        <section id="section-003-positioning">
+        <section id="sectionPositioning">
           <!-- v-show="activePage === 'Positioning'" -->
           <h1>Positioning</h1>
+          <p>
+            Paragraph
+          </p>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+            </ul>
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
         </section>
 
 
@@ -337,6 +598,47 @@
         <section id="section-004-typography">
           <!-- v-show="activePage === 'Typography'" -->
           <h1>Typography</h1>
+          <p>
+            Paragraph
+          </p>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+            </ul>
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
         </section>
 
 
@@ -349,9 +651,50 @@
 
 
         <!-- 005 BACKGROUNDS -->
-        <section id="section-005-backgrounds">
+        <section id="sectionBackgrounds">
           <!-- v-show="activePage === 'Backgrounds'" -->
           <h1>Backgrounds</h1>
+          <p>
+            Paragraph
+          </p>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+            </ul>
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
         </section>
 
 
@@ -363,84 +706,50 @@
 
 
         <!-- 006 TRANSFORMS -->
-        <section id="006-transforms" >
+        <section id="sectionTransforms" >
           <!-- v-show="activePage === 'Transforms'" -->
           <h1>Transforms</h1>
-          <h2>Are you ready for the truth?</h2>
-          <p>put the anchors (or have the computed property navigate you where you need)</p>
-          <p>change the fonts</p>
-          <p>connect with the computed property that changes to the right chapter</p>
           <p>
-            Now that we know who you are, I know who I am. I'm not a mistake! It all makes
-            sense! In a comic, you know how you can tell who the arch-villain's going to
-            be? He's the exact opposite of the hero. And most times they're friends,
-            like you and me! I should've known way back when... You know why, David?
-            Because of the kids. They called me Mr Glass.
+            Paragraph
           </p>
 
-          <h2>Uuummmm, this is a tasty burger!</h2>
-          <p>
-            Now that we know who you are, I know who I am. I'm not a mistake! It all makes
-            sense! In a comic, you know how you can tell who the arch-villain's going to be?
-            He's the exact opposite of the hero. And most times they're friends, like you
-            and me! I should've known way back when... You know why, David? Because of
-            the kids. They called me Mr Glass.
-          </p>
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
 
-          <h3>Uuummmm, this is a tasty burger!</h3>
-          <p>
-            You think water moves fast? You should see ice. It moves like it has a mind.
-            Like it knows it killed the world once and got a taste for murder.
-            After the avalanche, it took us a week to climb out. Now, I don't know exactly
-            when we turned on each other, but I know that seven of us survived the slide...
-            and only five made it out. Now we took an oath, that I'm breaking now.
-            We said we'd say it was the snow that killed the other two, but it wasn't.
-            Nature is lethal but it doesn't hold a candle to man.
-          </p>
 
-          <h4>Uuummmm, this is a tasty burger!</h4>
-          <p>
-            My money's in that office, right? If she start giving me some bullshit about
-            it ain't there, and we got to go someplace else and get it, I'm gonna shoot you
-            in the head then and there. Then I'm gonna shoot that bitch in the kneecaps,
-            find out where my goddamn money is. She gonna tell me too. Hey, look at me
-            when I'm talking to you, motherfucker. You listen: we go in there, and that
-            nigga Winston or anybody else is in there, you the first motherfucker to get
-            shot. You understand?
-          </p>
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+            </ul>
 
-          <p>
-            The path of the righteous man is beset on all sides by the iniquities of the
-            selfish and the tyranny of evil men. Blessed is he who, in the name of charity
-            and good will, shepherds the weak through the valley of darkness, for he is
-            \truly his brother's keeper and the finder of lost children. And I will strike
-            down upon thee with great vengeance and furious anger those who would attempt
-            to poison and destroy My brothers. And you will know My name is the Lord when
-            I lay My vengeance upon thee.
-          </p>
 
-          <h5>No, motherfucker</h5>
-          <p>
-            The path of the righteous man is beset on all sides by the iniquities of the
-            selfish and the tyranny of evil men. Blessed is he who, in the name of charity
-            and good will, shepherds the weak through the valley of darkness, for he is
-            \truly his brother's keeper and the finder of lost children. And I will strike
-            down upon thee with great vengeance and furious anger those who would attempt
-            to poison and destroy My brothers. And you will know My name is the Lord when
-            I lay My vengeance upon thee.
-          </p>
-
-          <h6>No, motherfucker</h6>
-          <p>
-            The path of the righteous man is beset on all sides by the iniquities of the
-            selfish and the tyranny of evil men. Blessed is he who, in the name of charity
-            and good will, shepherds the weak through the valley of darkness, for he is
-            \truly his brother's keeper and the finder of lost children. And I will strike
-            down upon thee with great vengeance and furious anger those who would attempt
-            to poison and destroy My brothers. And you will know My name is the Lord when
-            I lay My vengeance upon thee.
-          </p>
-
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
         </section>
 
 
