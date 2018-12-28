@@ -44,11 +44,11 @@ var exampleArea = Vue.component("example-area",{
       .replace("<span>", "")
       .replace(/\s[^\S]/g, "")
       .replace(/\{/g, "{\n\t")
-      .replace(/;[^\}]/g, ";\n\t")
+      .replace(/;[^\}\*]/g, ";\n\t")
+      .replace(/(\*\/)[^\}]/g, "$1\n\t")
       .replace(/\}/g, "}\n\n")
       .trim();
 
-      console.log(this.$el.children[1].innerHTML.split("</span>")[1].includes("\n"));
       this.textAreaPracticeHtml =
       this.$el.children[1].innerHTML
       .split("</span>")[1]
@@ -115,10 +115,13 @@ var practiceArea = Vue.component("practice-area",{
     }
   },
   methods: {
-    htmlCssCombine(event){ //Updates the iFrame content on the keyUp events.
+    //Updates the iFrame content on the keyUp events.
+    htmlCssCombine(event){
       event.path[1].children[2].contentDocument.body.innerHTML = this.iframeContentUpdate;
     },
-    solutionContent(){ //content loaded from the <span> <slot> tag when click on "solution" button
+
+    //content loaded from the <span> <slot> tag when click on "solution" button
+    solutionContent(){
       this.iFrameUserContent = "<style>" + this.textAreaPracticeCss + "</style>" + this.textAreaPracticeHtml;
 
       this.textAreaPracticeCss =
@@ -128,7 +131,8 @@ var practiceArea = Vue.component("practice-area",{
       .replace(/(\s){2,}/gm, " ")
       .replace(/\s[^\S]/g, "")
       .replace(/\{/g, "{\n\t")
-      .replace(/;[^\}]/g, ";\n\t")
+      .replace(/;[^\}\*]/g, ";\n\t")
+      .replace(/(\*\/)[^\}]/g, "$1\n\t")
       .replace(/\}/g, "}\n\n")
       .trim();
 
@@ -153,7 +157,8 @@ var practiceArea = Vue.component("practice-area",{
       .replace("<style>", "")
       .replace(/\s[^\S]/g, "")
       .replace(/\{/g, "{\n\t")
-      .replace(/;[^\}]/g, ";\n\t")
+      .replace(/;[^\}\*]/g, ";\n\t")
+      .replace(/(\*\/)[^\}]/g, "$1\n\t")
       .replace(/\}/g, "}\n\n")
       .trim();
 
@@ -168,8 +173,9 @@ var practiceArea = Vue.component("practice-area",{
     solutionContentExecute(){
       this.solutionContent();
       this.solutioniFrameContent();
-    }
+    },
   }, //End of methods
+
   mounted() {
     // this.solutionContent();
     // this.solutioniFrameContent();
@@ -220,6 +226,8 @@ var app = new Vue({
 
       if (!event.target.className.includes("anchorActiveTag")) event.target.className += "anchorActiveTag";
     },
+
+    //CREATES ALL THE HEADINGS IN THE ASIDE TAG BASED ON THE HEADINGS IN THE MAIN AREA OF PAGE
     headingsFormation(){
       let hList = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
 
@@ -249,8 +257,7 @@ var app = new Vue({
       }
     }
   }, //End of methods
-  computed: {
-  },
+
   beforeMount(){
     this.headingsFormation();
   },

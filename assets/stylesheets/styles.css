@@ -74,6 +74,7 @@ main{
   height: 87vh;
   overflow: auto;
   padding: 10px;
+	background-color: rgb(242, 242, 242);
 }
 
 footer{
@@ -139,7 +140,7 @@ section h6{
 }
 
 section p, section ul{
-  width: 60%;
+  /* width: 60%; */
   margin-bottom: 10px;
 }
 
@@ -224,9 +225,16 @@ code{
 	padding: 1px 4px;
 }
 
+.articleContent{
+	width: 60%;
+	background-color: white;
+	padding: 10px;
+}
+
 .divCodeBlock{
 	background-color: rgb(0, 113, 184);
-	width: 60%;
+	/* width: 60%; */
+	margin-bottom: 3vh;
 }
 
 .divExampleContainer, .divPracticeContainer{

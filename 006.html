@@ -12,7 +12,7 @@
 
 
       <header>
-        <a id="cssLogo" @click="activePage = 'Index'"><i class="fa fa-css3"></i></a>
+        <a id="cssLogo" @click="activePage = 'Introduction'"><i class="fa fa-css3"></i></a>
         <span id="spanHeaderTitle">CSS Tutorial: {{activePage}}</span>
       </header>
 
@@ -73,99 +73,85 @@
         <!-- Introduction -->
         <section id="sectionIntroduction">
           <!-- v-show="activePage === 'Introduction'" -->
-          <h1>Introduction to CSS</h1>
-          This is the index <br>
-          Darker blue is rgb(0, 79, 128) <br>
-          Dark blue is rgb(0, 113, 184) <br>
-          light blue is rgb(42, 171, 222) <br>
-          Gray is rgb(207, 207, 207) <br>
-          White is rgb(255, 255, 255)
+          <article class="articleContent">
+            <h1>Introduction to CSS</h1>
+            This is the index <br>
+            Darker blue is rgb(0, 79, 128) <br>
+            Dark blue is rgb(0, 113, 184) <br>
+            light blue is rgb(42, 171, 222) <br>
+            Gray is rgb(207, 207, 207) <br>
+            White is rgb(255, 255, 255)
 
-          <p>
-            Hello and welcome to the CSS Tutorial. This tutorial works as a point
-            of reference for me but also can be used by whomever thinks it might
-            be useful to his/her knowledge.
-          </p>
-          <p>
-            This is a basic tutorial about CSS and how we can use different css
-            settings to accomplish functionality and a create visibly pleasing
-             and functional content when we are building a web page. You should
-             already have some familiarity with the structure of an html document
-             and how the html tags are nested within each other.
-          </p>
-          <p>
-            As we progress through this tutorial, you will be seeing different
-            examples of css and different techniques. This is by no means an
-            extensive work portraying how CSS works. On the contrary, there are
-            other very good online resources that you can use for that purpose.
-            Yet, this resource is being built step by step, as my own knowledge
-            and understanding grows and new techniques are being incorporated on
-            other projects I am working on.
-          </p>
-          <p>
-            Hence, this work will probaby have pieces of information missing and
-            it might be flawed BUT the language I will try to use will be simple
-            without too many complicated terms and with a lot of practice areas.
-            So let's get started!
-          </p>
-
-
-
-          <h2>Structure of tutorial</h2>
-          <p>
-            This tutorial is broken in different chapters based on the topic you would
-            like to study. Each chapter is constituted by the following core components:
-          </p>
-          <h5>Chapter topic</h5>
-          <p>
-            This is where the particular topic is being discussed along with some
-            generic information.
-          </p>
-          <h5>Properties to learn</h5>
-          <p>
-            There are different properties in CSS that do different things for
-            particular topics. I will try to cover as many different properties
-            as possible. This is where the properties are being registered.
-          </p>
-          <h5>Example</h5>
-          <p>
-            This is where I will be displaying an example of how to use the different
-            properties being taught. You will be able to review the html and css
-            code and also play with it.
-          </p>
-          <h5>Practice</h5>
-          <p>
-            This is where you will be given a task to complete. There is an option
-            where you can toggle between your code and the solution so it is okay
-            if you get stuck since you will be able to get some help if you need to.
-          </p>
+            <p>
+              Hello and welcome to the CSS Tutorial. This tutorial works as a point
+              of reference for me but also can be used by whomever thinks it might
+              be useful to his/her knowledge.
+            </p>
+            <p>
+              This is a basic tutorial about CSS and how we can use different css
+              settings to accomplish functionality and a create visibly pleasing
+              and functional content when we are building a web page. You should
+              already have some familiarity with the structure of an html document
+              and how the html tags are nested within each other.
+            </p>
+            <p>
+              As we progress through this tutorial, you will be seeing different
+              examples of css and different techniques. This is by no means an
+              extensive work portraying how CSS works. On the contrary, there are
+              other very good online resources that you can use for that purpose.
+              Yet, this resource is being built step by step, as my own knowledge
+              and understanding grows and new techniques are being incorporated on
+              other projects I am working on.
+            </p>
+            <p>
+              Hence, this work will probaby have pieces of information missing and
+              it might be flawed BUT the language I will try to use will be simple
+              without too many complicated terms and with a lot of practice areas.
+              So let's get started!
+            </p>
 
 
 
+            <h2>Structure of tutorial</h2>
+            <p>
+              This tutorial is broken in different chapters based on the topic you would
+              like to study. Each chapter is constituted by the following core components:
+            </p>
+            <h5>Chapter topic</h5>
+            <p>
+              This is where the particular topic is being discussed along with some
+              generic information.
+            </p>
+            <h5>Properties to learn</h5>
+            <p>
+              There are different properties in CSS that do different things for
+              particular topics. I will try to cover as many different properties
+              as possible. This is where the properties are being registered.
+            </p>
+            <h5>Example</h5>
+            <p>
+              This is where I will be displaying an example of how to use the different
+              properties being taught. You will be able to review the html and css
+              code and also play with it.
+            </p>
+            <h5>Practice</h5>
+            <p>
+              This is where you will be given a task to complete. There is an option
+              where you can toggle between your code and the solution so it is okay
+              if you get stuck since you will be able to get some help if you need to.
+            </p>
 
 
-          <h2>What is CSS?</h2>
-          <p>
-            CSS stands for Cascading Style Sheets. CSS is a style language sheet that
-            is being used to modify the way an HTML page is being presented. Let's take
-            a random person as an example. This person might wear a coat, a skirt,
-            and a hat one day, and jeans, a t-shirt and glasses the other day. The
-            person is always the same but the way she looks is different based on
-            the clothes she is wearing.
-            Likewise, CSS can give a different look, feel and level of interactivity
-            to the different components of the HTML page, based on the different
-            properties we are modifying to the elements (tags) of the HTML page.
-          </p>
 
 
-
-          <h2>Examples</h2>
-          <p>
-            This tutorial has example areas where snippets of code along with the
-            outcome are being displayed. The example areas allow you to change
-            the content if you would like to experiment. Also, if you wish to revisit
-            the original example after your edits, just click on the "reset" button.
-          </p>
+            <h2>Examples</h2>
+            <p>
+              This tutorial has example areas where snippets of code along with the
+              outcome are being displayed. The example areas allow you to change
+              the content if you would like to experiment. Also, if you wish to revisit
+              the original example after your edits, just click on the "reset" button.
+            </p>
+          </article>
 
 
 
@@ -209,21 +195,23 @@
           </div>
 
 
-          <h2>Practice</h2>
-          <p>
-            The practice area will have some coding problem that you can try to resolve.
-            The things that are asked relate to the learnings of the particular
-            chapter but there may be some components from previous chapters as well. You
-            can have fun working on the challenge. And also, if you do not close the
-            browser window, your work will not be lost, even if you navigate to
-            other chapters of this tutorial.
-          </p>
-          <p>
-            There will be a description of the problem you can try to solve.
-            You can always look at the solution of the problem if you need help.
-            You can revert back to the original version of the problem and continue
-            your work.
-          </p>
+          <article class="articleContent">
+            <h2>Practice</h2>
+            <p>
+              The practice area will have some coding problem that you can try to resolve.
+              The things that are asked relate to the learnings of the particular
+              chapter but there may be some components from previous chapters as well. You
+              can have fun working on the challenge. And also, if you do not close the
+              browser window, your work will not be lost, even if you navigate to
+              other chapters of this tutorial.
+            </p>
+            <p>
+              There will be a description of the problem you can try to solve.
+              You can always look at the solution of the problem if you need help.
+              You can revert back to the original version of the problem and continue
+              your work.
+            </p>
+          </article>
 
           <div class="divPracticeContainer">
             <h4>Practice</h4>
@@ -297,9 +285,39 @@
         <section id="sectionSyntax">
           <h1>CSS Syntax</h2>
             <h5>Chapter Topic</h5>
+            <p>
+              I am covering the way that the basic CSS syntax is structured.
+            </p>
             <h5>Properties to Learn</h5>
+            <p>
+              No properties. This chapter talks about the syntax of the CSS in general.
+            </p>
             <h5>Example</h5>
             <h5>Practice</h5>
+
+
+
+
+
+          <h2>What is CSS?</h2>
+          <p>
+            CSS stands for Cascading Style Sheets. CSS is a style language sheet that
+            is being used to modify the way an HTML page is being presented. Let's take
+            a random person as an example. This person might wear a coat, a skirt,
+            and a hat one day, and jeans, a t-shirt and glasses the other day. The
+            person is always the same but the way she looks is different based on
+            the clothes she is wearing.
+            Likewise, CSS can give a different look, feel and level of interactivity
+            to the different components of the HTML page, based on the different
+            properties we are modifying to the elements (tags) of the HTML page.
+          </p>
+
+
+
+
+
+
+          <h2>Syntax structure</h2>
           <p>
             CSS has a syntax that has some similarities to the way JSON files or
             JavaScript object literals are structured.
@@ -307,39 +325,37 @@
           </p>
             <ul>
               <li>
-                A selector: is the one that points to the HTML element (or elements)
+                <b>A selector:</b>
+                The selector is the one that points to the HTML element (or elements)
                 that you want to style. If this would be stated in plain English,
                 it would read like: <i>I want you to select the <code>h1</code>
                 tags.</i>
               </li>
               <li>
-                Declarations: These are the different properties that state the
+                <b>Declarations:</b>
+                These are the different properties that state the
                 type of styling you want a particular element to have and what the
                 value is. If this would be stated in plain English, it would read
                 something like: <em>I want to select the <code>h1</code>
                 tags.</em> (selector) <em>and I want their <code>color</code> to
-                be <code>green</code></em>.
+                be <code>green</code></em>. --&gt; <code>h1{ color: green; }</code>. <br>
+                Notice how the declaration is siting between two curly braces. All
+                the declarations of a selector are included between two curly braces
+                and they are separated by semi-colons (;).
               </li>
               <li>
-                Property: The property is the entity that states what needs to
-                change (eg: color, positioning, background, display)
+                <b>Property:</b>
+                The property is the entity that states what needs to
+                change (eg: color, positioning, background, display). It is the first
+                part of the declaration, before the colon symbol (:) --&gt;
+                <code>h1{ color: &lt;-- The property is the one to the left; }</code>
               </li>
               <li>
-                Value: The value is the entity that states how the property changes /
-                what the value of the property is. If this would be stated in plain
-                English, it would read something like: <em>I want to select the <code>h1</code>
-                tags.</em> (selector) <em>and I want the following things to happen:</em>
+                <b>Value:</b>
+                The value is the entity that states how the property changes /
+                what the value of the property is. --&gt;
+                <code>h1 { The value is the one to the right --&gt; green; }</code>
               </li>
-              <ul style="width: 100%">
-                <li>
-                  Declaration: I want the - property - <code>color</code> to have a
-                  value <code>green</code>
-                </li>
-                <li>
-                  Declaration: I want the - property - <code>font-size</code> to
-                  have a value of <code>16px</code>.
-                </li>
-              </ul>
             </ul>
             <p>
               In the following example, you can see how the declarations are being
@@ -354,6 +370,64 @@
                 }
               </code>
             </div>
+
+
+            <div class="divExampleContainer">
+              <h4>Example</h4>
+              <p>
+                Description here
+              </p>
+              <example-area class="exampleArea">
+                <span>
+                  p{
+                    color: blue;
+                    /&ast;font-family: verdana;&ast;/
+                    /&ast;font-size: 20px;&ast;/
+                  }
+                </span>
+                <h1>CSS Syntax</h1>
+                <p>
+                  In this section, you can see how the CSS of the paragraphs is
+                  set so that it has a <code>blue</code> color. The <code>font-family</code>
+                  and the <code>font-size</code> are in the CSS script but the formatting
+                  is not visible because they are disabled by the comment.
+                  You can try disable the comments so you can see how the formatting
+                  changes.
+                </p>
+                <p>
+                  You can also go ahead and add additional declarations on the
+                  existing or other selectors.
+                </p>
+              </example-area>
+            </div>
+
+
+            <div class="divPracticeContainer">
+                  <h4>Practice</h4>
+                  <p>
+                    Description here
+                  </p>
+                  <h5>HTML</h5>
+                  <p>
+                    Description here
+                  </p>
+                  <h5>CSS</h5>
+                  <p>
+                    Description here
+                  </p>
+                  </ul>
+
+
+                  <practice-area class="exampleArea">
+                    <span>
+                      CSS goes here
+                    </span>
+                    HTML goes here
+                  </practice-area>
+                </div>
+
+
+
         </section>
 
 
