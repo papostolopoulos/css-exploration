@@ -74,7 +74,7 @@
         <section id="sectionIntroduction">
           <!-- v-show="activePage === 'Introduction'" -->
           <article class="articleContent">
-            <h1>Introduction to CSS</h1>
+            <h1>Introduction</h1>
             This is the index <br>
             Darker blue is rgb(0, 79, 128) <br>
             Dark blue is rgb(0, 113, 184) <br>
@@ -282,8 +282,9 @@
 
 
 
-        <section id="sectionSyntax">
-          <h1>CSS Syntax</h2>
+        <section id="sectionCSSSyntax">
+          <article class="articleContent">
+            <h1>CSS Syntax</h1>
             <h5>Chapter Topic</h5>
             <p>
               I am covering the way that the basic CSS syntax is structured.
@@ -298,31 +299,27 @@
 
 
 
-
-          <h2>What is CSS?</h2>
-          <p>
-            CSS stands for Cascading Style Sheets. CSS is a style language sheet that
-            is being used to modify the way an HTML page is being presented. Let's take
-            a random person as an example. This person might wear a coat, a skirt,
-            and a hat one day, and jeans, a t-shirt and glasses the other day. The
-            person is always the same but the way she looks is different based on
-            the clothes she is wearing.
-            Likewise, CSS can give a different look, feel and level of interactivity
-            to the different components of the HTML page, based on the different
-            properties we are modifying to the elements (tags) of the HTML page.
-          </p>
-
+            <h2>What is CSS?</h2>
+            <p>
+              CSS stands for Cascading Style Sheets. CSS is a style language sheet that
+              is being used to modify the way an HTML page is being presented. Let's take
+              a random person as an example. This person might wear a coat, a skirt,
+              and a hat one day, and jeans, a t-shirt and glasses the other day. The
+              person is always the same but the way she looks is different based on
+              the clothes she is wearing.
+              Likewise, CSS can give a different look, feel and level of interactivity
+              to the different components of the HTML page, based on the different
+              properties we are modifying to the elements (tags) of the HTML page.
+            </p>
 
 
 
-
-
-          <h2>Syntax structure</h2>
-          <p>
-            CSS has a syntax that has some similarities to the way JSON files or
-            JavaScript object literals are structured.
-            The main components of CSS are the following:
-          </p>
+            <h2>Syntax structure</h2>
+            <p>
+              CSS has a syntax that has some similarities to the way JSON files or
+              JavaScript object literals are structured.
+              The main components of CSS are the following:
+            </p>
             <ul>
               <li>
                 <b>A selector:</b>
@@ -370,39 +367,39 @@
                 }
               </code>
             </div>
+          </article>
 
 
-            <div class="divExampleContainer">
-              <h4>Example</h4>
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                p{
+                  color: blue;
+                  /&ast;font-family: verdana;&ast;/
+                  /&ast;font-size: 20px;&ast;/
+                }
+              </span>
+              <h1>CSS Syntax</h1>
               <p>
-                Description here
+                In this section, you can see how the CSS of the paragraphs is
+                set so that it has a <code>blue</code> color. The <code>font-family</code>
+                and the <code>font-size</code> are in the CSS script but the formatting
+                is not visible because they are disabled by the comment.
+                You can try disable the comments so you can see how the formatting
+                changes.
               </p>
-              <example-area class="exampleArea">
-                <span>
-                  p{
-                    color: blue;
-                    /&ast;font-family: verdana;&ast;/
-                    /&ast;font-size: 20px;&ast;/
-                  }
-                </span>
-                <h1>CSS Syntax</h1>
-                <p>
-                  In this section, you can see how the CSS of the paragraphs is
-                  set so that it has a <code>blue</code> color. The <code>font-family</code>
-                  and the <code>font-size</code> are in the CSS script but the formatting
-                  is not visible because they are disabled by the comment.
-                  You can try disable the comments so you can see how the formatting
-                  changes.
-                </p>
-                <p>
-                  You can also go ahead and add additional declarations on the
-                  existing or other selectors.
-                </p>
-              </example-area>
-            </div>
+              <p>
+                You can also go ahead and add additional declarations on the
+                existing or other selectors.
+              </p>
+            </example-area>
+          </div>
 
 
-            <div class="divPracticeContainer">
+          <div class="divPracticeContainer">
                   <h4>Practice</h4>
                   <p>
                     Description here
@@ -425,10 +422,8 @@
                     HTML goes here
                   </practice-area>
                 </div>
-
-
-
         </section>
+        <!-- END OF SECTION SYNTAX -->
 
 
 
@@ -443,6 +438,7 @@
         <!-- RESET -->
         <section id="sectionReset">
           <!-- v-show="activePage === 'Reset'" -->
+          
           <h1>Reset</h1>
           <h5>Chapter Topic</h5>
           <h5>Properties to Learn</h5>
@@ -669,7 +665,7 @@
 
 
         <!-- 004 TYPOGRAPHY -->
-        <section id="section-004-typography">
+        <section id="sectionTypography">
           <!-- v-show="activePage === 'Typography'" -->
           <h1>Typography</h1>
           <p>

@@ -195,37 +195,30 @@ var app = new Vue({
     activeSection: "",
   }, //End of data
   methods: {
+
+    //UPDATES THE TAGS DISPLAY AND DISPLAYS THE ONE THAT IS CURRENTLY CLICKED FROM THE <ASIDE> LINKS
     activeTag(event){
-      //KEEP THIS LINE IN CASE YOU DON'T WANT TO DO THE CHANGE THROUGH THE HTML
-      //ON THE @CLICK EVENT
-      // this.activePage = event.target.innerHTML.trim();
 
-      // console.log("location hash:", location.hash);
-      // console.log("event target hash (what I want it to change it to):", event.target.hash);
-      // console.log("window.location.hash:", window.location.hash);
-      // window.location.hash = "";
-      // top.location.hash = "";
-      // window.location.href = window.location.href.replace(/#.*/, "") + event.target.hash;
-      // window.location.href = window.location.origin+window.location.pathname+event.target.hash;
-      // window.location.assign(document.location.origin+document.location.pathname+event.target.hash);
-      // console.log("-------------------");
-      // console.log("location hash:", location.hash);
-      // console.log("event target hash (what I want it to change it to):", event.target.hash);
-      // console.log("window.location.hash:", window.location.hash);
-      // top.location.assign(top.location.origin + top.location.pathname+event.target.hash);
-      // console.log(window.location.href);
+      //Updates the display of all sections. Makes the active section visible and the others not
+      let sectionActive = "section" + event.target.innerHTML.replace(/[^A-z]/g, "");
+      let sections = document.querySelectorAll("section");
+      for (let i = 0; i < sections.length; i++) {
+        sectionActive === sections[i].id ? sections[i].style.display = "block" : sections[i].style.display = "none";
+      }
 
-      //Give the bolding effect to the clicked element of the <aside> tag.
-      console.log(event.target);
-      console.log(event.target.parentElement);
+      //Updates the styling of the aside tags h1 headings to bold
       let list = event.path[3].children;
+      console.log(event.path[3].children);
+      console.log(document.querySelectorAll("aside h1"));
       for (var i = 0; i < list.length; i++) {
         var anchorClass = list[i].children[0].children[0].className;
         list[i].children[0].children[0].className = anchorClass.replace(/\s?anchorActiveTag/, "");
       }
 
       if (!event.target.className.includes("anchorActiveTag")) event.target.className += "anchorActiveTag";
-    },
+
+    }, //End of activeTag method
+
 
     //CREATES ALL THE HEADINGS IN THE ASIDE TAG BASED ON THE HEADINGS IN THE MAIN AREA OF PAGE
     headingsFormation(){
