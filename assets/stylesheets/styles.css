@@ -149,9 +149,9 @@ section ul{
 }
 
 section ul li::before{
-	content: "\21d2";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: rgb(0, 113, 184); /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
+	content: "\21d2";  /* \2022 is the CSS Code/unicode for a bullet */
+  color: rgb(0, 113, 184);
+  font-weight: bold;
   display: inline-block; /* Needed to add space between the bullet and the text */
   width: 2vw; /* Also needed for space (tweak if needed) */
   margin-left: -1vw; /* Also needed for space (tweak if needed) */
