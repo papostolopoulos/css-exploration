@@ -201,7 +201,7 @@ var app = new Vue({
     activeTag(event){
 
       //Updates the display of all sections. Makes the active section visible and the others not
-      let sectionActive = "section" + this.activePage.replace(/[^A-z]/g, "");
+      let sectionActive = "section" + this.modifyActivePage;
       let sections = document.querySelectorAll("section");
       for (let i = 0; i < sections.length; i++) {
         sectionActive === sections[i].id ? sections[i].style.display = "block" : sections[i].style.display = "none";
@@ -209,37 +209,32 @@ var app = new Vue({
 
 
       //Updates the styling of the aside tags h1 headings to bold
-      //this.anchorActive = "anchor" + this.activePage.replace(/[^A-z]/g, "");
-      let asideAnchors = document.querySelectorAll("aside a")
-      console.log(document.querySelectorAll("aside a"));
-      console.log(event);
+      let asideAnchors = document.querySelectorAll("aside a");
+      let starter = -Infinity;
 
-      /*You have to see how you can iterate through the sibling list elements
-      up until you find the element that is the new h1 tag. The ones before the h1
-      are the h2, h3 that should be visible. Everything else should be invisible.*/
-      for (var i = 0; i < asideAnchors.length; i++) {
-        //If the parent is h1, then remove anchorInactiveTag
-        //Else if otherwise, add anchorInactiveTag
-        var anchorClass = asideAnchors[i].className;
-        asideAnchors[i].className = anchorClass.replace(/\s?anchorActiveTag/, "");
+      for (let i = 0; i < asideAnchors.length; i++) {
+
+        //Remove the bolding from the anchor that has a parent that is h1
+        asideAnchors[i].className = asideAnchors[i].className.replace(/\s?anchorActiveTag/, "");
+
+        //Remove all the classes from the list elements
+        asideAnchors[i].parentNode.parentNode.className = asideAnchors[i].parentNode.parentNode.className.replace(/\s?anchor(Active|Inactive)(Tag|Heading)/g, "");
+
+        //Hide all the <li> elements that do not nest an h1
+        if (asideAnchors[i].parentNode.localName !== "h1") asideAnchors[i].parentNode.parentNode.className += " anchorInactiveHeading";
+
+        //For starting the while loop at the position right after the h1 that represents the displayed section
+        if (asideAnchors[i].className.includes("anchor" + this.modifyActivePage)) starter = i + 1;
       }
-      console.log(this.activePage);
-      console.log("activeclick:", document.querySelector("a.anchor" + this.activePage.replace(/[^A-z]/, "")).className);
-      document.querySelector("a.anchor" + this.activePage.replace(/[^A-z]/, "")).className += " anchorActiveTag";
-      // if (!event.target.className.includes("anchorActiveTag")) event.target.className += " anchorActiveTag";
 
+      //That is for h2 - h3 aside headings to be visible
+      while(asideAnchors[starter].parentNode.localName !== "h1"){
+        asideAnchors[starter].parentNode.parentNode.className = "anchorActiveHeading";
+        starter ++;
+      }
 
-      //YOU NEED TO ACTIVATE THIS
-      // for (let i = asideAnchors.indexOf("a." + THE ACTIVE TAG NAME HERE + The name of the class tag?) + 1; i < asideAnchors.length; i++) {
-      // 	if (asideAnchors[i].length == 1) {
-      // 		console.log(i, headingsArr[i]);
-      // 	}
-      // 	else {
-      // 		break;
-      // 	}
-      // }
-
-
+      //Give to the (h1 --> anchor) a class that makes it bold
+      document.querySelector("a.anchor" + this.modifyActivePage).className += " anchorActiveTag";
     }, //End of activeTag method
 
 
@@ -277,10 +272,17 @@ var app = new Vue({
     } //End of makeId method
   }, //End of methods
 
+  computed: {
+    modifyActivePage() {
+      return this.activePage.replace(/[^A-z]/g, "");
+    }
+  },
+
   beforeMount(){
     this.headingsFormation();
   },
   mounted(){
     this.makeId();
+    this.activeTag();
   }
 });

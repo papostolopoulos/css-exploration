@@ -173,7 +173,6 @@ aside h3,
 aside h4,
 aside h5 {
   font-family: arial;
-  /* color: rgb(42, 171, 222); */
 }
 
 aside h1{
@@ -183,22 +182,22 @@ aside h1{
 }
 
 aside h2{
-  font-size: 24px;
-  line-height: 26px;
+  font-size: 22px;
+  line-height: 24px;
   margin: 0;
-  text-indent: 10px;
+  text-indent: 15px;
 }
 
 aside h3{
-  font-size: 20px;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 20px;
   margin: 0;
-  text-indent: 20px;
+  text-indent: 30px;
 }
 
 aside h4{
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 18px;
   margin: 0;
   text-indent: 30px;
 }
@@ -251,7 +250,11 @@ code{
   font-weight: bold;
 }
 
-.anchorInactiveTag{
+.anchorActiveHeading{
+	display: block;
+}
+
+.anchorInactiveHeading{
 	display: none;
 }
 
