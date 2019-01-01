@@ -191,6 +191,7 @@ var app = new Vue({
   data: {
     chapters: [],
     activePage: "Introduction",
+    //anchorActive: "anchorIntroduction", Not needed probably - test page to confirm
     indexPage: "",
     activeSection: "",
   }, //End of data
@@ -200,22 +201,44 @@ var app = new Vue({
     activeTag(event){
 
       //Updates the display of all sections. Makes the active section visible and the others not
-      let sectionActive = "section" + event.target.innerHTML.replace(/[^A-z]/g, "");
+      let sectionActive = "section" + this.activePage.replace(/[^A-z]/g, "");
       let sections = document.querySelectorAll("section");
       for (let i = 0; i < sections.length; i++) {
         sectionActive === sections[i].id ? sections[i].style.display = "block" : sections[i].style.display = "none";
       }
 
-      //Updates the styling of the aside tags h1 headings to bold
-      let list = event.path[3].children;
-      console.log(event.path[3].children);
-      console.log(document.querySelectorAll("aside h1"));
-      for (var i = 0; i < list.length; i++) {
-        var anchorClass = list[i].children[0].children[0].className;
-        list[i].children[0].children[0].className = anchorClass.replace(/\s?anchorActiveTag/, "");
-      }
 
-      if (!event.target.className.includes("anchorActiveTag")) event.target.className += "anchorActiveTag";
+      //Updates the styling of the aside tags h1 headings to bold
+      //this.anchorActive = "anchor" + this.activePage.replace(/[^A-z]/g, "");
+      let asideAnchors = document.querySelectorAll("aside a")
+      console.log(document.querySelectorAll("aside a"));
+      console.log(event);
+
+      /*You have to see how you can iterate through the sibling list elements
+      up until you find the element that is the new h1 tag. The ones before the h1
+      are the h2, h3 that should be visible. Everything else should be invisible.*/
+      for (var i = 0; i < asideAnchors.length; i++) {
+        //If the parent is h1, then remove anchorInactiveTag
+        //Else if otherwise, add anchorInactiveTag
+        var anchorClass = asideAnchors[i].className;
+        asideAnchors[i].className = anchorClass.replace(/\s?anchorActiveTag/, "");
+      }
+      console.log(this.activePage);
+      console.log("activeclick:", document.querySelector("a.anchor" + this.activePage.replace(/[^A-z]/, "")).className);
+      document.querySelector("a.anchor" + this.activePage.replace(/[^A-z]/, "")).className += " anchorActiveTag";
+      // if (!event.target.className.includes("anchorActiveTag")) event.target.className += " anchorActiveTag";
+
+
+      //YOU NEED TO ACTIVATE THIS
+      // for (let i = asideAnchors.indexOf("a." + THE ACTIVE TAG NAME HERE + The name of the class tag?) + 1; i < asideAnchors.length; i++) {
+      // 	if (asideAnchors[i].length == 1) {
+      // 		console.log(i, headingsArr[i]);
+      // 	}
+      // 	else {
+      // 		break;
+      // 	}
+      // }
+
 
     }, //End of activeTag method
 
@@ -238,7 +261,10 @@ var app = new Vue({
           }
         }
       });
-    },
+    }, //End of headingsFormation method
+
+
+    //CREATES IDS FOR ALL THE HEADING TAGS THAT DO NOT BELONG IN THE ASIDE TAG
     makeId(){
       let hList = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
 
@@ -248,7 +274,7 @@ var app = new Vue({
         if (hList[i].parentNode.localName !== "li")
           hList[i].id = hList[i].localName + "_" + hList[i].innerText.replace(/\s/g, "-");
       }
-    }
+    } //End of makeId method
   }, //End of methods
 
   beforeMount(){

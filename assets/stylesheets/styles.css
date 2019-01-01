@@ -242,6 +242,10 @@ code{
 	border: 2px solid rgb(0, 79, 128);
 }
 
+.divExampleContainer{
+	margin-bottom: 3vh;
+}
+
 .anchorActiveTag{
   color: rgb(0, 79, 128);
   font-weight: bold;

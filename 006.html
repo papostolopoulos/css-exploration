@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>A CSS Tutorial</title>
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
+    <script type="text/javascript" src="assets/javascript/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="assets/stylesheets/styles.css">
   </head>
@@ -12,7 +13,7 @@
 
 
       <header>
-        <a id="cssLogo" @click="activePage = 'Introduction'"><i class="fa fa-css3"></i></a>
+        <a id="cssLogo" @click="(activePage = 'Introduction') && (activeTag($event))"><i class="fa fa-css3"></i></a>
         <span id="spanHeaderTitle">CSS Tutorial: {{activePage}}</span>
       </header>
 
@@ -28,6 +29,7 @@
               <h1>
                 <a @click="(activePage = chapter.text) && (activeTag($event))"
                 :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')"
+                :class="'anchor' + chapter.text.replace(/[^A-z]/g, '')"
                 >
                   {{chapter.text}}
                 </a>
@@ -185,7 +187,7 @@
               </p>
               <p>
                 Also, do you think you can change the color of the h1 tag from <code>red</code>
-                to <code>rgb(0, 113, 184)</code>?
+                to <code>rgb(0, 113, 184)</code>
               </p>
               <p>
                 If you wish to, you can click on the "reset" button to view
@@ -229,6 +231,7 @@
               </li>
               <li>
                 Wrap the word "great" inside a <code>b</code> tag.
+              </li>
             </ul>
             <h5>CSS</h5>
             <ul>
@@ -251,6 +254,7 @@
               <li>
                 Give to the <code>b</code> tag the property of <code>font-variant</code>
                 with the value of "small-caps"
+              </li>
             </ul>
 
 
@@ -320,53 +324,38 @@
               JavaScript object literals are structured.
               The main components of CSS are the following:
             </p>
-            <ul>
-              <li>
-                <b>A selector:</b>
-                The selector is the one that points to the HTML element (or elements)
-                that you want to style. If this would be stated in plain English,
-                it would read like: <i>I want you to select the <code>h1</code>
-                tags.</i>
-              </li>
-              <li>
-                <b>Declarations:</b>
-                These are the different properties that state the
-                type of styling you want a particular element to have and what the
-                value is. If this would be stated in plain English, it would read
-                something like: <em>I want to select the <code>h1</code>
-                tags.</em> (selector) <em>and I want their <code>color</code> to
-                be <code>green</code></em>. --&gt; <code>h1{ color: green; }</code>. <br>
-                Notice how the declaration is siting between two curly braces. All
-                the declarations of a selector are included between two curly braces
-                and they are separated by semi-colons (;).
-              </li>
-              <li>
-                <b>Property:</b>
-                The property is the entity that states what needs to
-                change (eg: color, positioning, background, display). It is the first
-                part of the declaration, before the colon symbol (:) --&gt;
-                <code>h1{ color: &lt;-- The property is the one to the left; }</code>
-              </li>
-              <li>
-                <b>Value:</b>
-                The value is the entity that states how the property changes /
-                what the value of the property is. --&gt;
-                <code>h1 { The value is the one to the right --&gt; green; }</code>
-              </li>
-            </ul>
+            <h3>Selector</h3>
             <p>
-              In the following example, you can see how the declarations are being
-              entered in a new CSS rule. In this example, all the <code>&lt;p&gt;</code>
-              nodes have a font color of green and the font size is 16 pixels.
+              The selector is the one that points to the HTML element (or elements)
+              that you want to style. If this would be stated in plain English,
+              it would read like: <i>I want you to select the <code>h1</code>
+              tags.</i>
             </p>
-            <div class="divCodeBlock">
-              <code>
-                p {
-                  color: green;
-                  font-size: 16px;
-                }
-              </code>
-            </div>
+            <h3>Declarations</h3>
+            <p>
+              These are the different properties that state the
+              type of styling you want a particular element to have and what the
+              value is. If this would be stated in plain English, it would read
+              something like: <em>I want to select the <code>h1</code>
+              tags.</em> (selector) <em>and I want their <code>color</code> to
+              be <code>green</code></em>. --&gt; <code>h1{ color: green; }</code>. <br>
+              Notice how the declaration is siting between two curly braces. All
+              the declarations of a selector are included between two curly braces
+              and they are separated by semi-colons (;).
+            </p>
+            <h3>Property</h3>
+            <p>
+              The property is the entity that states what needs to
+              change (eg: color, positioning, background, display). It is the first
+              part of the declaration, before the colon symbol (:) --&gt;
+              <code>h1{ color: &lt;-- The property is the one to the left; }</code>
+            </p>
+            <h3>Value</h3>
+            <p>
+              The value is the entity that states how the property changes /
+              what the value of the property is. --&gt;
+              <code>h1 { The value is the one to the right --&gt; green; }</code>
+            </p>
           </article>
 
 
@@ -385,16 +374,23 @@
               <h1>CSS Syntax</h1>
               <p>
                 In this section, you can see how the CSS of the paragraphs is
-                set so that it has a <code>blue</code> color. The <code>font-family</code>
-                and the <code>font-size</code> are in the CSS script but the formatting
-                is not visible because they are disabled by the comment.
-                You can try disable the comments so you can see how the formatting
-                changes.
+                set so that it has a <code>blue</code> color.
               </p>
               <p>
-                You can also go ahead and add additional declarations on the
-                existing or other selectors.
+                The <code>font-family</code>
+                and the <code>font-size</code> are in the CSS script but the formatting
+                is not visible because they are disabled by the comment.
               </p>
+              <ul>
+                <li>
+                  You can try disable the comments so you can see how the formatting
+                  changes.
+                </li>
+                <li>
+                  You can also go ahead and add additional declarations on the
+                  the <code>p</code> or other selectors.
+                </li>
+              </ul>
             </example-area>
           </div>
 
@@ -412,14 +408,54 @@
                   <p>
                     Description here
                   </p>
-                  </ul>
 
 
                   <practice-area class="exampleArea">
                     <span>
-                      CSS goes here
+                      body{
+                        font-family: arial;
+                      }
+
+                      h1{
+                        font-size: 28px;
+                        color: blue;
+                      }
+
+                      h2{
+                        color: brown;
+                      }
+
+                      b{
+                        color: darkblue;
+                      }
                     </span>
-                    HTML goes here
+                    <h1>
+                      CSS Syntax
+                    </h1>
+                    <h2>Syntax Elements</h2>
+                    <p>The CSS syntax elements are:</p>
+                    <ol>
+                      <li>Selector</li>
+                      <li>Declarations</li>
+                      <li>Property</li>
+                      <li>Value</li>
+                    </ol>
+
+                    <h2>Syntax elements distinction</h2>
+                    <ul>
+                      <li></li>
+                      <li>All the declarations for a selector are included within
+                      curly braces (<b>{}</b>)</li>
+                      <li>Each declaration is separated by a <b>semicolon</b>.</li>
+                      <li>Declaration properties are separated by its values with a <b>colon</b>.</li>
+                    </ul>
+
+                    <h2>CSS comments</h2>
+                    <p>
+                      The comments in CSS can be entered with slashes and asterisks.
+                      You can open a comment with a slash and an asterisk (<b>/*</b>)
+                      and you can close it with an asterisk and a slash (<b>*/</b>).
+                    </p> <br><br><br>
                   </practice-area>
                 </div>
         </section>
@@ -438,15 +474,18 @@
         <!-- RESET -->
         <section id="sectionReset">
           <!-- v-show="activePage === 'Reset'" -->
-          
-          <h1>Reset</h1>
-          <h5>Chapter Topic</h5>
-          <h5>Properties to Learn</h5>
-          <h5>Example</h5>
-          <h5>Practice</h5>
-          <p>
-            Paragraph
-          </p>
+
+          <article class="articleContent">
+            <h1>Reset</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+            <p>
+              Paragraph
+            </p>
+          </article>
+
 
           <div class="divExampleContainer">
             <h4>Example</h4>
@@ -475,7 +514,6 @@
             <p>
               Description here
             </p>
-            </ul>
 
 
             <practice-area class="exampleArea">
@@ -486,6 +524,7 @@
             </practice-area>
           </div>
         </section>
+        <!-- END OF SECTION RESET -->
 
 
 
@@ -499,10 +538,17 @@
         <!-- 001 SPECIFICITY -->
         <section id="sectionSpecificity">
           <!-- v-show="activePage === 'Specificity'" -->
-          <h1>Specificity</h1>
-          <p>
-            Paragraph
-          </p>
+          <article class="articleContent">
+            <h1>Specificity</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+
+            <p>
+              Paragraph
+            </p>
+          </article>
 
           <div class="divExampleContainer">
             <h4>Example</h4>
@@ -531,7 +577,7 @@
             <p>
               Description here
             </p>
-            </ul>
+
 
 
             <practice-area class="exampleArea">
@@ -542,6 +588,7 @@
             </practice-area>
           </div>
         </section>
+        <!-- END OF SECTION SPECIFICITY -->
 
 
 
@@ -555,10 +602,17 @@
         <!-- 002 BOX MODEL -->
         <section id="sectionBoxModel">
           <!-- v-show="activePage === 'Box Model'" -->
-          <h1>Box Model</h1>
-          <p>
-            Paragraph
-          </p>
+          <article class="articleContent">
+            <h1>Box Model</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+
+            <p>
+              Paragraph
+            </p>
+          </article>
 
           <div class="divExampleContainer">
             <h4>Example</h4>
@@ -587,7 +641,7 @@
             <p>
               Description here
             </p>
-            </ul>
+
 
 
             <practice-area class="exampleArea">
@@ -598,6 +652,7 @@
             </practice-area>
           </div>
         </section>
+        <!-- END OF SECTION BOX MODEL -->
 
 
 
@@ -611,10 +666,17 @@
         <!-- 003 POSITIONING -->
         <section id="sectionPositioning">
           <!-- v-show="activePage === 'Positioning'" -->
-          <h1>Positioning</h1>
-          <p>
-            Paragraph
-          </p>
+          <article class="articleContent">
+            <h1>Positioning</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+
+            <p>
+              Paragraph
+            </p>
+          </article>
 
           <div class="divExampleContainer">
             <h4>Example</h4>
@@ -643,7 +705,7 @@
             <p>
               Description here
             </p>
-            </ul>
+
 
 
             <practice-area class="exampleArea">
@@ -654,6 +716,7 @@
             </practice-area>
           </div>
         </section>
+        <!-- END OF SECTION POSITIONING -->
 
 
 
@@ -667,10 +730,17 @@
         <!-- 004 TYPOGRAPHY -->
         <section id="sectionTypography">
           <!-- v-show="activePage === 'Typography'" -->
-          <h1>Typography</h1>
-          <p>
-            Paragraph
-          </p>
+          <article class="articleContent">
+            <h1>Typography</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+
+            <p>
+              Paragraph
+            </p>
+          </article>
 
           <div class="divExampleContainer">
             <h4>Example</h4>
@@ -699,7 +769,7 @@
             <p>
               Description here
             </p>
-            </ul>
+
 
 
             <practice-area class="exampleArea">
@@ -710,6 +780,7 @@
             </practice-area>
           </div>
         </section>
+        <!-- END OF SECTION TYPOGRAPHY -->
 
 
 
@@ -723,10 +794,17 @@
         <!-- 005 BACKGROUNDS -->
         <section id="sectionBackgrounds">
           <!-- v-show="activePage === 'Backgrounds'" -->
-          <h1>Backgrounds</h1>
-          <p>
-            Paragraph
-          </p>
+          <article class="articleContent">
+            <h1>Backgrounds</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+
+            <p>
+              Paragraph
+            </p>
+          </article>
 
           <div class="divExampleContainer">
             <h4>Example</h4>
@@ -755,7 +833,7 @@
             <p>
               Description here
             </p>
-            </ul>
+
 
 
             <practice-area class="exampleArea">
@@ -766,6 +844,7 @@
             </practice-area>
           </div>
         </section>
+        <!-- END OF SECTION BACKGROUNDS -->
 
 
 
@@ -778,10 +857,17 @@
         <!-- 006 TRANSFORMS -->
         <section id="sectionTransforms" >
           <!-- v-show="activePage === 'Transforms'" -->
-          <h1>Transforms</h1>
-          <p>
-            Paragraph
-          </p>
+          <article class="articleContent">
+            <h1>Transforms</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+
+            <p>
+              Paragraph
+            </p>
+          </article>
 
           <div class="divExampleContainer">
             <h4>Example</h4>
@@ -810,7 +896,7 @@
             <p>
               Description here
             </p>
-            </ul>
+
 
 
             <practice-area class="exampleArea">
@@ -821,6 +907,7 @@
             </practice-area>
           </div>
         </section>
+        <!-- END OF SECTION TRANSFORMS -->
 
 
       </main>
