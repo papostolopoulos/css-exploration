@@ -254,11 +254,10 @@ var app = new Vue({
           if (!el.parentElement.className.includes("exampleArea")) {
             newHeading.heading = el.localName;
             newHeading.text = el.innerText;
-            if (el.localName === "h1"){
-              sectionName = el.innerText.replace(/\s/g, "");
-              console.log("Inside", sectionName);
-            }
+
+            if (el.localName === "h1") sectionName = el.innerText.replace(/\s/g, "");
             newHeading.sectionName = sectionName;
+
             this.chapters.push(newHeading);
           }
         }
