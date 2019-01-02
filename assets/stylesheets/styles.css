@@ -157,6 +157,9 @@ section ul li::before{
   margin-left: -1vw; /* Also needed for space (tweak if needed) */
 }
 
+section ol{
+	padding-left: 2vw;
+}
 
 b{
 	font-weight: bold;
@@ -188,6 +191,10 @@ aside h2{
   text-indent: 15px;
 }
 
+aside h2:focus{
+	font-weight: bold;
+}
+
 aside h3{
   font-size: 18px;
   line-height: 20px;
@@ -199,7 +206,7 @@ aside h4{
   font-size: 16px;
   line-height: 18px;
   margin: 0;
-  text-indent: 30px;
+  text-indent: 45px;
 }
 
 aside a{
@@ -337,14 +344,4 @@ button:active{
   width: 100%;
   height: 100%;
 	background-color: white;
-}
-
-
-/* This is probably going to be used for the reset section inside the content */
-.sectionReset {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font: inherit;
-	vertical-align: baseline;
 }

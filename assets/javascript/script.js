@@ -191,20 +191,22 @@ var app = new Vue({
   data: {
     chapters: [],
     activePage: "Introduction",
-    //anchorActive: "anchorIntroduction", Not needed probably - test page to confirm
     indexPage: "",
     activeSection: "",
   }, //End of data
   methods: {
 
-    //UPDATES THE TAGS DISPLAY AND DISPLAYS THE ONE THAT IS CURRENTLY CLICKED FROM THE <ASIDE> LINKS
+    //UPDATES THE DISPLAY OF THE <SECTION> ELEMENTS - DISPLAYS THE ONE THAT IS CURRENTLY CLICKED FROM THE <ASIDE> LINKS
+    //CHANGES THE FORMAT / DISPLAY OF THE HEADINGS IN THE <ASIDE> TAG
     activeTag(event){
 
       //Updates the display of all sections. Makes the active section visible and the others not
       let sectionActive = "section" + this.modifyActivePage;
       let sections = document.querySelectorAll("section");
       for (let i = 0; i < sections.length; i++) {
-        sectionActive === sections[i].id ? sections[i].style.display = "block" : sections[i].style.display = "none";
+        sectionActive === sections[i].id ?
+        sections[i].style.display = "block" :
+        sections[i].style.display = "none";
       }
 
 
@@ -241,9 +243,9 @@ var app = new Vue({
     //CREATES ALL THE HEADINGS IN THE ASIDE TAG BASED ON THE HEADINGS IN THE MAIN AREA OF PAGE
     headingsFormation(){
       let hList = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+      let sectionName = "Introduction"
 
       hList.forEach((el, idx)=>{
-        // console.log("innerText", el.innerText);
         let newHeading = {};
 
         //If statement so that the headings in the <aside> tag are disregarded OR
@@ -252,6 +254,11 @@ var app = new Vue({
           if (!el.parentElement.className.includes("exampleArea")) {
             newHeading.heading = el.localName;
             newHeading.text = el.innerText;
+            if (el.localName === "h1"){
+              sectionName = el.innerText.replace(/\s/g, "");
+              console.log("Inside", sectionName);
+            }
+            newHeading.sectionName = sectionName;
             this.chapters.push(newHeading);
           }
         }
@@ -266,8 +273,17 @@ var app = new Vue({
       for(let i = 0; i < hList.length; i++){
         if (hList[i].parentNode.className === "spanSolutionArea") continue;
 
-        if (hList[i].parentNode.localName !== "li")
-          hList[i].id = hList[i].localName + "_" + hList[i].innerText.replace(/\s/g, "-");
+        if (hList[i].parentNode.localName !== "li"){
+          if (hList[i].parentNode.className === "divExampleContainer" || hList[i].parentNode.className === "divPracticeContainer") {
+            hList[i].id =
+            hList[i].localName + "_" +
+            hList[i].innerText.replace(/\s/g, "-") +
+            "(" + hList[i].parentNode.parentNode.id + ")";
+          }
+          else {
+            hList[i].id = hList[i].localName + "_" + hList[i].innerText.replace(/\s/g, "-");
+          }
+        }
       }
     } //End of makeId method
   }, //End of methods

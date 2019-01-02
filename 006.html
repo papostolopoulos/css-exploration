@@ -50,14 +50,14 @@
                 </a>
               </h3>
             </li>
-            <!-- <li v-else-if="chapter.heading === 'h4'">
+            <li v-else-if="chapter.heading === 'h4'">
               <h4>
-                <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
+                <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-') + '(section' + chapter.sectionName + ')'">
                   {{chapter.text}}
                 </a>
               </h4>
             </li>
-            <li v-else-if="chapter.heading === 'h5'">
+            <!-- <li v-else-if="chapter.heading === 'h5'">
               <h5>
                 <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
                   {{chapter.text}}
@@ -198,7 +198,7 @@
 
 
           <article class="articleContent">
-            <h2>Practice</h2>
+            <h2>Practices</h2>
             <p>
               The practice area will have some coding problem that you can try to resolve.
               The things that are asked relate to the learnings of the particular
@@ -295,10 +295,24 @@
             </p>
             <h5>Properties to Learn</h5>
             <p>
-              No properties. This chapter talks about the syntax of the CSS in general.
+              <p>
+                No specific properties being taught.
+                This chapter talks about the syntax of the CSS in general.
+              </p>
             </p>
             <h5>Example</h5>
+            <p>
+              I am displaying how the CSS syntax is affecting the view of a page.
+              I am also including some comments that display how some of the CSS is
+              disabled.
+            </p>
             <h5>Practice</h5>
+            <p>
+              You will need to write some things that confirm you understand how the
+              CSS syntax works and what the elements are. Also you will need to describe
+              the different distinction marks that separate the different CSS elements
+              as well as how the comments are formed.
+            </p>
 
 
 
@@ -397,16 +411,46 @@
 
           <div class="divPracticeContainer">
                   <h4>Practice</h4>
-                  <p>
-                    Description here
-                  </p>
                   <h5>HTML</h5>
-                  <p>
-                    Description here
-                  </p>
+                  <ol>
+                    <li>
+                      Create an ordered list with all the CSS syntax elements
+                    </li>
+                    <li>
+                      Describe all the different distinction marks (collons, semicolons etc)
+                      and how they are used in CSS.
+                    </li>
+                    <li>
+                      Write a small paragraph about the comments and how they are formed.
+                    </li>
+                    <li>
+                      Each of the above should have an <code>h2</code> tag as a title.
+                    </li>
+                    <li>
+                      The whole document should have an <code>h1</code> tag that will
+                      serve as the title.
+                    </li>
+                  </ol>
                   <h5>CSS</h5>
+                  <ol>
+                    <li>
+                      All the elements should be typed in Arial font family.
+                    </li>
+                    <li>
+                      Give the following font color to the elements:
+                      <ul>
+                        <li>h1: blue</li>
+                        <li>h2: brown</li>
+                        <li>b: dark blue</li>
+                      </ul>
+                    </li>
+                    <li>The h1 should have a size of 28px</li>
+                  </ol>
                   <p>
-                    Description here
+                    Remember that you can always toggle between the solution and
+                    your edits to see how close you are to the final result. If
+                    you are very comfortable with the syntax, you can always add
+                    more things to the CSS. Enjoy!
                   </p>
 
 
