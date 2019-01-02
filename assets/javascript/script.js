@@ -240,7 +240,9 @@ var app = new Vue({
     }, //End of activeTag method
 
 
-    //CREATES ALL THE HEADINGS IN THE ASIDE TAG BASED ON THE HEADINGS IN THE MAIN AREA OF PAGE
+    //CREATES ALL THE "HEADINGS" OBJECT ELEMENTS FOR THE "CHAPTERS" DATA PROPERTY.
+    //THEN THE DATA IN THE "CHAPTERS" PROPERTY ARE USED FOR THE FORMATION OF THE
+    //HEADINGS IN THE ASIDE TAG
     headingsFormation(){
       let hList = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
       let sectionName = "Introduction"
