@@ -1,124 +1,978 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Galvanize CSS - Welcome</title>
-</head>
-<body>
-  <aside class="asideClass" id="asideId" >
-    <header class="headerClass" id="headerId">
-      <div id="logoBurger">
-        <div id="logoDiv">
-          <a href="index.html"><i class="fa fa-css3"></i></a>
-        </div>
-      </div>
-      <nav id="navId">
-        <div id="burger"><i class="fa fa-bars" aria-hidden="true"></i></div>
-        <ol class="navOlClass" id="menuBarUl" start="0">
-          <li>
-            <a href="000-reset.html">Reset</a>
-            </li>
-          <li>
-            <a href="001-specificity.html">Specificity</a>
-            </li>
-          <li>
-            <a href="002-box-model.html">Box Model</a>
-            </li>
-          <li>
-            <a href="003-positioning.html">Positioning</a>
-            </li>
-          <li>
-            <a href="004-typography.html">Typography</a>
-            </li>
-          <li>
-            <a href="005-backgrounds.html">Backgrounds</a>
-            </li>
-            <li>
-              <a href="006-responsive_design.html">Responsive Design</a>
-            </li>
-        </ol>
-      </nav>
-    </header>
-  </aside>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>A CSS Tutorial</title>
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
+    <script type="text/javascript" src="assets/javascript/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="assets/stylesheets/styles.css">
+  </head>
+  <body>
+    <div id="container">
 
-  <section>
-    <div>
-      <h1>CSS Tutorial</h1>
+
+      <header>
+        <a id="cssLogo" @click="(activePage = 'Introduction') && (activeTag($event))"><i class="fa fa-css3"></i></a>
+        <span id="spanHeaderTitle">CSS Tutorial: {{activePage}}</span>
+      </header>
+
+
+
+
+
+      <aside class="asideNavigation">
+        <nav>
+
+          <ul>
+            <li v-for="(chapter, idx) in chapters" v-if="chapter.heading === 'h1'">
+              <h1>
+                <a @click="(activePage = chapter.text) && (activeTag($event))"
+                :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')"
+                :class="'anchor' + chapter.text.replace(/[^A-z]/g, '')"
+                >
+                  {{chapter.text}}
+                </a>
+              </h1>
+            </li>
+
+            <li v-else-if="chapter.heading === 'h2'">
+              <h2>
+                <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
+                  {{chapter.text}}
+                </a>
+              </h2>
+            </li>
+            <li v-else-if="chapter.heading === 'h3'">
+              <h3>
+                <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
+                  {{chapter.text}}
+                </a>
+              </h3>
+            </li>
+            <li v-else-if="chapter.heading === 'h4'">
+              <h4>
+                <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-') + '(section' + chapter.sectionName + ')'">
+                  {{chapter.text}}
+                </a>
+              </h4>
+            </li>
+            <!-- <li v-else-if="chapter.heading === 'h5'">
+              <h5>
+                <a :href="'#' + chapter.heading + '_'+ chapter.text.replace(/\s/g, '-')">
+                  {{chapter.text}}
+                </a>
+              </h5>
+            </li> -->
+          </ul>
+        </nav>
+      </aside>
+
+
+
+
+      <main>
+        <!-- Introduction -->
+        <section id="sectionIntroduction">
+          <!-- v-show="activePage === 'Introduction'" -->
+          <article class="articleContent">
+            <h1>Introduction</h1>
+            This is the index<br>
+            Darker blue is rgb(0, 79, 128) <br>
+            Dark blue is rgb(0, 113, 184) <br>
+            light blue is rgb(42, 171, 222) <br>
+            Gray is rgb(207, 207, 207) <br>
+            White is rgb(255, 255, 255)
+
+            <p>
+              Hello and welcome to the CSS Tutorial. This tutorial works as a point
+              of reference for me but also can be used by whomever thinks it might
+              be useful to his/her knowledge.
+            </p>
+            <p>
+              This is a basic tutorial about CSS and how we can use different css
+              settings to accomplish functionality and a create visibly pleasing
+              and functional content when we are building a web page. You should
+              already have some familiarity with the structure of an html document
+              and how the html tags are nested within each other.
+            </p>
+            <p>
+              As we progress through this tutorial, you will be seeing different
+              examples of css and different techniques. This is by no means an
+              extensive work portraying how CSS works. On the contrary, there are
+              other very good online resources that you can use for that purpose.
+              Yet, this resource is being built step by step, as my own knowledge
+              and understanding grows and new techniques are being incorporated on
+              other projects I am working on.
+            </p>
+            <p>
+              Hence, this work will probaby have pieces of information missing and
+              it might be flawed BUT the language I will try to use will be simple
+              without too many complicated terms and with a lot of practice areas.
+              So let's get started!
+            </p>
+
+
+
+            <h2>Structure of tutorial</h2>
+            <p>
+              This tutorial is broken in different chapters based on the topic you would
+              like to study. Each chapter is constituted by the following core components:
+            </p>
+            <h5>Chapter topic</h5>
+            <p>
+              This is where the particular topic is being discussed along with some
+              generic information.
+            </p>
+            <h5>Properties to learn</h5>
+            <p>
+              There are different properties in CSS that do different things for
+              particular topics. I will try to cover as many different properties
+              as possible. This is where the properties are being registered.
+            </p>
+            <h5>Example</h5>
+            <p>
+              This is where I will be displaying an example of how to use the different
+              properties being taught. You will be able to review the html and css
+              code and also play with it.
+            </p>
+            <h5>Practice</h5>
+            <p>
+              This is where you will be given a task to complete. There is an option
+              where you can toggle between your code and the solution so it is okay
+              if you get stuck since you will be able to get some help if you need to.
+            </p>
+
+
+
+
+            <h2>Examples</h2>
+            <p>
+              This tutorial has example areas where snippets of code along with the
+              outcome are being displayed. The example areas allow you to change
+              the content if you would like to experiment. Also, if you wish to revisit
+              the original example after your edits, just click on the "reset" button.
+            </p>
+          </article>
+
+
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              In this area, there will be a description of what the example is displaying.
+              Feel free to experiment with the example's different options and
+              click on "reset" if you want to revert back to the original version.
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                h1{
+                  color: red;
+                }
+
+                p{
+                  font-family: Tahoma, Arial;
+                  color: gray;
+                }
+              </span>
+              <h1>Hello there I am the example area!</h1>
+              <p>
+                If you want, you can run tests in this area. You can update the
+                HTML code on the top left slot where the HTML code exists and you
+                can update the CSS in the bottom left area.
+              </p>
+              <p>
+                Do you think you can change the property of the <code>h1</code> tag
+                to read: <i>Hello there, this is my first example</i>
+              </p>
+              <p>
+                Also, do you think you can change the color of the h1 tag from <code>red</code>
+                to <code>rgb(0, 113, 184)</code>
+              </p>
+              <p>
+                If you wish to, you can click on the "reset" button to view
+                the original code.
+              </p>
+            </example-area>
+          </div>
+
+
+          <article class="articleContent">
+            <h2>Practices</h2>
+            <p>
+              The practice area will have some coding problem that you can try to resolve.
+              The things that are asked relate to the learnings of the particular
+              chapter but there may be some components from previous chapters as well. You
+              can have fun working on the challenge. And also, if you do not close the
+              browser window, your work will not be lost, even if you navigate to
+              other chapters of this tutorial.
+            </p>
+            <p>
+              There will be a description of the problem you can try to solve.
+              You can always look at the solution of the problem if you need help.
+              You can revert back to the original version of the problem and continue
+              your work.
+            </p>
+          </article>
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Let's work on our basic syntax. Try to do the following:
+            </p>
+            <h5>HTML</h5>
+            <ul>
+              <li>
+                Create an <code>h1</code> tag with text that reads: My first CSS code
+              </li>
+              <li>
+                Create a <code>p</code> tag with text that reads: <i>This is my first
+                code in the CSS tutorial. I think it is great!</i>
+              </li>
+              <li>
+                Wrap the word "great" inside a <code>b</code> tag.
+              </li>
+            </ul>
+            <h5>CSS</h5>
+            <ul>
+              <li>
+                Give to the <code>h1</code> tag the property of <code>font-family</code>
+                with a value of "Tahoma".
+              </li>
+              <li>
+                Give the h1 tag the property of <code>font-style</code> with the
+                value "italic".
+              </li>
+              <li>
+                Give to the <code>h1</code> tag the property of <code>color</code>
+                with the value of "blue".
+              </li>
+              <li>
+                Give the <code>p</code> tag the property of <code>font-size</code>
+                with the value of "16px"
+              </li>
+              <li>
+                Give to the <code>b</code> tag the property of <code>font-variant</code>
+                with the value of "small-caps"
+              </li>
+            </ul>
+
+
+            <practice-area class="exampleArea">
+              <span>
+                h1{
+                  font-family: tahoma;
+                  color: blue;
+                }
+
+                p {
+                  font-size: 18px;
+                }
+
+                b{
+                  font-variant: small-caps;
+                }
+              </span>
+              <h1>My first CSS code</h1>
+              <p>This is my first
+              code in the CSS tutorial. I think it is <b>great!</b></p>
+            </practice-area>
+          </div>
+        </section>
+
+
+
+
+
+
+
+        <section id="sectionCSSSyntax">
+          <article class="articleContent">
+            <h1>CSS Syntax</h1>
+            <h5>Chapter Topic</h5>
+            <p>
+              I am covering the way that the basic CSS syntax is structured.
+            </p>
+            <h5>Properties to Learn</h5>
+            <p>
+              <p>
+                No specific properties being taught.
+                This chapter talks about the syntax of the CSS in general.
+              </p>
+            </p>
+            <h5>Example</h5>
+            <p>
+              I am displaying how the CSS syntax is affecting the view of a page.
+              I am also including some comments that display how some of the CSS is
+              disabled.
+            </p>
+            <h5>Practice</h5>
+            <p>
+              You will need to write some things that confirm you understand how the
+              CSS syntax works and what the elements are. Also you will need to describe
+              the different distinction marks that separate the different CSS elements
+              as well as how the comments are formed.
+            </p>
+
+
+
+
+            <h2>What is CSS?</h2>
+            <p>
+              CSS stands for Cascading Style Sheets. CSS is a style language sheet that
+              is being used to modify the way an HTML page is being presented. Let's take
+              a random person as an example. This person might wear a coat, a skirt,
+              and a hat one day, and jeans, a t-shirt and glasses the other day. The
+              person is always the same but the way she looks is different based on
+              the clothes she is wearing.
+              Likewise, CSS can give a different look, feel and level of interactivity
+              to the different components of the HTML page, based on the different
+              properties we are modifying to the elements (tags) of the HTML page.
+            </p>
+
+
+
+            <h2>Syntax structure</h2>
+            <p>
+              CSS has a syntax that has some similarities to the way JSON files or
+              JavaScript object literals are structured.
+              The main components of CSS are the following:
+            </p>
+            <h3>Selector</h3>
+            <p>
+              The selector is the one that points to the HTML element (or elements)
+              that you want to style. If this would be stated in plain English,
+              it would read like: <i>I want you to select the <code>h1</code>
+              tags.</i>
+            </p>
+            <h3>Declarations</h3>
+            <p>
+              These are the different properties that state the
+              type of styling you want a particular element to have and what the
+              value is. If this would be stated in plain English, it would read
+              something like: <em>I want to select the <code>h1</code>
+              tags.</em> (selector) <em>and I want their <code>color</code> to
+              be <code>green</code></em>. --&gt; <code>h1{ color: green; }</code>. <br>
+              Notice how the declaration is siting between two curly braces. All
+              the declarations of a selector are included between two curly braces
+              and they are separated by semi-colons (;).
+            </p>
+            <h3>Property</h3>
+            <p>
+              The property is the entity that states what needs to
+              change (eg: color, positioning, background, display). It is the first
+              part of the declaration, before the colon symbol (:) --&gt;
+              <code>h1{ color: &lt;-- The property is the one to the left; }</code>
+            </p>
+            <h3>Value</h3>
+            <p>
+              The value is the entity that states how the property changes /
+              what the value of the property is. --&gt;
+              <code>h1 { The value is the one to the right --&gt; green; }</code>
+            </p>
+
+
+            <h2>Comments</h2>
+            <p>
+              Comments is CSS are created by using a forward slash and a star to open them,
+              and a star followed by a forward slash to close them. Comments can be a convenient
+              way to keep notes about edits that are being done in CSS or temporarily
+              de-activate declarations in order to observe the behavior of the page without
+              deleting the declaration, in the event you will need to reactivate it
+              again. <code>/*Hello, I am a comment. Use me to keep notes in CSS*/</code>
+            </p>
+          </article>
+
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                p{
+                  color: blue;
+                  /&ast;font-family: verdana;&ast;/
+                  /&ast;font-size: 20px;&ast;/
+                }
+              </span>
+              <h1>CSS Syntax</h1>
+              <p>
+                In this section, you can see how the CSS of the paragraphs is
+                set so that it has a <code>blue</code> color.
+              </p>
+              <p>
+                The <code>font-family</code>
+                and the <code>font-size</code> are in the CSS script but the formatting
+                is not visible because they are disabled by the comment.
+              </p>
+              <ul>
+                <li>
+                  You can try disable the comments so you can see how the formatting
+                  changes.
+                </li>
+                <li>
+                  You can also go ahead and add additional declarations on the
+                  the <code>p</code> or other selectors.
+                </li>
+              </ul>
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+                  <h4>Practice</h4>
+                  <h5>HTML</h5>
+                  <ol>
+                    <li>
+                      Create an ordered list with all the CSS syntax elements
+                    </li>
+                    <li>
+                      Describe all the different distinction marks (collons, semicolons etc)
+                      and how they are used in CSS.
+                    </li>
+                    <li>
+                      Write a small paragraph about the comments and how they are formed.
+                    </li>
+                    <li>
+                      Each of the above should have an <code>h2</code> tag as a title.
+                    </li>
+                    <li>
+                      The whole document should have an <code>h1</code> tag that will
+                      serve as the title.
+                    </li>
+                  </ol>
+                  <h5>CSS</h5>
+                  <ol>
+                    <li>
+                      All the elements should be typed in Arial font family.
+                    </li>
+                    <li>
+                      Give the following font color to the elements:
+                      <ul>
+                        <li>h1: blue</li>
+                        <li>h2: brown</li>
+                        <li>b: dark blue</li>
+                      </ul>
+                    </li>
+                    <li>The h1 should have a size of 28px</li>
+                  </ol>
+                  <p>
+                    Remember that you can always toggle between the solution and
+                    your edits to see how close you are to the final result. If
+                    you are very comfortable with the syntax, you can always add
+                    more things to the CSS. Enjoy!
+                  </p>
+
+
+                  <practice-area class="exampleArea">
+                    <span>
+                      body{
+                        font-family: arial;
+                      }
+
+                      h1{
+                        font-size: 28px;
+                        color: blue;
+                      }
+
+                      h2{
+                        color: brown;
+                      }
+
+                      b{
+                        color: darkblue;
+                      }
+                    </span>
+                    <h1>
+                      CSS Syntax
+                    </h1>
+                    <h2>Syntax Elements</h2>
+                    <p>The CSS syntax elements are:</p>
+                    <ol>
+                      <li>Selector</li>
+                      <li>Declarations</li>
+                      <li>Property</li>
+                      <li>Value</li>
+                    </ol>
+
+                    <h2>Syntax elements distinction</h2>
+                    <ul>
+                      <li></li>
+                      <li>All the declarations for a selector are included within
+                      curly braces (<b>{ }</b>)</li>
+                      <li>Each declaration is separated by a <b>semicolon</b>.</li>
+                      <li>Declaration properties are separated by its values with a <b>colon</b>.</li>
+                    </ul>
+
+                    <h2>CSS comments</h2>
+                    <p>
+                      The comments in CSS can be entered with slashes and asterisks.
+                      You can open a comment with a slash and an asterisk (<b>/*</b>)
+                      and you can close it with an asterisk and a slash (<b>*/</b>).
+                    </p> <br><br><br>
+                  </practice-area>
+                </div>
+        </section>
+        <!-- END OF SECTION SYNTAX -->
+
+
+
+
+
+
+
+
+
+
+
+        <!-- RESET -->
+        <section id="sectionReset">
+
+          <article class="articleContent">
+            <h1>Reset</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+            <p>
+              Paragraph
+            </p>
+          </article>
+
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
+        </section>
+        <!-- END OF SECTION RESET -->
+
+
+
+
+
+
+
+
+
+
+        <!-- 001 SPECIFICITY -->
+        <section id="sectionSpecificity">
+          <!-- v-show="activePage === 'Specificity'" -->
+          <article class="articleContent">
+            <h1>Specificity</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+
+            <p>
+              Paragraph
+            </p>
+          </article>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
+        </section>
+        <!-- END OF SECTION SPECIFICITY -->
+
+
+
+
+
+
+
+
+
+
+        <!-- 002 BOX MODEL -->
+        <section id="sectionBoxModel">
+          <!-- v-show="activePage === 'Box Model'" -->
+          <article class="articleContent">
+            <h1>Box Model</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+
+            <p>
+              Paragraph
+            </p>
+          </article>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
+        </section>
+        <!-- END OF SECTION BOX MODEL -->
+
+
+
+
+
+
+
+
+
+
+        <!-- 003 POSITIONING -->
+        <section id="sectionPositioning">
+          <!-- v-show="activePage === 'Positioning'" -->
+          <article class="articleContent">
+            <h1>Positioning</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+
+            <p>
+              Paragraph
+            </p>
+          </article>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
+        </section>
+        <!-- END OF SECTION POSITIONING -->
+
+
+
+
+
+
+
+
+
+
+        <!-- 004 TYPOGRAPHY -->
+        <section id="sectionTypography">
+          <!-- v-show="activePage === 'Typography'" -->
+          <article class="articleContent">
+            <h1>Typography</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+
+            <p>
+              Paragraph
+            </p>
+          </article>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
+        </section>
+        <!-- END OF SECTION TYPOGRAPHY -->
+
+
+
+
+
+
+
+
+
+
+        <!-- 005 BACKGROUNDS -->
+        <section id="sectionBackgrounds">
+          <!-- v-show="activePage === 'Backgrounds'" -->
+          <article class="articleContent">
+            <h1>Backgrounds</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+
+            <p>
+              Paragraph
+            </p>
+          </article>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
+        </section>
+        <!-- END OF SECTION BACKGROUNDS -->
+
+
+
+
+
+
+
+
+
+        <!-- 006 TRANSFORMS -->
+        <section id="sectionTransforms" >
+          <!-- v-show="activePage === 'Transforms'" -->
+          <article class="articleContent">
+            <h1>Transforms</h1>
+            <h5>Chapter Topic</h5>
+            <h5>Properties to Learn</h5>
+            <h5>Example</h5>
+            <h5>Practice</h5>
+
+            <p>
+              Paragraph
+            </p>
+          </article>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <p>
+              Description here
+            </p>
+            <example-area class="exampleArea">
+              <span>
+                CSS here
+              </span>
+              HTML here
+            </example-area>
+          </div>
+
+
+          <div class="divPracticeContainer">
+            <h4>Practice</h4>
+            <p>
+              Description here
+            </p>
+            <h5>HTML</h5>
+            <p>
+              Description here
+            </p>
+            <h5>CSS</h5>
+            <p>
+              Description here
+            </p>
+
+
+
+            <practice-area class="exampleArea">
+              <span>
+                CSS goes here
+              </span>
+              HTML goes here
+            </practice-area>
+          </div>
+        </section>
+        <!-- END OF SECTION TRANSFORMS -->
+
+
+      </main>
+      <footer>
+        <span>
+          CSS Tutorial 2018 | No rights reserved |
+          <a href="http://addeventlistener.xyz" target="_blank">Paraskevas Apostolopoulos</a>
+        </span>
+      </footer>
     </div>
-    <article>
-      <h2>Introduction</h2>
-      <p>Hello and welcome to the CSS Tutorial page.</p>
-      <p>This is a basic tutorial about CSS and how we can use different css settings
-        to accomplish functionality and create visibly pleasing content.</p>
-      <p>Before we begin with our CSS tutorial, we added some basic html elements to the page.
-        These elements are some of the most common found in html pages.</p>
-        <p>We are assuming that you already have some familiarity with html tags
-          and how they are nested within each other.</p>
-      <p>In this page, we have added some basic headers, nav tags, links, paragraphs
-        and general structural tags.</p>
-      <p>At this point, this page is completely stripped of CSS and the only thing that
-        renders is the lines of text that are being typed within the html document.</p>
-      <p>As we progress through this tutorial, we will be adding new CSS rules and
-        we will be moving things around in order to make our page more pleasing to view
-        and more functional.</p>
 
-        <h2>A brief history of HTML/CSS</h2>
-        <p>In the early days of the world wide web (WWW), documents or other
-          information were often sent as simple plain text across the wires that
-          formed the internet. <br>
-          Because the original intent was to allow scientists to share information
-          at the particle accelerator <a href="http://home.cern/">CERN</a>,
-          <a href="http://webfoundation.org/about/vision/history-of-the-web/">Sir Tim Berners-Lee</a>,
-          the inventor of the WWW, developed the Hyper Text Markup Language (HTML). <br>
-          HTML included the means to allow some basic formatting of the documents
-          being shared. </p>
-
-          <p>Once styling became more complex and demanding, there was a need for
-            a way that would allow the separation of the code that related to the
-            styling of the page from the rest of the document. </p>
-          <p>CSS was introduced in order to satisfy this need. CSS files are used
-            to control the attributes of a webpage, while the overall style of an html page
-            is being managed through separate files.</p>
-          <p>By including some type of order and precedence we can keep CSS code DRY
-            (don't repeat yourself). This increases readability for the developer
-            while reducing the memory
-            requirements on both the client and the server side,
-            as well as during the transmission process.</p>
-
-
-        <h2>How was CSS used on this page?</h2>
-      <p>Even though there is no CSS applied to the page, you can see that some
-        formatting is already applied to it.</p>
-      <p>This formatting comes from the browser's preset settings and it might be different
-        from how other browsers format the page.</p>
-        <p>That is why you see things like:</p>
-        <ol>
-          <li>The <code>&#60;h1&#62; and &#60;h2&#62;</code> tags of the page in a larger font size.</li>
-          <li>The fonts of the page being in a specific preset font format.</li>
-          <li>Some indentation between the text and the window's frame.</li>
-          <li>Spacing between the different paragraphs and the headers of the page.</li>
-        </ol>
-        <p>As you progress through the pages of this tutorial, you will be able to see the css code
-          that we added by viewing the things entered in the <code>&#60;code&#62;</code>
-          tag.</p>
-          <p>For example, you will see code displayed like this:</p>
-          <code>
-            h1 {<br>
-          	font-size: 3.2rem;<br>
-          	line-height: 5.2rem;<br>
-          	font-family: Arial;<br>
-          	font-weight: 600;<br>
-          }<br>
-        </code>
-        <p>Go ahead and click on the next link to continue reading the tutorial.</p>
-      <a href="000-reset.html">Next</a>
-    </article>
-  </section>
-  <footer>&copy; January 2017 - today. <br>
-    David Shin <br>
-    Jeremy Beal <br>
-    Paraskevas Apostolopoulos</footer>
-</body>
+  </body>
+  <script type="text/javascript" src="assets/javascript/script.js"></script>
 </html>
