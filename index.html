@@ -536,7 +536,56 @@
             <h5>Example</h5>
             <h5>Practice</h5>
             <p>
-              Paragraph
+              All the different popular browsers come in the market with some predefined
+              format for several of the primary HTML elements. That happens because
+              in the past, when CSS was not that widely used, the web pages were more
+              static and there was uniformity in some key components of the pages.
+              Hence, the browsers come with some format for all the <code>h</code>
+              tags, there is usually some predefined <code>padding</code> and <code>margin</code>
+              and finaly, the <code>font-size</code> and <code>font-family</code> is
+              predefined.
+            </p>
+            <p>
+              Things get more complicated because different browsers are handling
+              the above and several other properties in a different way. Therefore,
+              when the web developer creates a new CSS environment, unexpected results
+              might render in specific browsers, if compared to other ones. Hence
+              the web developer cannot accomplish uniformity in the online experience.
+            </p>
+            <p>
+              In order to resolve this challenge, the developers go through a process
+              of <i>normalizing</i> some or all of the styles that are being affected.
+              There are several different flavors of CSS reset that you can chose from.
+              Some of them are very detailed and extensive while others are barebones
+              simple. Depending on your level of knowledge and comfort, you can go
+              with any way. My suggestion is to start with the absolute basics first
+              and then start thinking if you want to reset more things. In that way,
+              you will avoid any unexpected browser behavior and you will not have to
+              rebuild the CSS from the ground up and for elements that you were not
+              planning to change anyway. An example could be the reset of the <code>li</code>
+              elements in ordered and unordered lists. If you are fine with the way
+              the <code>li</code> elements are rendering, then you should not go ahead
+              and reset them because then nothing will render with a bullet or a
+              numbered order, unless you define them again in your own CSS.
+            </p>
+            <p>
+              A very barebones CSS reset could be the following:
+            </p>
+            <code>
+              * {
+                    margin: 0;
+                    padding: 0;
+                }
+            </code>
+            <p>
+              This format would allow you to get rid of all the padding and the margin
+              of all elements but all the other characteristins that are preset in
+              the browser (font family and size, vertical align, borders etc) would
+              stay the same. If you want to use some more complicated reset option,
+              you can do an online search and find several useful pages that provide
+              different options on how to reset the CSS in the browser. Finally, there
+              is even a library called <b>normalize.css</b> that does the job for you
+              if you decide to install it in your application.
             </p>
           </article>
 
