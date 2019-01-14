@@ -44,7 +44,7 @@ var exampleArea = Vue.component("example-area",{
       .replace("<span>", "")
       .replace(/\s[^\S]/g, "")
       .replace(/\{/g, "{\n\t")
-      .replace(/;[^\}\*]/g, ";\n\t")
+      .replace(/;/g, ";\n\t")
       .replace(/(\*\/)[^\}]/g, "$1\n\t")
       .replace(/\}/g, "}\n\n")
       .trim();

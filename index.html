@@ -94,13 +94,6 @@
           <!-- v-show="activePage === 'Introduction'" -->
           <article class="articleContent">
             <h1>Introduction</h1>
-            This is the index<br>
-            Darker blue is rgb(0, 79, 128) <br>
-            Dark blue is rgb(0, 113, 184) <br>
-            light blue is rgb(42, 171, 222) <br>
-            Gray is rgb(207, 207, 207) <br>
-            White is rgb(255, 255, 255)
-
             <p>
               Hello and welcome to the CSS Tutorial. This tutorial works as a point
               of reference for me but also can be used by whomever thinks it might
@@ -586,7 +579,9 @@
               numbered order, unless you define them again in your own CSS.
             </p>
             <p>
-              A very barebones CSS reset could be the following:
+              A very barebones CSS reset could be the following. Notice that instead
+              of defining the different html elements, the <code>*</code> character
+              is used to capture everything.
             </p>
             <code>
               * {
@@ -600,9 +595,18 @@
               the browser (font family and size, vertical align, borders etc) would
               stay the same. If you want to use some more complicated reset option,
               you can do an online search and find several useful pages that provide
-              different options on how to reset the CSS in the browser. Finally, there
-              is even a library called <b>normalize.css</b> that does the job for you
-              if you decide to install it in your application.
+              different options on how to reset the CSS in the browser.
+            </p>
+            <p>
+              Finally, there is an option of using
+              <a href="https://necolas.github.io/normalize.css/" target="_blank">
+                <b>normalize.css</b>
+              </a>. This option
+              allows you to reset only particular html elements while some other ones
+              are set with predefined values. This allows the developer to not have
+              to worry about setting new values to some elements that might be
+              necessary to maintain like <code><li></code> bullets or paragraph
+              margins.
             </p>
           </article>
 
@@ -610,13 +614,75 @@
           <div class="divExampleContainer">
             <h4>Example</h4>
             <p>
-              Description here
+              In the following example, you will see how some html elements have
+              been reset. Hence, there is no preset formatting to be displayed.
+              You can go ahead and remove some of the reset options in the CSS and
+              see how the html behaves after you do the updates.
+            </p>
+            <p>
+              The CSS in this example is created by
+              <a href="http://meyerweb.com/eric/tools/css/reset/" target="_blank">Eric Meyer</a>
+              and it is the second version (v2.0 | 20110126).
             </p>
             <example-area class="exampleArea">
               <span>
-                CSS here
+                html, body, div, span, applet, object, iframe,
+                h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+                a, abbr, acronym, address, big, cite,
+                del, dfn, em, img, ins, kbd, q, s, samp,
+                small, strike, strong, sub, sup, tt, var,
+                b, u, i, center,
+                dl, dt, dd, ol, ul, li,
+                fieldset, form, label, legend,
+                table, caption, tbody, tfoot, thead, tr, th, td,
+                article, aside, canvas, details, embed,
+                figure, figcaption, footer, header, hgroup,
+                menu, nav, output, ruby, section, summary,
+                time, mark, audio, video {
+                	margin: 0;
+                	padding: 0;
+                	border: 0;
+                	font: inherit;
+                	vertical-align: baseline;
+                }
+                /* HTML5 display-role reset for older browsers */
+                article, aside, details, figcaption, figure,
+                footer, header, hgroup, menu, nav, section {
+                	display: block;
+                }
+                body {
+                	line-height: 1;
+                }
+                ol, ul {
+                	list-style: none;
+                }
+                blockquote, q {
+                	quotes: none;
+                }
+                blockquote:before, blockquote:after,
+                q:before, q:after {
+                	content: '';
+                	content: none;
+                }
+                table {
+                	border-collapse: collapse;
+                	border-spacing: 0;
+                }
               </span>
-              HTML here
+              <h1>I am an <code>h1</code> and I have been reset</h1>
+              <p>I am a paragraph <code>p</code> and I have been reset</p>
+              <ul>
+                <li>I am a list (<code>li</code>) item in an unordered list.</li>
+                <li>I am another list item. Remove the <code>ul</code> rule to see
+                my bullets again.</li>
+              </ul>
+              <h2>I am an <code>h2</code> header.</h2>
+              <p>
+                I am a paragraph with some <b>bold text</b> and some <i>italic text</i>.
+                Do you think you can modify the reset CSS so that I render based on
+                the predefined browser settings?
+                settings?
+              </p>
             </example-area>
           </div>
 
@@ -624,23 +690,44 @@
           <div class="divPracticeContainer">
             <h4>Practice</h4>
             <p>
-              Description here
             </p>
             <h5>HTML</h5>
             <p>
-              Description here
+              Create some headings and some paragraphs with some random text in them.
             </p>
             <h5>CSS</h5>
             <p>
-              Description here
+              Try reseting all the html elements you have created at once. The
+              components that you can try to reset are:
+            </p>
+            <ul>
+              <li>The margin</li>
+              <li>The padding</li>
+              <li>The border</li>
+              <li>The font</li>
+            </ul>
+            <p>
+              Hint: For reseting the font, use the <code>inherit</code> property. It
+              allows all the elements to inherit from the parent element.
             </p>
 
 
             <practice-area class="exampleArea">
               <span>
-                CSS goes here
+                * {
+                  margin: 0;
+                  padding: 0;
+                  border: 0;
+                  font: inherit;
+                }
               </span>
-              HTML goes here
+              <h1>Reset practice</h1>
+              <p>I am a paragraph and I have been reset.</p>
+              <p>
+                I am another paragraph with some <b>bold</b> and some <i>italic</i>
+                text and I have been reset. There is also some <code>code</code>
+                that gets affected.
+              </p>
             </practice-area>
           </div>
         </section>
@@ -983,9 +1070,31 @@
             <h5>Properties to Learn</h5>
             <h5>Example</h5>
             <h5>Practice</h5>
-
+            <h2>How do they word?</h2>
             <p>
-              Paragraph
+              Transforms work on a coordinate system. Each element in the html document
+              is considered to be a rectangle and the beginning of the coordinates
+              is located in the top left corner of this rectangle. Hence, before
+              any action is taken through the tranforms, the top left corner of the
+              rectangle is located at the position (0,0). In particular, this coordinate
+              refers to the top left corner of the margin of the rectangle and not
+              the content, padding, or its border.
+            </p>
+            <p>
+              The thing that is also good to remember is that not all two and three
+              dimentional transforms are supported by all the browsers. The more
+              modern browsers support most of the transforms and there are also
+              polyfyls that offer this kind of support. For this tutorial, I will
+              only mention the transforms and transitions as if all browsers are
+              supporting the CSS written.
+            </p>
+            <p>
+              Another thing to remember is that transforms should not constitute the
+              main element of a web page but rather part of the experience. The
+              page should still be functional if the transforms are not working.
+              Transforms do indeed make the browsing experience better but they
+              should not be the primary concern to create content that is easily
+              accessible and easy to use.
             </p>
           </article>
 
@@ -1026,6 +1135,13 @@
               HTML goes here
             </practice-area>
           </div>
+
+          Darker blue is rgb(0, 79, 128) <br>
+          Dark blue is rgb(0, 113, 184) <br>
+          light blue is rgb(42, 171, 222) <br>
+          Gray is rgb(207, 207, 207) <br>
+          White is rgb(255, 255, 255)
+
         </section>
         <!-- END OF SECTION TRANSFORMS -->
 
