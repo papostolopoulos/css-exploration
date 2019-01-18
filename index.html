@@ -305,10 +305,8 @@
             </p>
             <h5>Properties to Learn</h5>
             <p>
-              <p>
-                No specific properties being taught.
-                This chapter talks about the syntax of the CSS in general.
-              </p>
+              No specific properties being taught.
+              This chapter talks about the syntax of the CSS in general.
             </p>
             <h5>Example</h5>
             <p>
@@ -323,6 +321,7 @@
               the different distinction marks that separate the different CSS elements
               as well as how the comments are formed.
             </p>
+            <hr>
 
 
 
@@ -542,9 +541,26 @@
           <article class="articleContent">
             <h1>Reset</h1>
             <h5>Chapter Topic</h5>
+            <p>
+              In CSS, it is a good practice to reset the default CSS format that
+              comes from the browser, in order to accomplish uniformity in the way
+              that CSS renders.
+            </p>
             <h5>Properties to Learn</h5>
+            <p>
+              None. This is a generic approach being discussed.
+            </p>
             <h5>Example</h5>
+            <p>
+              A popular reset example is being presented.
+            </p>
             <h5>Practice</h5>
+            <p>
+              Create your own reset rules and see how they affect the display of
+              html elements.
+            </p>
+            <hr>
+
             <p>
               All the different popular browsers come in the market with some predefined
               format for several of the primary HTML elements. That happens because
@@ -605,9 +621,13 @@
               allows you to reset only particular html elements while some other ones
               are set with predefined values. This allows the developer to not have
               to worry about setting new values to some elements that might be
-              necessary to maintain like <code><li></code> bullets or paragraph
-              margins.
+              necessary to maintain like:
             </p>
+            <ul>
+              <li>Bullets for list elements</li>
+              <li>Margins between headers and paragraphs</li>
+              <li>Padding between the <code>body</code> and all the html elements.</li>
+            </ul>
           </article>
 
 
@@ -748,13 +768,273 @@
           <article class="articleContent">
             <h1>Specificity</h1>
             <h5>Chapter Topic</h5>
+            <p>
+              An analysis of the process CSS followes to determine which conflicting
+              CSS rule wins over another one, in the event that both exist in the CSS
+              document.
+            </p>
             <h5>Properties to Learn</h5>
+            <p>
+              No property in particular but an analysis how various conflicting rules
+              get priority over other ones based on the level of specificity.
+            </p>
             <h5>Example</h5>
             <h5>Practice</h5>
 
+            <h2>What is Specificity</h2>
             <p>
-              Paragraph
+              Specificity is the process that is followed in CSS to determine which
+              rules should apply in an HTML element. Depending on the depth determined
+              in the CSS rule, along with the number of related attributes defined,
+              the developer can be more specific about the attributes to be used or
+              more broad.
             </p>
+            <h2>Tag, class, id based specificity</h2>
+            <p>
+              The most common methods used to define how particular elements are
+              affected by CSS are based on the tag selection, classes selection or
+              ids selection.
+            </p>
+
+            <h3>Tag level rules</h3>
+            <p>
+              The tags in the HTML are being selected. More than one elements can
+              be included in the set of rules, when separated by a comma.
+            </p>
+            <code>
+              /* Modifies all the &lt;p&gt; elements in the HTML */
+              p{
+                color: brown;
+                font-family: Arial;
+              }
+
+              /* Modifies all the &lt;ul&gt; and &lt;ol&gt; elements in the HTML */
+              ul ol{
+                font-variant: small-caps;
+              }
+            </code>
+
+            <h3>Class level rules</h3>
+            <p>
+              All the elements with the particular class get affected by the rule.
+              Depending of the inclusion of a tag or another attribute, the rule
+              can become more specific. If there are elements that have a rule at
+              a tag level and also have rules at a class level, the class level
+              CSS rules get priority over the tag level rules.
+            </p>
+            <code>
+              /* Modifies all the elements with the same class */
+              .yellow{
+                background: yellow;
+              }
+
+              /* Modifies the &lt;div&gt; tags that have the class .blue */
+              div.blue{
+                background: blue;
+              }
+            </code>
+            <h3>ID level rules</h3>
+            <p>
+              The element with the particular id is the only one that gets affected.
+              This is the deepest level of specificity and it prevails over the rules
+              that might be set at a class or a tag level.
+            </p>
+            <code>
+              /* Modifies the element with an id of #addMargin */
+              #addMargin{
+                margin: 20px 0;
+              }
+            </code>
+          </article>
+
+          <div class="divExampleContainer">
+            <h4>Example</h4>
+            <!-- <p>
+              Description here
+            </p> -->
+            <example-area class="exampleArea">
+              <span>
+                /* Modifies all the &lt;p&gt; elements in the HTML */
+                p{
+                  color: brown;
+                  font-family: Arial;
+                }
+
+                /* Modifies all the &lt;ul&gt; and &lt;ol&gt; elements in the HTML */
+                ul ol{
+                  font-variant: small-caps;
+                }
+
+                /* Modifies all the elements with the same class */
+                .yellow{
+                  background: yellow;
+                }
+
+                /* Modifies the &lt;div&gt; tags that have the class .blue */
+                div.blue{
+                  background: blue;
+                }
+
+                /* Modifies the element with an id of #addMargin */
+                #addMargin{
+                  margin: 20px 0;
+                }
+
+              </span>
+
+
+              <h1>Class level rules</h1>
+              <p>
+                This <code>&lt;p&gt;</code> tag is modified at a tag level.
+              </p>
+
+              <ul>
+                <li>This list</li>
+                <li>is modified at a tag level</li>
+              </ul>
+
+              <ol>
+                <li>The selectors for the <code>&lt;ul&gt;</code> and</li>
+                <li>for the <code>&lt;ol&gt;</code></li> are grouped under one
+                set of rules.
+              </ol>
+            </example-area>
+          </div>
+
+
+
+          <article class="articleContent">
+
+
+
+            <h2>Other rules and techniques used</h2>
+            <p>
+              In addition to the above, there are several different
+              ways of combining the different selectors or be specific, with the
+              CSS rules based on:
+            </p>
+            <ul>
+              <li>The element's attributes existence</li>
+              <li>The value of the element's attributes</li>
+              <li>The nesting of the element in the html.</li>
+              <li>The event that happens on the rule</li>
+            </ul>
+            <h3>Elements' attributes</h3>
+            <p>
+              CSS gives us the option to select particular elements of the HTML, not
+              only based on their tags, classes or ids but also based on the attributes
+              that they have and their respective values.
+            </p>
+            <code>
+              /* Modifies the &lt;a&gt; tag that has a "target" attribute */
+              a[target]{
+                color: lightgreen;
+              }
+            </code>
+            <h3>Element's attribute values</h3>
+            <p>
+              You can be more specific with your selector's attribute by defining
+              the full or part of its value.
+            </p>
+            <code>
+              /* Selects all &lt;input&gt; tags */
+              input{
+                background-color: lightgreen;
+              }
+
+              /* Selects all &lt;input&gt; tags that have a "name" attribute */
+              input[name]{
+                font-family: verdana;
+              }
+
+              /* Selects all &lt;input&gt; tags that have a "name" attribute with
+              a value of "user-name"*/
+              input[name = user-name]{
+                font-weight: bold;
+              }
+
+              /* Selects all &lt;input&gt; tags that have a "name" attribute with
+              a value that begins with the substring "user"*/
+              input[name ^= user]{
+                font-size: 18px;
+              }
+
+              /* Selects all &lt;input&gt; tags that have a "name" attribute with
+              a value that ends with "name"*/
+              input[name $= name]{
+                color: green;
+              }
+
+              /* Selects all &lt;input&gt; tags that have a "name" attribute with
+              a value that contains the full word (not the substring) "first"*/
+              input[name ~= first]{
+                border: 2px solid yellow;
+              }
+
+              /* Selects all &lt;input&gt; tags that have a "name" attribute with
+              a value that contains the substring "last"*/
+              input[name *= last]{
+                font-family: verdana;
+              }
+
+
+            </code>
+            <h3>Nested elements</h3>
+            <h3>Event based rules</h3>
+            <p>
+              a:hover
+            </p>
+
+
+
+
+
+            <h2>Selectors grouping</h2>
+            <p>
+              It is syntactically acceptable to combine different tags. classes and ids
+              in one set of rules as separate selectors. If you need to apply the
+              same set of rules on several
+              different HTML elements with different attributes, classes or of a different
+              category, it is preferable if you combine the rules, instead of writting
+              them repeatedly for each one of the HTML elements.
+            </p>
+            <code>
+              /* The following rule is affecting the &lt;div&gt; tag with a class
+              .codeContainer, along with the &lt;code&gt; tags and the element that
+              has the id #codeAlert. Instead of including the white-space rule and
+              the font-family rule repeatedly for each one of these selectors, the
+              declarations are grouped together with all the selectors. */
+
+              div.codeContainer, code, #codeAlert{
+                white-space: pre-line;
+              	font-family: "Monaco";
+              }
+
+              div.codeContainer{
+                padding: 20px;
+              }
+
+              code{
+                font-weight: bold;
+              }
+
+              #codeAlert{
+                color: red;
+              }
+            </code>
+
+            <h3>Rules position</h3>
+            <p>
+              , in the event that more than one rules
+              referring to it are conflicting each other. The position of
+              the rules in the CSS document, along with the level of depth that
+              is determined play a role in the way that CSS decides how things should
+              render in the HTML document.
+            </p>
+            <h3>Child elements rules</h3>
+
+            <h2>CSS child selector depth</h2>
+
           </article>
 
           <div class="divExampleContainer">
