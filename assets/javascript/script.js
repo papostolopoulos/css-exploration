@@ -43,18 +43,23 @@ var exampleArea = Vue.component("example-area",{
       .split("</span>")[0]
       .replace("<span>", "")
       .replace(/\s[^\S]/g, "")
-      .replace(/\{/g, "{\n\t")
-      .replace(/;/g, ";\n\t")
-      .replace(/(\*\/)[^\}]/g, "$1\n\t")
-      .replace(/\}/g, "}\n\n")
+      .replace(/&lt;/g,"<").replace(/&gt;/g,">")
+      .replace(/(\*\/)[^\}]/g, "$1\n")
+      .replace(/(\/\*)/g, "\n\n$1")
+      .replace(/(\{)\s(\w+)/g, "$1\n   $2")
+      .replace(/(;)\s(\w+)/g, "$1\n   $2")
+      .replace(/(;)\s(\})/g, "$1\n$2")
+      .replace(/(\})\s?(\S)/g, "$1\n\n$2")
       .trim();
 
       this.textAreaPracticeHtml =
       this.$el.children[1].innerHTML
       .split("</span>")[1]
       .replace(/(\s){2,}/gm, " ")
-      .replace(/(<\/\w+>)/g, "\n$1")
-      .replace(/(<\w+>)/g, "\n$1\n\t")
+      .replace(/(<\/?\w+>)/g, "\n$1")
+      .replace(/>\s?</g,">\n<")
+      .replace(/(>)\s?(\w+)/g,"$1\n   $2")
+      .replace(/(<\w+>)\s?(\w+)/g, "$1\n   $2")
       .trim();
     },
     preSetiFrameContent(){ //Content that is being pre-loaded from the computed property
@@ -128,20 +133,24 @@ var practiceArea = Vue.component("practice-area",{
       this.$el.children[1].innerHTML
       .split("</span>")[0]
       .replace("<span>", "")
-      .replace(/(\s){2,}/gm, " ")
       .replace(/\s[^\S]/g, "")
-      .replace(/\{/g, "{\n\t")
-      .replace(/;[^\}\*]/g, ";\n\t")
-      .replace(/(\*\/)[^\}]/g, "$1\n\t")
-      .replace(/\}/g, "}\n\n")
+      .replace(/&lt;/g,"<").replace(/&gt;/g,">")
+      .replace(/(\*\/)[^\}]/g, "$1\n")
+      .replace(/(\/\*)/g, "\n\n$1")
+      .replace(/(\{)\s(\w+)/g, "$1\n   $2")
+      .replace(/(;)\s(\w+)/g, "$1\n   $2")
+      .replace(/(;)\s(\})/g, "$1\n$2")
+      .replace(/(\})\s?(\S)/g, "$1\n\n$2")
       .trim();
 
       this.textAreaPracticeHtml =
       this.$el.children[1].innerHTML
       .split("</span>")[1]
-      .replace(/\s{2,}/gm, "")
-      .replace(/(<\/\w+>)/g, "\n$1")
-      .replace(/(<\w+>)/g, "\n$1\n\t")
+      .replace(/(\s){2,}/gm, " ")
+      .replace(/(<\/?\w+>)/g, "\n$1")
+      .replace(/>\s?</g,">\n<")
+      .replace(/(>)\s?(\w+)/g,"$1\n   $2")
+      .replace(/(<\w+>)\s?(\w+)/g, "$1\n   $2")
       .trim();
     },
     solutioniFrameContent(){
@@ -153,21 +162,26 @@ var practiceArea = Vue.component("practice-area",{
 
       this.textAreaPracticeCss =
       this.iFrameUserContent
-      .split("</style>")[0]
-      .replace("<style>", "")
+      .split("</span>")[0]
+      .replace("<span>", "")
       .replace(/\s[^\S]/g, "")
-      .replace(/\{/g, "{\n\t")
-      .replace(/;[^\}\*]/g, ";\n\t")
-      .replace(/(\*\/)[^\}]/g, "$1\n\t")
-      .replace(/\}/g, "}\n\n")
+      .replace(/&lt;/g,"<").replace(/&gt;/g,">")
+      .replace(/(\*\/)[^\}]/g, "$1\n")
+      .replace(/(\/\*)/g, "\n\n$1")
+      .replace(/(\{)\s(\w+)/g, "$1\n   $2")
+      .replace(/(;)\s(\w+)/g, "$1\n   $2")
+      .replace(/(;)\s(\})/g, "$1\n$2")
+      .replace(/(\})\s?(\S)/g, "$1\n\n$2")
       .trim();
 
       this.textAreaPracticeHtml =
       this.iFrameUserContent
-      .split("</style>")[1]
+      .split("</span>")[1]
       .replace(/(\s){2,}/gm, " ")
-      .replace(/(<\/\w+>)/g, "\n$1")
-      .replace(/(<\w+>)/g, "\n$1\n\t")
+      .replace(/(<\/?\w+>)/g, "\n$1")
+      .replace(/>\s?</g,">\n<")
+      .replace(/(>)\s?(\w+)/g,"$1\n   $2")
+      .replace(/(<\w+>)\s?(\w+)/g, "$1\n   $2")
       .trim();
     },
     solutionContentExecute(){
